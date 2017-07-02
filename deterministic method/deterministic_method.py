@@ -7,7 +7,7 @@ SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 title = ['ENTERPRISEID',	'LAST_',	'FIRST_',	'MIDDLE',	'SUFFIX_',	'DOB',	'GENDER',	'SSN',	'ADDRESS1',	'ADDRESS2',	'ZIP',	'MOTHERS_MAIDEN_NAME',	'MRN',	'CITY',	'STATE_',	'PHONE',	'PHONE2',	'EMAIL',	'ALIAS_']
 
-def find_lfgd_records():
+def find_lfgd_records(sql, file):
 	# sql = '''
 	# 		select p1.ENTERPRISEID, p2.ENTERPRISEID from pcm p1, pcm p2 where
 	# 		p1.ENTERPRISEID <> p2.ENTERPRISEID and
@@ -43,70 +43,29 @@ def find_lfgd_records():
 	# 		p1.ADDRESS1 = p2.ADDRESS1
 	# '''
 
-	sql = '''
-			select p1.ENTERPRISEID, p2.ENTERPRISEID from pcm p1, pcm p2
-			where p1.ENTERPRISEID <> p2.ENTERPRISEID and
-			p1.FIRST_ = p2.FIRST_ and
-			p1.LAST_ = p2.LAST_
-	'''
-
+	# sql = '''
+	# 		select p1.ENTERPRISEID, p2.ENTERPRISEID from pcm p1, pcm p2
+	# 		where p1.ENTERPRISEID <> p2.ENTERPRISEID and
+	# 		p1.FIRST_ = p2.FIRST_ and
+	# 		p1.LAST_ = p2.LAST_
+	# '''
 
 	with engine.begin() as conn:
-		#res = conn.execute(sql)
-		# with open('diff.csv', "w", newline='') as f:
-		# 	writer = csv.writer(f)
-		# 	for row in res:
-		# 		writer.writerow(row[0:19])
-		# 		writer.writerow(row[19:38])
-
-		# with open("no_gender.txt", "w", newline='\n') as f:
-		# 	s = set()
-		# 	for row in res:
-		# 		if row[0] not in s:
-		# 			s.add(row[1])
-					# data = "{}\t{}".format(row[0], row[1])
-					# print(data, file=f)
-		# s = set()
-		# i = 0
-		# for row in res:
-		# 	if row[0] not in s:
-		# 		s.add(row[1])
-		# 		i += 1
-		# print(i)
-
-
-		# res1 = conn.execute(sql1)
-		# with open("no_ssn.txt", "w", newline='\n') as f:
-		# 	s1 = set()
-		# 	for row in res1:
-		# 		if row[0] not in s1:
-		# 			s1.add(row[1])
-					# data = "{}\t{}".format(row[0], row[1])
-					# print(data, file=f)
-		# s = set()
-		# i = 0
-		# for row in res1:
-		# 	if row[0] not in s:
-		# 		s.add(row[1])
-		# 		i += 1
-		# print(i)
-
 		res = conn.execute(sql)
-		with open("only_fl.txt", "w", newline='\n') as f:
+		with open(file, "w", newline='\n') as f:
 			s = set()
 			for row in res:
 				if row[0] not in s:
 					s.add(row[1])
 					data = "{}\t{}".format(row[0], row[1])
 					print(data, file=f)
-		# s = set()
-		# i = 0
-		# for row in res2:
-		# 	if row[0] not in s:
-		# 		s.add(row[1])
-		# 		i += 1
-		# print(i)
-
+		s = set()
+		i = 0
+		for row in res2:
+			if row[0] not in s:
+				s.add(row[1])
+				i += 1
+		print(i)
 
 def find_exact_same_records():
 	sql = '''
@@ -133,10 +92,6 @@ def check_overlap(file1, file2, meld):
 		print("switch two files! file1 must be the larger file.")
 		sys.exit(1)
 
-	# l1 = []
-	# l2 = []
-	# l3 = []
-	# l4 = []
 	d1 = dict()
 	dd1 = dict()
 	d2 = dict()
@@ -179,7 +134,7 @@ def check_overlap(file1, file2, meld):
 			d4[each] = d3[each]
 
 	if meld:
-		file_name = "com_all.txt"
+		file_name = ".txt"
 		with open(file_name, "w") as f:
 			for each in d1:
 				line = "{}\t{}".format(each, d1[each])
@@ -203,7 +158,6 @@ def create_submission_csv(file, csv_file):
 				l.append(1)
 				writer.writerow(l)
 
-
 def main():
 	#find_exact_same_records()
 	#find_lfgd_records()
@@ -211,7 +165,10 @@ def main():
 	#check_overlap("no_ssn.txt", "no_gender.txt", True)
 	#check_overlap("com_ssn_gender_dob.txt", "only_address.txt", True)
 	#create_submission_csv('com_ssn_gender_dob_addr.txt', 'sub4.csv')
-	check_overlap("com_ssn_gender_dob.txt", "fldsg.txt", True)
+	#check_overlap("no_gender_no_dob.txt", "fldsg.txt", True)
+	#create_submission_csv("no_gender_no_dob.txt","sub5.csv")
+	pass
+
 
 if __name__ == '__main__':
 	main()
