@@ -1,10 +1,10 @@
-##dedupe
+## dedupe
 1.use csvdedupe_modified.py obtained a submission result as submission1 -> precision=0.413 recall=0.3
 2.seperate 3 records into two or three pairs -> obtain submission2 -> precision=0.84 recall 0.65 
 
-#all below experiments are related to deterministic method
+# all below experiments are related to deterministic method
 
-##strategy:
+## strategy:
 1.query db for same f+l+dob+ssn+gender
 2.query db for same f+l+dob+gender
 3.query db for same f+l+dob+ssn
@@ -17,7 +17,7 @@
 
 ###### experiment are related to results by index 
 
-##experiment to do:
+## experiment to do:
 1. test query 1
 2. test query 2 (containing query 1)
 3. test strategy 6 (sub3)
@@ -25,7 +25,7 @@
 5. test	strategy 8 (sub4)
 
 
-##results:
+## results:
 1.query 1 provides a result as precision=1 and recall=0.19
 2.query 2 provides a result as precision=0.9997 and recall=0.58
 3.result 6 provides a result as precision=0.9997 and recall=0.64
@@ -33,13 +33,13 @@
 5.result 8 provides a result as precision=0.99742 and recall=0.69
 
 
-##csv files:
+## csv files:
 1.per1: sql from database with condition as same first + last + gender + ssn + DOB (total:10950)
 2.per2: sql from database with condition as same first + last + gender + DOB (total:33474)
 3.diff_same_SSN: the records from per2 that a pair of two records have different ssn
 
 
-##txt files:
+## txt files:
 1.no_gender: all pairs collected with same first + last + ssn +dob
 2.no_ssn: all pairs collected with same first + last + dob + gender
 3.no_dob: all pairs collected with same first + last + ssn + gender
