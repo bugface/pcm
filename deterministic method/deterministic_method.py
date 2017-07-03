@@ -1,5 +1,4 @@
 from sqlalchemy import create_engine
-import cx_Oracle
 import csv
 import os
 import sys
@@ -61,28 +60,28 @@ def find_lfgd_records(sql, file):
 					print(data, file=f)
 		s = set()
 		i = 0
-		for row in res2:
+		for row in res:
 			if row[0] not in s:
 				s.add(row[1])
 				i += 1
 		print(i)
 
-def find_exact_same_records():
-	sql = '''
-			select *
-			from pcm p1, pcm p2
-			where p1.dob = p2.dob
-			and p1.FIRST_ = p2.first_
-			and p1.ENTERPRISEID <> p2.ENTERPRISEID
-			and p1.GENDER = p2.GENDER
-			and p1.ssn = p2.ssn
-			and p1.LAST_ = p2.LAST_
-	'''
-	with engine.begin() as conn:
-		res = conn.execute(sql)
-		for row in res:
-			if row[7] != row[26]:
-				output(row, "enterpriseID_pair.txt")
+# def find_exact_same_records():
+# 	sql = '''
+# 			select *
+# 			from pcm p1, pcm p2
+# 			where p1.dob = p2.dob
+# 			and p1.FIRST_ = p2.first_
+# 			and p1.ENTERPRISEID <> p2.ENTERPRISEID
+# 			and p1.GENDER = p2.GENDER
+# 			and p1.ssn = p2.ssn
+# 			and p1.LAST_ = p2.LAST_
+# 	'''
+# 	with engine.begin() as conn:
+# 		res = conn.execute(sql)
+# 		for row in res:
+# 			if row[7] != row[26]:
+# 				output(row, "enterpriseID_pair.txt")
 
 def check_overlap(file1, file2, meld):
 	# file1 must have more data then file2
@@ -167,6 +166,8 @@ def main():
 	#create_submission_csv('com_ssn_gender_dob_addr.txt', 'sub4.csv')
 	#check_overlap("no_gender_no_dob.txt", "fldsg.txt", True)
 	#create_submission_csv("no_gender_no_dob.txt","sub5.csv")
+	#check_overlap("sub2_pair.txt", "com_ssn_gender_dob_addr.txt", True)
+	#create_submission_csv("dedupedetermine.txt", "sub6.csv")
 	pass
 
 

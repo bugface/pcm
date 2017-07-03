@@ -11,26 +11,29 @@
 4. query db for same f+l+gender+ssn
 5. union results between 2 and 3 as com_ssn_gender
 6. union results among 2,3 and 4 as com_ssn_gender_dob (total 38635)
-7. union results between 3 and 4 as no_gender_no_dob (16011)
+7. union results between 3 and 4 as no_gender_no_dob (16011 cover all the records in 1)
 8. query db for same f+l+address
 9. union results between 8 and 6 (total:40281)
+10. union results from 9 and data pairs from submission 2 (derived from dedupe experiment)
+
 
 ###### experiment are related to results by index 
-
 ## experiment to do:
 1. test query 1
 2. test query 2 (containing query 1)
 3. test strategy 6 (sub3)
-4. test strategy 7 (sub5)
-5. test	strategy 8 (sub4)
+4. test strategy 9 (sub5)
+5. test	strategy 7 (sub4)
+6. test strategy 10 (sub6)
 
 
 ## results:
 1. query 1 provides a result as precision=1 and recall=0.19
 2. query 2 provides a result as precision=0.9997 and recall=0.58
-3. result 6 provides a result as precision=0.9997 and recall=0.64
-4. result 7 provides a result as precision=1 and recall=0.27854
-5. result 8 provides a result as precision=0.99742 and recall=0.69
+3. result 3 provides a result as precision=0.9997 and recall=0.64
+4. result 4 provides a result as precision=1 and recall=0.27854
+5. result 5 provides a result as precision=0.99742 and recall=0.69
+6. retult 6 provides a result as precision=0.846 and recall=0.71 (dedupe recordes not in deterministic records almost have no valuebal information)
 
 
 ## csv files:
@@ -49,3 +52,4 @@
 7. com_gender_ssn_dob_addr: all pairs of union of com_ssn_gender_dob and only_address
 8. fldsg: all pairs with same f+l+ssn+dob+gender. This is the source file of per1
 9. only_fl: contains all pairs having same f + l (total: 744512) (not fit for test)
+10. sub2_pair contains all pairs from submission 2 (dedupe result)
