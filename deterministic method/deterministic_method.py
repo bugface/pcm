@@ -42,12 +42,12 @@ def find_lfgd_records(sql, file):
 	# 		p1.ADDRESS1 = p2.ADDRESS1
 	# '''
 
-	# sql = '''
-	# 		select p1.ENTERPRISEID, p2.ENTERPRISEID from pcm p1, pcm p2
-	# 		where p1.ENTERPRISEID <> p2.ENTERPRISEID and
-	# 		p1.FIRST_ = p2.FIRST_ and
-	# 		p1.LAST_ = p2.LAST_
-	# '''
+	sql = '''
+			select p1.ENTERPRISEID, p2.ENTERPRISEID from pcm p1, pcm p2
+			where p1.ENTERPRISEID <> p2.ENTERPRISEID and
+			p1.FIRST_ = p2.FIRST_ and
+			p1.LAST_ = p2.LAST_
+	'''
 
 	with engine.begin() as conn:
 		res = conn.execute(sql)
