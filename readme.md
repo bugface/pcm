@@ -38,16 +38,18 @@
 <br><br>
 #### *************************************************************************************************************
 
-##table of fields combination
+## table of fields combination
 
-###table of combination 3
+### table of combination 3
+
 | index   | combination   | pairs   | percision   | recall   |
 |---|---|---|---|---|
 |   |   |   |   |   |
 |   |   |   |   |   |
 |   |   |   |   |   |
 
-###table of combination 4
+### table of combination 4
+
 | index   | combination   | pairs   | percision   | recall   |
 |---|---|---|---|---|
 |   |   |   |   |   |
