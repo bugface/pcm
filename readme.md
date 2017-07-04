@@ -66,6 +66,8 @@
 | 7  | f+l+dob+address  |   | n |   |   |
 | 8  | f+dob+gender(F)+ssn  | 2882  | n |   |   |
 | 9  | f+l+ssn+addr  |  | n |   |   |
+| 10 | l+gender(M)+dob+ssn  |  | n |   |   |
+| 11 | f+l+dob+addr+phone  |  | n |   |   |
 
 ##please make selection for the next stage work:
 
