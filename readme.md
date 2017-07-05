@@ -67,7 +67,8 @@
 | 8  | f+dob+gender(F)+ssn  | 2882  | n |   |   |
 | 9  | f+l+ssn+addr  |  | n |   |   |
 | 10 | l+gender(M)+dob+ssn  |  | n |   |   |
-| 11 | f+l+dob+addr+phone  |  | n |   |   |
+| 11 | l+middle+ssn+dob  |  | n |   |   |
+| 12 | l+middle+ssn+dob  |  | n |   |   |
 
 ##please make selection for the next stage work:
 
@@ -82,6 +83,8 @@
 - [ ] Table B 6
 - [ ] Table B 7
 - [ ] Table B 9
+- [ ] Table B 10
+- [ ] Table B 11
 
 ### To Do submit List:
 - [ ] Table A 1
