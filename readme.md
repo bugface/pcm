@@ -45,13 +45,6 @@
 | index   | combination   | pairs   | test?(y/n)   | percision   | recall   |
 |---|---|---|---|---|---|
 | 1   | f+l+addr  | 12460   | n  |   |   |
-| 2   | f+l+phone  |   | n  |   |   |
-| 3   | l+gender+ssn  |   | n  |   |   |
-| 4   | f+gender+ssn  |   | n  |   |   |
-| 5   | gender+ssn+dob |   | n  |   |   |
-| 6   | addr+phone+dob  |   | n  |   |   |
-| 7   | l+gender(M)+dob  |   | n  |   |   |
-| 8   | f+gender(F)+dob  |   | n  |   |   |
 
 ### table (B) of combination 4 or 5
 
@@ -61,45 +54,9 @@
 | 2  | f+l+dob+ssn  | 13960  | n  |   |   |
 | 3  | f+l+gender+ssn  | 13235  | n |   |   |
 | 4  | f+l+dob+gender  | 33474  | y | 0.997  | 0.58  |
-| 5  | f+l+address+phone  |   | n |   |   |
-| 6  | f+l+dob+phone  |   | n |   |   |
-| 7  | f+l+dob+address  |   | n |   |   |
-| 8  | f+dob+gender(F)+ssn  | 2882  | n |   |   |
-| 9  | f+l+ssn+addr  |  | n |   |   |
-| 10 | l+gender(M)+dob+ssn  |  | n |   |   |
-| 11 | l+middle+ssn+dob  |  | n |   |   |
-| 12 | l+middle+ssn+dob  |  | n |   |   |
+| 5  | f+dob+gender(F)+ssn  | 2882  | n |   |   |
 
-##please make selection for the next stage work:
 
-### To Do Query List:
-- [ ] Table A 2
-- [ ] Table A 3
-- [ ] Table A 4
-- [ ] Table A 5
-- [ ] Table A 6
-- [ ] Table A 7
-- [ ] Table A 8
-- [ ] Table B 6
-- [ ] Table B 7
-- [ ] Table B 9
-- [ ] Table B 10
-- [ ] Table B 11
 
-### To Do submit List:
-- [ ] Table A 1
-- [ ] Table A 2
-- [ ] Table A 3
-- [ ] Table A 4
-- [ ] Table A 5
-- [ ] Table A 6
-- [ ] Table A 7
-- [ ] Table A 8
-- [ ] Table B 2
-- [ ] Table B 3
-- [ ] Table B 5
-- [ ] Table B 6
-- [ ] Table B 7
-- [ ] Table B 8
-- [ ] Table B 9
+
 
