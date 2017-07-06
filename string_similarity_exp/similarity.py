@@ -8,7 +8,8 @@ def calc_sim_dl(str_pair):
 
 
 
-
+def main():
+	pass
 
 if __name__ == '__main__':
 	main()
