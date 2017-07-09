@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 import csv
 import logging
 import glob
+import os
 
 FORMAT = '%(asctime)-20s %(name)-5s %(levelname)-10s %(message)s'
 logging.basicConfig(filename='rules.log',level=logging.INFO, format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
@@ -10,6 +11,9 @@ logger = logging.getLogger("task")
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
+
+def clsw():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 def create_submission_csv(file, csv_file):
 	with open(file, "r") as f:
@@ -126,20 +130,57 @@ def pairs2txt(data, file):
 			output = "{}\t{}".format(each[0], each[1])
 			print(output, file=f, end='\n')
 
+def check_csv_by_hand(csv_file):
+	with open('same_pair_from_diff_csv.txt', "w") as fs, open('diff_pair_from_diff_csv.txt', "w") as fd:
+		with open(csv_file, "r") as f:
+			reader = csv.reader(f)
+			records = []
+			for i, row in enumerate(reader):
+				if i == 0:
+					continue
+				records.append(row)
+			j = 0
+			for i in range(0, len(records), 2):
+				l = []
+				for each in records[i]:
+					l.append(each)
+				for each in records[i+1]:
+					l.append(each)
+				if l[8] == l[28] and l[8].strip() != '':
+					print(l[8])
+					output = "{}\t{}".format(records[i][1], records[i+1][1])
+					print(output, file = fs, end='\n')
+				else:
+					j += 1
+					for k in range(len(records[i])):
+						if k in [2,3,4,6,7,8,9,10,11,16,17,18,19]:
+							print("{}\t\t{}\t\t\t\t\t{}".format(title[k-1], l[k], l[k+20]))
+					decision = input("same or not (y/n):")
+					if decision in ['y', 'Y']:
+						output = "{}\t{}".format(records[i][1], records[i+1][1])
+						print(output, file = fs, end='\n')
+
+					if decision in ['n', 'N']:
+						output = "{}\t{}".format(records[i][1], records[i+1][1])
+						print(output, file = fd, end='\n')
+						print()
+						print()
+					if j % 2 == 0:
+						j = 0
+						clsw()
+
 def main():
 	# rules = get_rules('rules_pair.txt')
 	# store_pairs(rules)
-	txt_files = glob.glob("txt\*.txt")
-	base_file = "union_stgy4.txt"
+	# txt_files = glob.glob("txt\*.txt")
+	# base_file = "union_stgy4.txt"
 	# combine(base_file, txt_files)
 	# create_submission_csv('combined.txt', 'sub7.csv')
 	# dp_set = diff(base_file, txt_files)
 	# pairs2txt(dp_set, 'diffpairs.txt')
 	# create_submission_csv('diffpairs.txt', 'sub8.csv')
 	# pairs2csv(dp_set, "rulesdiff.csv")
-
-
-
+	check_csv_by_hand("rulesdiff.csv")
 
 if __name__ == '__main__':
 	main()

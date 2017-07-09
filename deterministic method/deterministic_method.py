@@ -6,7 +6,7 @@ SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-
 engine = create_engine(SQLALCHEMY_DATABASE_URI)
 title = ['ENTERPRISEID',	'LAST_',	'FIRST_',	'MIDDLE',	'SUFFIX_',	'DOB',	'GENDER',	'SSN',	'ADDRESS1',	'ADDRESS2',	'ZIP',	'MOTHERS_MAIDEN_NAME',	'MRN',	'CITY',	'STATE_',	'PHONE',	'PHONE2',	'EMAIL',	'ALIAS_']
 
-def find_lfgd_records(sql, file):
+def find_lfgd_records(file):
 	# sql = '''
 	# 		select p1.ENTERPRISEID, p2.ENTERPRISEID from pcm p1, pcm p2 where
 	# 		p1.ENTERPRISEID <> p2.ENTERPRISEID and
@@ -42,11 +42,16 @@ def find_lfgd_records(sql, file):
 	# 		p1.ADDRESS1 = p2.ADDRESS1
 	# '''
 
+	# sql = '''
+	# 		select p1.ENTERPRISEID, p2.ENTERPRISEID from pcm p1, pcm p2
+	# 		where p1.ENTERPRISEID <> p2.ENTERPRISEID and
+	# 		p1.FIRST_ = p2.FIRST_ and
+	# 		p1.LAST_ = p2.LAST_
+	# '''
+
 	sql = '''
-			select p1.ENTERPRISEID, p2.ENTERPRISEID from pcm p1, pcm p2
-			where p1.ENTERPRISEID <> p2.ENTERPRISEID and
-			p1.FIRST_ = p2.FIRST_ and
-			p1.LAST_ = p2.LAST_
+		select p1.ENTERPRISEID, p2.ENTERPRISEID, p1.ssn from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and
+		p1.ssn = p2.ssn
 	'''
 
 	with engine.begin() as conn:
@@ -54,7 +59,7 @@ def find_lfgd_records(sql, file):
 		with open(file, "w", newline='\n') as f:
 			s = set()
 			for row in res:
-				if row[0] not in s:
+				if row[0] not in s and row:
 					s.add(row[1])
 					data = "{}\t{}".format(row[0], row[1])
 					print(data, file=f)
@@ -159,7 +164,7 @@ def create_submission_csv(file, csv_file):
 
 def main():
 	#find_exact_same_records()
-	#find_lfgd_records()
+	find_lfgd_records('ssn.txt')
 	#no_dob.txt, no_gender.txt, no_ssn.txt
 	#check_overlap("no_ssn.txt", "no_gender.txt", True)
 	#check_overlap("com_ssn_gender_dob.txt", "only_address.txt", True)

@@ -35,9 +35,9 @@
 	- txt files: f_l.txt (total: 740281)
 <br><br>
 7.  - strategy: query db using rules combined with exp5
-	- txt files: combined.txt (total: 50668)
+	- txt files: combined.txt (total: 48388)
 	- submission: sub7.csv
-	- result: precision=0.953 and recall=0.84
+	- result: precision=0.99657 and recall=0.839
 <br><br>
 8.  - strategy: query db using all rules, filter all the distinct pairs not contained in experiment 4
 	- txt files: combined.txt (total: 9853)
