@@ -27,3 +27,6 @@
 2017-07-07 16:49:28  task  INFO       rule: txt\f_dob_phone_email.txt; pairs number: 0
 2017-07-07 16:49:35  task  INFO       rule: txt\f_l_addr_middle.txt; pairs number: 2611
 2017-07-07 16:50:13  task  INFO       rule: txt\l_dob_gender_phone.txt; pairs number: 22566
+2017-07-26 10:40:06  task  INFO       rule: txt\3_fields_process_address\l_ssn_gender.txt; pairs number: 17177
+2017-07-26 10:40:51  task  INFO       rule: txt\3_fields_process_address\l_dob_ssn.txt; pairs number: 21008
+2017-07-26 10:40:54  task  INFO       rule: txt\3_fields_process_address\f_dob_email.txt; pairs number: 10

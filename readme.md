@@ -34,15 +34,20 @@
 6.  - strategy: query db for same f+l
 	- txt files: f_l.txt (total: 740281)
 <br><br>
-7.  - strategy: query db using rules combined with exp5
-	- txt files: combined.txt (total: 48388)
+7.  - strategy: query db using rules combined with exp5(stgy5) (deduped)
+	- txt files: stgy7.txt (total: 48388)
 	- submission: sub7.csv
-	- result: precision=0.99657 and recall=0.839
+	- result: precision=0.99657 and recall=0.839 (f-score is 0.91)
 <br><br>
 8.  - strategy: query db using all rules, filter all the distinct pairs not contained in experiment 4
 	- txt files: combined.txt (total: 9853)
 	- submission: sub8.csv
-	- result: precision=0.984 and recall=0.17 (has around 150 error pairs, will be checked by hand in diffpair.csv)
+	- result: precision=0.984 and recall=0.17 (has around 158 error pairs, will be checked by hand in diffpair.csv)
+<br><br>
+9.  - strategy: collect a set of rules in rules_dtail_process_address.txt which used only three fields. The query result based on these rules will be combined and deduped with stgy7. The resulted data pairs will be checked again by the new address rule which will compare the similarity based on normalized address
+	- txt files:
+	- submission: sub9.csv
+	- result:
 <br><br>
 #### *************************************************************************************************************
 
@@ -58,6 +63,13 @@
 | 6  | f+l+addr  | 12460   | n  |   |   |
 
 
+### **************************************************************************************************************
 
+# deterministic remove wrong record pairs strategy:
+## stgy1: we get give some rules as what we did for finding same pairs to find different pairs existed in our current selected result set
+### rule such as record1.ssn <> record2.ssn etc.
 
-
+### **************************************************************************************************************
+1. - process address: use regex to normalize the address to a common and unified format
+2. - process dob with three cases
+<br><br>

@@ -4,16 +4,7 @@ import logging
 import glob
 import os
 
-FORMAT = '%(asctime)-20s %(name)-5s %(levelname)-10s %(message)s'
-logging.basicConfig(filename='rules.log',level=logging.INFO, format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
-logger = logging.getLogger("task")
-
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
-engine = create_engine(SQLALCHEMY_DATABASE_URI)
-title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
-
-def clsw():
-    os.system('cls' if os.name=='nt' else 'clear')
 
 def create_submission_csv(file, csv_file):
 	with open(file, "r") as f:
@@ -27,7 +18,7 @@ def create_submission_csv(file, csv_file):
 				l.append(1)
 				writer.writerow(l)
 
-def sql(rule):
+def execute_sql(rule):
 	with engine.begin() as conn:
 		res = conn.execute(rule)
 	return res
@@ -48,10 +39,10 @@ def pair2txt(file, data):
 			output = "{}\t{}".format(each[0], each[1])
 			print(output, file=f, end='\n')
 
-def store_pairs(rules):
+def store_result_as_pairs(rules, folder):
 	for rule in rules:
-		file = "txt\\" + rule + ".txt"
-		res = sql(rules[rule])
+		file = folder + "\\" + rule + ".txt"
+		res = execute_sql(rules[rule])
 		data = []
 		s = set()
 		for each_res in res:
@@ -73,19 +64,19 @@ def _dedupe(file, dataset):
 			if t not in dataset and tprim not in dataset:
 				dataset.add(t)
 
-def combine(base, files):
+def combine_pair_files_with_dedupe(base_file, new_files, output_file):
 	pairs = set()
-	_dedupe(base, pairs)
+	_dedupe(base_file, pairs)
 
-	for file in files:
+	for file in new_files:
 		_dedupe(file, pairs)
 
-	with open("combined.txt", "w") as f:
+	with open(output_file, "w") as f:
 		for each in pairs:
 			output = "{}\t{}".format(each[0], each[1])
 			print(output, file = f, end='\n')
 
-def diff(base, files):
+def get_extra_pairs_not_in_base(base, files):
 	pairs = set()
 	diff_pairs = set()
 	_dedupe(base, pairs)
@@ -101,9 +92,9 @@ def diff(base, files):
 					diff_pairs.add(t)
 	return diff_pairs
 
-def pairs2csv(pairs, file):
+def pairs2csv(pairs, output_file):
 	title.insert(0, "index")
-	with open(file, "w", newline='') as f:
+	with open(output_file, "w", newline='') as f:
 		writer = csv.writer(f)
 		writer.writerow(title)
 		title.pop(0)
@@ -130,57 +121,32 @@ def pairs2txt(data, file):
 			output = "{}\t{}".format(each[0], each[1])
 			print(output, file=f, end='\n')
 
-def check_csv_by_hand(csv_file):
-	with open('same_pair_from_diff_csv.txt', "w") as fs, open('diff_pair_from_diff_csv.txt', "w") as fd:
-		with open(csv_file, "r") as f:
-			reader = csv.reader(f)
-			records = []
-			for i, row in enumerate(reader):
-				if i == 0:
-					continue
-				records.append(row)
-			j = 0
-			for i in range(0, len(records), 2):
-				l = []
-				for each in records[i]:
-					l.append(each)
-				for each in records[i+1]:
-					l.append(each)
-				if l[8] == l[28] and l[8].strip() != '':
-					print(l[8])
-					output = "{}\t{}".format(records[i][1], records[i+1][1])
-					print(output, file = fs, end='\n')
-				else:
-					j += 1
-					for k in range(len(records[i])):
-						if k in [2,3,4,6,7,8,9,10,11,16,17,18,19]:
-							print("{}\t\t{}\t\t\t\t\t{}".format(title[k-1], l[k], l[k+20]))
-					decision = input("same or not (y/n):")
-					if decision in ['y', 'Y']:
-						output = "{}\t{}".format(records[i][1], records[i+1][1])
-						print(output, file = fs, end='\n')
-
-					if decision in ['n', 'N']:
-						output = "{}\t{}".format(records[i][1], records[i+1][1])
-						print(output, file = fd, end='\n')
-						print()
-						print()
-					if j % 2 == 0:
-						j = 0
-						clsw()
+def pipline_get_detail(rule_file, folder, base_file, output_csv_file):
+	rules = get_rules(rule_file)
+	store_result_as_pairs(rules, folder)
+	new_pair_files = golb.glob(folder + "\\" + "*.txt")
+	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
+	extra_pairs = get_extra_pairs_not_in_base()
+	pairs2csv(extra_pairs, output_csv_file)
+	print(output_csv_file)
 
 def main():
-	# rules = get_rules('rules_pair.txt')
-	# store_pairs(rules)
-	# txt_files = glob.glob("txt\*.txt")
-	# base_file = "union_stgy4.txt"
-	# combine(base_file, txt_files)
-	# create_submission_csv('combined.txt', 'sub7.csv')
-	# dp_set = diff(base_file, txt_files)
-	# pairs2txt(dp_set, 'diffpairs.txt')
-	# create_submission_csv('diffpairs.txt', 'sub8.csv')
-	# pairs2csv(dp_set, "rulesdiff.csv")
-	check_csv_by_hand("rulesdiff.csv")
+	#work 1 config input:
+	base_file = "stgy7.txt"
+	rule_file = "rules_detail_process_address.txt"
+	folder = "txt\\3_fields_process_address"
+	output_csv_file = "addr_to_process.csv"
+
+	#run pipline
+	if not os.path.exists(folder):
+		os.makedirs(folder)
+	pipline_get_detail(rule_file, folder, base_file, output_csv_file)
+
 
 if __name__ == '__main__':
+	FORMAT = '%(asctime)-20s %(name)-5s %(levelname)-10s %(message)s'
+	logging.basicConfig(filename='rules.log',level=logging.INFO, format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
+	logger = logging.getLogger("task")
+	engine = create_engine(SQLALCHEMY_DATABASE_URI)
+	title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
 	main()
