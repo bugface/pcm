@@ -39,18 +39,28 @@ def pair2txt(file, data):
 			output = "{}\t{}".format(each[0], each[1])
 			print(output, file=f, end='\n')
 
-def store_result_as_pairs(rules, folder):
+def store_result_as_pairs(rules, folder, job):
 	for rule in rules:
 		file = folder + "\\" + rule + ".txt"
 		res = execute_sql(rules[rule])
 		data = []
 		s = set()
-		for each_res in res:
-			t = (each_res[0], each_res[1])
-			tprim = (each_res[1], each_res[0])
-			if t not in s and tprim not in s:
-				s.add(t)
-				data.append(t)
+
+		if job == "p":
+			for each_res in res:
+				t = (each_res[0], each_res[1])
+				tprim = (each_res[1], each_res[0])
+				if t not in s and tprim not in s:
+					s.add(t)
+					data.append(t)
+		elif job == "d":
+			for each_res in res:
+				t = (each_res[7], each_res[26])
+				tprim = (each_res[7], each_res[26])
+				if t not in s and tprim not in s:
+					s.add(t)
+					data.append(t)
+
 		pair2txt(file, data)
 		logger.info("rule: {}; pairs number: {}".format(file, len(data)))
 		res.close()
@@ -121,32 +131,49 @@ def pairs2txt(data, file):
 			output = "{}\t{}".format(each[0], each[1])
 			print(output, file=f, end='\n')
 
-def pipline_get_detail(rule_file, folder, base_file, output_csv_file):
+def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job):
 	rules = get_rules(rule_file)
-	store_result_as_pairs(rules, folder)
-	new_pair_files = golb.glob(folder + "\\" + "*.txt")
+	store_result_as_pairs(rules, folder, job)
+	new_pair_files = glob.glob(folder + "\\" + "*.txt")
 	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
-	extra_pairs = get_extra_pairs_not_in_base()
+	extra_pairs = get_extra_pairs_not_in_base(base_file, new_pair_files)
+	pairs2txt(extra_pairs, output_pair_file)
 	pairs2csv(extra_pairs, output_csv_file)
-	print(output_csv_file)
 
 def main():
 	#work 1 config input:
-	base_file = "stgy7.txt"
-	rule_file = "rules_detail_process_address.txt"
-	folder = "txt\\3_fields_process_address"
-	output_csv_file = "addr_to_process.csv"
+	# base_file = "stgy7.txt"
+	# rule_file = "rules_detail_process_address.txt"
+	# folder = "txt\\3_fields_process_address"
+	# output_csv_file = "addr_to_process.csv"
+	# output_pair_file = "addr_to_process.txt"
+	# job = "d" #("d" = detail, "p" = only pairs)
+	# #run pipline
+	# if not os.path.exists(folder):
+	# 	os.makedirs(folder)
+	# pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
 
-	#run pipline
-	if not os.path.exists(folder):
-		os.makedirs(folder)
-	pipline_get_detail(rule_file, folder, base_file, output_csv_file)
+	#work 2 config input:
+	# input_file = "addr_to_process_final_pairs2.txt"
+	# output_file = "addr_to_process_final_pairs2.csv"
+	# pairs = []
+	# with open(input_file, "r") as f:
+	# 	for each in f:
+	# 		#print(each[:-1])
+	# 		t = each[:-1].split('\t')
+	# 		#print(t)
+	# 		t1 = t[0]
+	# 		t2 = t[1]
+	# 		ts = (int(t1), int(t2))
+	# 		pairs.append(ts)
+	# pairs2csv(pairs, output_file)
+	pass
 
 
 if __name__ == '__main__':
 	FORMAT = '%(asctime)-20s %(name)-5s %(levelname)-10s %(message)s'
 	logging.basicConfig(filename='rules.log',level=logging.INFO, format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
 	logger = logging.getLogger("task")
-	engine = create_engine(SQLALCHEMY_DATABASE_URI)
+	engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 	title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
 	main()

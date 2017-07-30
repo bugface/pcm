@@ -47,7 +47,7 @@ def input_rules(source_file, indicator):
 			elif each == 'ssn':
 				query_fields.append('ssn')
 			elif each == 'phone':
-				query_fields.append('phone1')
+				query_fields.append('phone')
 			elif each == 'email':
 				query_fields.append('email')
 			elif each == 'alias':

@@ -71,5 +71,9 @@
 
 ### **************************************************************************************************************
 1. - process address: use regex to normalize the address to a common and unified format
+   - the rules and pairs obtained used in this method are listed in the txt\\3_field_process_address\\*.txt (all records add up to 200000+)
+   - without f_l_gender rule after deduplication, only 1000+ records have been extracted in which 235 of them are sure to be true
+   - the f_l_gender rule gave 1400000+ pair of records which not feasible to process (I can do it but not for sure how much we can get paid)
+
 2. - process dob with three cases
 <br><br>

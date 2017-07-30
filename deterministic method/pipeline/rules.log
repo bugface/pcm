@@ -30,3 +30,85 @@
 2017-07-26 10:40:06  task  INFO       rule: txt\3_fields_process_address\l_ssn_gender.txt; pairs number: 17177
 2017-07-26 10:40:51  task  INFO       rule: txt\3_fields_process_address\l_dob_ssn.txt; pairs number: 21008
 2017-07-26 10:40:54  task  INFO       rule: txt\3_fields_process_address\f_dob_email.txt; pairs number: 10
+2017-07-29 10:46:49  task  INFO       rule: txt\3_fields_process_address\dob_ssn_gender.txt; pairs number: 32220
+2017-07-29 10:47:45  task  INFO       rule: txt\3_fields_process_address\f_gender_ssn.txt; pairs number: 34754
+2017-07-29 11:06:28  task  INFO       rule: txt\3_fields_process_address\f_l_gender.txt; pairs number: 1408314
+2017-07-29 11:07:38  task  INFO       rule: txt\3_fields_process_address\l_gender_dob.txt; pairs number: 84238
+2017-07-29 11:07:46  task  INFO       rule: txt\3_fields_process_address\dob_ssn_phone.txt; pairs number: 6758
+2017-07-29 11:07:54  task  INFO       rule: txt\3_fields_process_address\ssn_gender_phone.txt; pairs number: 6816
+2017-07-29 11:08:23  task  INFO       rule: txt\3_fields_process_address\l_dob_ssn.txt; pairs number: 33216
+2017-07-29 11:08:51  task  INFO       rule: txt\3_fields_process_address\f_l_ssn.txt; pairs number: 32612
+2017-07-29 11:08:55  task  INFO       rule: txt\3_fields_process_address\f_dob_email.txt; pairs number: 10
+2017-07-29 11:09:14  task  INFO       rule: txt\3_fields_process_address\f_l_middle.txt; pairs number: 20986
+2017-07-29 11:09:22  task  INFO       rule: txt\3_fields_process_address\l_ssn_phone.txt; pairs number: 6670
+2017-07-29 11:09:51  task  INFO       rule: txt\3_fields_process_address\dob_ssn_gender.txt; pairs number: 32220
+2017-07-29 11:10:52  task  INFO       rule: txt\3_fields_process_address\f_l_dob.txt; pairs number: 74476
+2017-07-29 11:11:18  task  INFO       rule: txt\3_fields_process_address\l_ssn_gender.txt; pairs number: 28426
+2017-07-29 11:13:15  task  INFO       rule: txt\3_fields_process_address\f_dob_gender.txt; pairs number: 138100
+2017-07-29 11:13:57  task  INFO       rule: txt\3_fields_process_address\f_l_phone.txt; pairs number: 44294
+2017-07-29 16:06:45  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521)))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\engine\base.py", line 721, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\engine\default.py", line 443, in do_commit
+    dbapi_connection.commit()
+cx_Oracle.OperationalError: ORA-03113: end-of-file on communication channel
+Process ID: 12677
+Session ID: 36 Serial number: 37607
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\engine\base.py", line 1393, in _handle_dbapi_exception
+    exc_info
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\engine\base.py", line 721, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\engine\default.py", line 443, in do_commit
+    dbapi_connection.commit()
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03113: end-of-file on communication channel
+Process ID: 12677
+Session ID: 36 Serial number: 37607
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.OperationalError: ORA-03114: not connected to ORACLE
+
+2017-07-29 17:09:27  task  INFO       rule: txt\3_fields_process_address\f_dob_gender.txt; pairs number: 138100
+2017-07-29 17:09:40  task  INFO       rule: txt\3_fields_process_address\dob_ssn_phone.txt; pairs number: 6758
+2017-07-29 17:09:50  task  INFO       rule: txt\3_fields_process_address\l_ssn_phone.txt; pairs number: 6670
+2017-07-29 17:09:53  task  INFO       rule: txt\3_fields_process_address\f_dob_email.txt; pairs number: 10
+2017-07-29 17:11:11  task  INFO       rule: txt\3_fields_process_address\l_gender_dob.txt; pairs number: 84238
+2017-07-29 17:11:48  task  INFO       rule: txt\3_fields_process_address\f_gender_ssn.txt; pairs number: 34754
+2017-07-29 17:12:21  task  INFO       rule: txt\3_fields_process_address\f_l_ssn.txt; pairs number: 32612
+2017-07-29 17:12:34  task  INFO       rule: txt\3_fields_process_address\ssn_gender_phone.txt; pairs number: 6816
+2017-07-29 17:13:26  task  INFO       rule: txt\3_fields_process_address\f_l_phone.txt; pairs number: 44294
+2017-07-29 17:13:48  task  INFO       rule: txt\3_fields_process_address\f_l_middle.txt; pairs number: 20986
+2017-07-29 17:15:02  task  INFO       rule: txt\3_fields_process_address\f_l_dob.txt; pairs number: 74476
+2017-07-29 17:15:38  task  INFO       rule: txt\3_fields_process_address\l_dob_ssn.txt; pairs number: 33216
+2017-07-29 17:16:11  task  INFO       rule: txt\3_fields_process_address\dob_ssn_gender.txt; pairs number: 32220
+2017-07-29 17:16:41  task  INFO       rule: txt\3_fields_process_address\l_ssn_gender.txt; pairs number: 28426
+2017-07-29 19:09:35  task  INFO       rule: txt\3_fields_process_address\dob_ssn_phone.txt; pairs number: 6758
+2017-07-29 19:10:21  task  INFO       rule: txt\3_fields_process_address\f_l_phone.txt; pairs number: 44294
+2017-07-29 19:10:55  task  INFO       rule: txt\3_fields_process_address\f_l_ssn.txt; pairs number: 32612
+2017-07-29 19:13:00  task  INFO       rule: txt\3_fields_process_address\f_dob_gender.txt; pairs number: 138100
+2017-07-29 19:14:13  task  INFO       rule: txt\3_fields_process_address\f_l_dob.txt; pairs number: 74476
+2017-07-29 19:14:24  task  INFO       rule: txt\3_fields_process_address\l_ssn_phone.txt; pairs number: 6670
+2017-07-29 19:14:29  task  INFO       rule: txt\3_fields_process_address\f_dob_email.txt; pairs number: 10
+2017-07-29 19:14:51  task  INFO       rule: txt\3_fields_process_address\f_l_middle.txt; pairs number: 20986
+2017-07-29 19:15:25  task  INFO       rule: txt\3_fields_process_address\l_dob_ssn.txt; pairs number: 33216
+2017-07-29 19:16:00  task  INFO       rule: txt\3_fields_process_address\dob_ssn_gender.txt; pairs number: 32220
+2017-07-29 19:17:18  task  INFO       rule: txt\3_fields_process_address\l_gender_dob.txt; pairs number: 84238
+2017-07-29 19:17:55  task  INFO       rule: txt\3_fields_process_address\f_gender_ssn.txt; pairs number: 34754
+2017-07-29 19:18:25  task  INFO       rule: txt\3_fields_process_address\l_ssn_gender.txt; pairs number: 28426
+2017-07-29 19:18:37  task  INFO       rule: txt\3_fields_process_address\ssn_gender_phone.txt; pairs number: 6816
