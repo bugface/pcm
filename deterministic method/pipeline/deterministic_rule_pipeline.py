@@ -6,8 +6,8 @@ import os
 
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
 
-def create_submission_csv(file, csv_file):
-	with open(file, "r") as f:
+def create_submission_csv(txt_file, csv_file):
+	with open(txt_file, "r") as f:
 		with open(csv_file, "w", newline='') as f1:
 			writer = csv.writer(f1)
 			for each in f:
@@ -132,42 +132,48 @@ def pairs2txt(data, file):
 			print(output, file=f, end='\n')
 
 def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job):
-	rules = get_rules(rule_file)
-	store_result_as_pairs(rules, folder, job)
+	# rules = get_rules(rule_file)
+	# store_result_as_pairs(rules, folder, job)
 	new_pair_files = glob.glob(folder + "\\" + "*.txt")
 	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
 	extra_pairs = get_extra_pairs_not_in_base(base_file, new_pair_files)
-	pairs2txt(extra_pairs, output_pair_file)
-	pairs2csv(extra_pairs, output_csv_file)
+	print(len(extra_pairs))
+	# pairs2txt(extra_pairs, output_pair_file)
+	# pairs2csv(extra_pairs, output_csv_file)
 
-def main():
-	#work 1 config input:
-	# base_file = "stgy7.txt"
-	# rule_file = "rules_detail_process_address.txt"
-	# folder = "txt\\3_fields_process_address"
-	# output_csv_file = "addr_to_process.csv"
-	# output_pair_file = "addr_to_process.txt"
-	# job = "d" #("d" = detail, "p" = only pairs)
-	# #run pipline
-	# if not os.path.exists(folder):
-	# 	os.makedirs(folder)
-	# pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
+def main(work_id):
+	if work_id == 1:
+		#work 1 config input:
+		base_file = "stgy7.txt"
+		rule_file = "rules_detail_process_address.txt"
+		folder = "txt\\3_fields_process_address"
+		output_csv_file = "addr_to_process.csv"
+		output_pair_file = "addr_to_process.txt"
+		job = "d" #("d" = detail, "p" = only pairs)
+		#run pipline
+		if not os.path.exists(folder):
+			os.makedirs(folder)
+		pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
+	elif work_id == 2:
+		#work 2 config input:
+		input_file = "addr_to_process_final_pairs2.txt"
+		output_file = "addr_to_process_final_pairs2.csv"
+		pairs = []
+		with open(input_file, "r") as f:
+			for each in f:
+				#print(each[:-1])
+				t = each[:-1].split('\t')
+				#print(t)
+				t1 = t[0]
+				t2 = t[1]
+				ts = (int(t1), int(t2))
+				pairs.append(ts)
+		pairs2csv(pairs, output_file)
+	elif work_id == 3:
+		txt_file = "addr_to_process_final_pairs2.txt"
+		csv_file = "sub9.csv"
+		create_submission_csv(txt_file, csv_file)
 
-	#work 2 config input:
-	# input_file = "addr_to_process_final_pairs2.txt"
-	# output_file = "addr_to_process_final_pairs2.csv"
-	# pairs = []
-	# with open(input_file, "r") as f:
-	# 	for each in f:
-	# 		#print(each[:-1])
-	# 		t = each[:-1].split('\t')
-	# 		#print(t)
-	# 		t1 = t[0]
-	# 		t2 = t[1]
-	# 		ts = (int(t1), int(t2))
-	# 		pairs.append(ts)
-	# pairs2csv(pairs, output_file)
-	pass
 
 
 if __name__ == '__main__':
@@ -176,4 +182,5 @@ if __name__ == '__main__':
 	logger = logging.getLogger("task")
 	engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 	title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
-	main()
+	work_id = 3
+	main(work_id)

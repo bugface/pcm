@@ -45,9 +45,9 @@
 	- result: precision=0.984 and recall=0.17 (has around 158 error pairs, will be checked by hand in diffpair.csv)
 <br><br>
 9.  - strategy: collect a set of rules in rules_dtail_process_address.txt which used only three fields. The query result based on these rules will be combined and deduped with stgy7. The resulted data pairs will be checked again by the new address rule which will compare the similarity based on normalized address
-	- txt files:
+	- txt files: addr_to_process_final_pairs2.txt (total: 1112)
 	- submission: sub9.csv
-	- result:
+	- result: percision=0.993 => 8 out of 1112 are not true
 <br><br>
 #### *************************************************************************************************************
 
@@ -63,13 +63,13 @@
 | 6  | f+l+addr  | 12460   | n  |   |   |
 
 
-### **************************************************************************************************************
+### *******************************************************************************
 
 # deterministic remove wrong record pairs strategy:
 ## stgy1: we get give some rules as what we did for finding same pairs to find different pairs existed in our current selected result set
 ### rule such as record1.ssn <> record2.ssn etc.
 
-### **************************************************************************************************************
+### *******************************************************************************
 1. - process address: use regex to normalize the address to a common and unified format
    - the rules and pairs obtained used in this method are listed in the txt\\3_field_process_address\\*.txt (all records add up to 200000+)
    - without f_l_gender rule after deduplication, only 1000+ records have been extracted in which 235 of them are sure to be true
@@ -77,3 +77,10 @@
 
 2. - process dob with three cases
 <br><br>
+
+
+
+note:
+TODO List:
+1. stgy7.txt test in process_address
+2.use name apply similar strategy
