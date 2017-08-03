@@ -3,6 +3,9 @@ import csv
 import logging
 import glob
 import os
+from names_normalization import main as name_norm_main
+from multiprocessing import Process
+#from multiprocessing import pool
 
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
 
@@ -137,43 +140,71 @@ def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pai
 	new_pair_files = glob.glob(folder + "\\" + "*.txt")
 	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
 	extra_pairs = get_extra_pairs_not_in_base(base_file, new_pair_files)
-	print(len(extra_pairs))
-	# pairs2txt(extra_pairs, output_pair_file)
-	# pairs2csv(extra_pairs, output_csv_file)
+	pairs2txt(extra_pairs, output_pair_file)
+	#change pairs2csv to multiprocessing
+	pairs2csv(extra_pairs, output_csv_file)
+	#extra_pairs = list(extra_pairs)
 
-def main(work_id):
-	if work_id == 1:
-		#work 1 config input:
-		base_file = "stgy7.txt"
-		rule_file = "rules_detail_process_address.txt"
-		folder = "txt\\3_fields_process_address"
-		output_csv_file = "addr_to_process.csv"
-		output_pair_file = "addr_to_process.txt"
-		job = "d" #("d" = detail, "p" = only pairs)
-		#run pipline
-		if not os.path.exists(folder):
-			os.makedirs(folder)
-		pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
-	elif work_id == 2:
-		#work 2 config input:
-		input_file = "addr_to_process_final_pairs2.txt"
-		output_file = "addr_to_process_final_pairs2.csv"
-		pairs = []
-		with open(input_file, "r") as f:
-			for each in f:
-				#print(each[:-1])
-				t = each[:-1].split('\t')
-				#print(t)
-				t1 = t[0]
-				t2 = t[1]
-				ts = (int(t1), int(t2))
-				pairs.append(ts)
-		pairs2csv(pairs, output_file)
-	elif work_id == 3:
-		txt_file = "addr_to_process_final_pairs2.txt"
-		csv_file = "sub9.csv"
-		create_submission_csv(txt_file, csv_file)
+def main():
+	#work 1 config input:
+	# base_file = "stgy7.txt"
+	# rule_file = "rules_detail_process_address.txt"
+	# folder = "txt\\3_fields_process_address"
+	# output_csv_file = "addr_to_process.csv"
+	# output_pair_file = "addr_to_process.txt"
+	# job = "d" #("d" = detail, "p" = only pairs)
+	# #run pipline
+	# if not os.path.exists(folder):
+	# 	os.makedirs(folder)
+	# pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
 
+	#work 2 config input:
+	# input_file = "addr_to_process_final_pairs2.txt"
+	# output_file = "addr_to_process_final_pairs2.csv"
+	# pairs = []
+	# with open(input_file, "r") as f:
+	# 	for each in f:
+	# 		#print(each[:-1])
+	# 		t = each[:-1].split('\t')
+	# 		#print(t)
+	# 		t1 = t[0]
+	# 		t2 = t[1]
+	# 		ts = (int(t1), int(t2))
+	# 		pairs.append(ts)
+	# pairs2csv(pairs, output_file)
+	
+	#work 3
+	'''
+	condfig:
+	output query file names for name normalization:
+		process_first_name.csv
+		process_last_name.csv
+	output name normalization file names:
+		process_first_name.txt
+		process_last_name.txt
+	'''
+	#files used in project
+	base_file = "stgy7.txt"
+	rule_file_first = ""
+	rule_file_last = ""
+	folder1 = "txt\\3_fields_process_name\\first_name"
+	folder2 = "txt\\3_fields_process_name\\last_name"
+	output_pair_file_first = "process_first_name_pairs.txt"
+	output_csv_file_first = "process_first_name.csv"
+	output_pair_file_last = "process_last_name_pairs.txt"
+	output_csv_file_last = "process_last_name.csv"
+	job = "d"
+	
+	p1 = Process(target=pipline_get_detail, args=(rule_file_first, folder1, base_file, output_csv_file_first, output_pair_file_first, job))
+	p2 = Process(target=pipline_get_detail, args=(rule_file_last, folder2, base_file, output_csv_file_last, output_pair_file_last, job))
+
+	p1.start()
+	p2.start()
+
+	p1.join()
+	p2.join()
+
+	name_norm_main()
 
 
 if __name__ == '__main__':
