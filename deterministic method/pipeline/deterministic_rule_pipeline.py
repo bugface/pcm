@@ -9,8 +9,8 @@ from multiprocessing import Process
 
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
 
-def create_submission_csv(file, csv_file):
-	with open(file, "r") as f:
+def create_submission_csv(txt_file, csv_file):
+	with open(txt_file, "r") as f:
 		with open(csv_file, "w", newline='') as f1:
 			writer = csv.writer(f1)
 			for each in f:
@@ -135,8 +135,8 @@ def pairs2txt(data, file):
 			print(output, file=f, end='\n')
 
 def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job):
-	rules = get_rules(rule_file)
-	store_result_as_pairs(rules, folder, job)
+	# rules = get_rules(rule_file)
+	# store_result_as_pairs(rules, folder, job)
 	new_pair_files = glob.glob(folder + "\\" + "*.txt")
 	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
 	extra_pairs = get_extra_pairs_not_in_base(base_file, new_pair_files)
@@ -213,4 +213,5 @@ if __name__ == '__main__':
 	logger = logging.getLogger("task")
 	engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 	title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
-	main()
+	work_id = 3
+	main(work_id)
