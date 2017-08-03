@@ -3,6 +3,9 @@ import csv
 import logging
 import glob
 import os
+from names_normalization import main as name_norm_main
+from multiprocessing import Process
+#from multiprocessing import pool
 
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
 
@@ -138,7 +141,9 @@ def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pai
 	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
 	extra_pairs = get_extra_pairs_not_in_base(base_file, new_pair_files)
 	pairs2txt(extra_pairs, output_pair_file)
+	#change pairs2csv to multiprocessing
 	pairs2csv(extra_pairs, output_csv_file)
+	#extra_pairs = list(extra_pairs)
 
 def main():
 	#work 1 config input:
@@ -167,7 +172,39 @@ def main():
 	# 		ts = (int(t1), int(t2))
 	# 		pairs.append(ts)
 	# pairs2csv(pairs, output_file)
-	pass
+	
+	#work 3
+	'''
+	condfig:
+	output query file names for name normalization:
+		process_first_name.csv
+		process_last_name.csv
+	output name normalization file names:
+		process_first_name.txt
+		process_last_name.txt
+	'''
+	#files used in project
+	base_file = "stgy7.txt"
+	rule_file_first = ""
+	rule_file_last = ""
+	folder1 = "txt\\3_fields_process_name\\first_name"
+	folder2 = "txt\\3_fields_process_name\\last_name"
+	output_pair_file_first = "process_first_name_pairs.txt"
+	output_csv_file_first = "process_first_name.csv"
+	output_pair_file_last = "process_last_name_pairs.txt"
+	output_csv_file_last = "process_last_name.csv"
+	job = "d"
+	
+	p1 = Process(target=pipline_get_detail, args=(rule_file_first, folder1, base_file, output_csv_file_first, output_pair_file_first, job))
+	p2 = Process(target=pipline_get_detail, args=(rule_file_last, folder2, base_file, output_csv_file_last, output_pair_file_last, job))
+
+	p1.start()
+	p2.start()
+
+	p1.join()
+	p2.join()
+
+	name_norm_main()
 
 
 if __name__ == '__main__':

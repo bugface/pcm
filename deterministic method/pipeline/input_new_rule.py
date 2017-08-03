@@ -80,10 +80,12 @@ def main():
 	while 1:
 		indicator = int(input_source)
 		if indicator == 1:
-			input_rules("rules_pair.txt", indicator)
+			suffix = input("file name: ")
+			input_rules("rules_pair_" + suffix + ".txt", indicator)
 			break
 		elif indicator == 2:
-			input_rules("rules_detail_process_address.txt", indicator)
+			suffix = input("file name: ")
+			input_rules("rules_detail_" + suffix + ".txt", indicator)
 			break
 		else:
 			print("input must be 1 or 2 (1 for pair, 2 for detail), input again: ")
