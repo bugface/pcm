@@ -8,6 +8,11 @@ from multiprocessing import Process
 #from multiprocessing import pool
 
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
+FORMAT = '%(asctime)-20s %(name)-5s %(levelname)-10s %(message)s'
+logging.basicConfig(filename='rules.log',level=logging.INFO, format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
+logger = logging.getLogger("task")
+title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
+engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 
 def create_submission_csv(txt_file, csv_file):
 	with open(txt_file, "r") as f:
@@ -22,6 +27,7 @@ def create_submission_csv(txt_file, csv_file):
 				writer.writerow(l)
 
 def execute_sql(rule):
+
 	with engine.begin() as conn:
 		res = conn.execute(rule)
 	return res
@@ -107,6 +113,7 @@ def get_extra_pairs_not_in_base(base, files):
 
 def pairs2csv(pairs, output_file):
 	title.insert(0, "index")
+	#engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 	with open(output_file, "w", newline='') as f:
 		writer = csv.writer(f)
 		writer.writerow(title)
@@ -140,6 +147,7 @@ def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pai
 	new_pair_files = glob.glob(folder + "\\" + "*.txt")
 	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
 	extra_pairs = get_extra_pairs_not_in_base(base_file, new_pair_files)
+	print(len(extra_pairs))
 	pairs2txt(extra_pairs, output_pair_file)
 	#change pairs2csv to multiprocessing
 	pairs2csv(extra_pairs, output_csv_file)
@@ -172,7 +180,7 @@ def main():
 	# 		ts = (int(t1), int(t2))
 	# 		pairs.append(ts)
 	# pairs2csv(pairs, output_file)
-	
+
 	#work 3
 	'''
 	condfig:
@@ -185,33 +193,39 @@ def main():
 	'''
 	#files used in project
 	base_file = "stgy7.txt"
-	rule_file_first = ""
-	rule_file_last = ""
-	folder1 = "txt\\3_fields_process_name\\first_name"
-	folder2 = "txt\\3_fields_process_name\\last_name"
-	output_pair_file_first = "process_first_name_pairs.txt"
-	output_csv_file_first = "process_first_name.csv"
-	output_pair_file_last = "process_last_name_pairs.txt"
-	output_csv_file_last = "process_last_name.csv"
-	job = "d"
-	
-	p1 = Process(target=pipline_get_detail, args=(rule_file_first, folder1, base_file, output_csv_file_first, output_pair_file_first, job))
-	p2 = Process(target=pipline_get_detail, args=(rule_file_last, folder2, base_file, output_csv_file_last, output_pair_file_last, job))
+	# rule_file_first = "rules_detail_first.txt"
+	# rule_file_last = "rules_detail_last.txt"
+	# folder1 = "txt\\3_fields_process_name\\first_name"
+	# folder2 = "txt\\3_fields_process_name\\last_name"
+	# output_pair_file_first = "process_first_name_pairs.txt"
+	# output_csv_file_first = "process_first_name1.csv"
+	# output_pair_file_last = "process_last_name_pairs.txt"
+	# output_csv_file_last = "process_last_name1.csv"
+	# job = "d"
 
-	p1.start()
-	p2.start()
+	if not os.path.exists(folder1):
+		os.makedirs(folder1)
+	if not os.path.exists(folder2):
+		os.makedirs(folder2)
 
-	p1.join()
-	p2.join()
+	#p1 = Process(target=pipline_get_detail, args=(rule_file_first, folder1, base_file, output_csv_file_first, output_pair_file_first, job))
+	#p2 = Process(target=pipline_get_detail, args=(rule_file_last, folder2, base_file, output_csv_file_last, output_pair_file_last, job))
 
-	name_norm_main()
+	# p1.start()
+	# p2.start()
 
+	# p1.join()
+	# p2.join()
+	#pipline_get_detail(rule_file_first, folder1, base_file, output_csv_file_first, output_pair_file_first, job)
+
+	# t1 = get_extra_pairs_not_in_base(base_file, ["process_first_name_222.txt"])
+	# t2 = get_extra_pairs_not_in_base(base_file, ["process_last_name_222.txt"])
+
+	# print(len(t1))
+	# print(len(t2))
+
+	# create_submission_csv("process_first_name_222.txt", "sub10.csv")
+	# create_submission_csv("process_last_name_222.txt", "sub11.csv")
 
 if __name__ == '__main__':
-	FORMAT = '%(asctime)-20s %(name)-5s %(levelname)-10s %(message)s'
-	logging.basicConfig(filename='rules.log',level=logging.INFO, format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
-	logger = logging.getLogger("task")
-	engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
-	title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
-	work_id = 3
-	main(work_id)
+	main()

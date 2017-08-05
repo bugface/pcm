@@ -48,6 +48,11 @@
 	- txt files: addr_to_process_final_pairs2.txt (total: 1112)
 	- submission: sub9.csv
 	- result: percision=0.993 => 8 out of 1112 are not true
+10. - strategy: collect a set of rules into rule_detail_first.txt and rule_detail_last.txt which contained only three fields. The query resukts based on these rules will be combined and deduped with stgy7, respectively. The resutled data pairs will be checked again by the new name normalization rule which will compare the similarity of two names based on name normalization algorithms (string similarity and phonetic)
+	- txt files: process_first_name_222.txt (2971) and process_last_name_222.txt (843)
+	- submission sub10.csv and sub11.csv
+	-result 10: percision=0.
+	-result 11: percision=0.
 <br><br>
 #### *************************************************************************************************************
 
@@ -75,7 +80,10 @@
    - without f_l_gender rule after deduplication, only 1000+ records have been extracted in which 235 of them are sure to be true
    - the f_l_gender rule gave 1400000+ pair of records which not feasible to process (I can do it but not for sure how much we can get paid)
 
-2. - process dob with three cases
+2. - process first name and last name with three cases
+   - the rules are documented in folders txt\\3_fields_process_name\\first_name and txt\\3_fields_process_name\\last_name  (recordes number of each rule can be found in rules.log)
+   - after processed with pipeline and name_normalization, the rules on last name leave 843 records and first name rule leave 2971 records
+   - first and last records will be combined and run the test to check the percision, recall and f-score
 <br><br>
 
 
@@ -83,4 +91,4 @@
 note:
 TODO List:
 1. stgy7.txt test in process_address
-2.use name apply similar strategy
+2.use name apply simi
