@@ -6,3 +6,5 @@
 *.ipynb
 project/
 data/
+*.log
+*.pyc

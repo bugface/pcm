@@ -39,7 +39,7 @@ def cos_distance(str_1,str_2):
         return dot_product / ((normA*normB)**0.5)
 
 #code reference: http://blog.csdn.net/wateryouyo/article/details/50917812
-def lcsubstr_distance(s1, s2): 
+def lcsubstr_distance(s1, s2):
     m=[[0 for i in range(len(s2)+1)]  for j in range(len(s1)+1)]  #生成0矩阵，为方便后续计算，比字符串长度多了一列
     mmax=0   #最长匹配的长度
     p=0  #最长匹配对应在s1中的最后一位
@@ -121,7 +121,7 @@ def write_distance2csv(column1_name, column2_name):
         process = 0
         headers = ['id_1', 'id_2', column_name + '_distance']
         writer = csv.DictWriter(csv_file, fieldnames=headers)
-        writer.writeheader() 
+        writer.writeheader()
         for row in distance_info:
             process += 1
             logger.info('writing: ' + str(process))

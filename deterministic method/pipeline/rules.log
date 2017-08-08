@@ -206,3 +206,767 @@ Traceback (most recent call last):
     dbapi_connection.close()
 cx_Oracle.OperationalError: ORA-03114: not connected to ORACLE
 
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:03:35  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:09:17  task  ERROR      name 'functools' is not defined
+2017-08-07 22:16:01  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd630d68 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:01  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd630c18 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:07  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd5f00f0 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:14  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd630eb8 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:18  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd630e10 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:24  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd630f60 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:27  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f048 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:29  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd630cc0 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:30  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f0f0 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:41  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f198 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:43  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f2e8 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:45  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f240 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:49  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f390 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:56  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f438 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:16:59  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f4e0 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:17:03  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f588 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:17:09  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f630 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:17:13  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f780 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:17:17  concurrent.futures ERROR      exception calling callback for <Future at 0x1b8dd63f6d8 state=finished raised NameError>
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\process.py", line 175, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 62, in store_result_job
+    if job == "p":
+NameError: name 'job' is not defined
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 86, in store_result_csv_job
+    results = future.result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+NameError: name 'job' is not defined
+2017-08-07 22:23:13  task  INFO       rule: txt\3_fields_process_dob\f_addr_middle.txt; pairs number: 6228
+2017-08-07 22:23:13  task  INFO       rule: txt\3_fields_process_dob\l_middle_addr.txt; pairs number: 6080
+2017-08-07 22:23:13  concurrent.futures ERROR      exception calling callback for <Future at 0x1add93f0c88 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:23:13  concurrent.futures ERROR      exception calling callback for <Future at 0x1add93f0d30 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:23:25  task  INFO       rule: txt\3_fields_process_dob\f_phone_middle.txt; pairs number: 9222
+2017-08-07 22:23:25  task  INFO       rule: txt\3_fields_process_dob\f_ssn_addr.txt; pairs number: 11060
+2017-08-07 22:23:25  concurrent.futures ERROR      exception calling callback for <Future at 0x1add93f0be0 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:23:25  concurrent.futures ERROR      exception calling callback for <Future at 0x1add93b00b8 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:23:39  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_phone.txt; pairs number: 6816
+2017-08-07 22:23:39  concurrent.futures ERROR      exception calling callback for <Future at 0x1add93f0e80 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:23:44  task  INFO       rule: txt\3_fields_process_dob\l_middle_ssn.txt; pairs number: 5722
+2017-08-07 22:23:44  concurrent.futures ERROR      exception calling callback for <Future at 0x1add93f0fd0 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:23:52  task  INFO       rule: txt\3_fields_process_dob\l_ssn_phone.txt; pairs number: 6670
+2017-08-07 22:23:52  concurrent.futures ERROR      exception calling callback for <Future at 0x1add93f0f28 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'NoneType' object is not subscriptable
+2017-08-07 22:23:59  task  INFO       rule: txt\3_fields_process_dob\f_ssn_phone.txt; pairs number: 7348
+2017-08-07 22:24:00  concurrent.futures ERROR      exception calling callback for <Future at 0x1add94000b8 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:24:06  task  INFO       rule: txt\3_fields_process_dob\f_ssn_email.txt; pairs number: 0
+2017-08-07 22:24:16  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_addr.txt; pairs number: 10252
+2017-08-07 22:24:17  concurrent.futures ERROR      exception calling callback for <Future at 0x1add9400160 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:24:20  task  INFO       rule: txt\3_fields_process_dob\f_l_ssn.txt; pairs number: 32612
+2017-08-07 22:24:21  concurrent.futures ERROR      exception calling callback for <Future at 0x1add93f0dd8 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:24:22  task  INFO       rule: txt\3_fields_process_dob\l_middle_phone.txt; pairs number: 10712
+2017-08-07 22:24:22  concurrent.futures ERROR      exception calling callback for <Future at 0x1add9400358 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:24:34  task  INFO       rule: txt\3_fields_process_dob\gender_phone_addr.txt; pairs number: 15288
+2017-08-07 22:24:35  concurrent.futures ERROR      exception calling callback for <Future at 0x1add9400208 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:24:46  task  INFO       rule: txt\3_fields_process_dob\f_addr_phone.txt; pairs number: 13446
+2017-08-07 22:24:47  concurrent.futures ERROR      exception calling callback for <Future at 0x1add9400550 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line1 = each[ : 19]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:24:57  task  INFO       rule: txt\3_fields_process_dob\f_l_addr.txt; pairs number: 24920
+2017-08-07 22:24:58  concurrent.futures ERROR      exception calling callback for <Future at 0x1add9400400 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:25:07  task  INFO       rule: txt\3_fields_process_dob\l_ssn_addr.txt; pairs number: 11146
+2017-08-07 22:25:07  concurrent.futures ERROR      exception calling callback for <Future at 0x1add94006a0 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:25:29  task  INFO       rule: txt\3_fields_process_dob\l_gender_addr.txt; pairs number: 55394
+2017-08-07 22:25:31  concurrent.futures ERROR      exception calling callback for <Future at 0x1add94004a8 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'NoneType' object is not subscriptable
+2017-08-07 22:25:54  task  INFO       rule: txt\3_fields_process_dob\f_l_phone.txt; pairs number: 44294
+2017-08-07 22:25:56  concurrent.futures ERROR      exception calling callback for <Future at 0x1add9400748 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'NoneType' object is not subscriptable
+2017-08-07 22:26:05  task  INFO       rule: txt\3_fields_process_dob\l_gender_ssn.txt; pairs number: 28426
+2017-08-07 22:26:06  concurrent.futures ERROR      exception calling callback for <Future at 0x1add9400898 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:26:20  task  INFO       rule: txt\3_fields_process_dob\f_l_middle.txt; pairs number: 20986
+2017-08-07 22:26:20  concurrent.futures ERROR      exception calling callback for <Future at 0x1add9400940 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'NoneType' object is not subscriptable
+2017-08-07 22:26:27  task  INFO       rule: txt\3_fields_process_dob\l_addr_phone.txt; pairs number: 15542
+2017-08-07 22:26:28  concurrent.futures ERROR      exception calling callback for <Future at 0x1add94009e8 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:29:41  task  INFO       rule: txt\3_fields_process_dob\f_gender_email.txt; pairs number: 306294
+2017-08-07 22:29:53  concurrent.futures ERROR      exception calling callback for <Future at 0x1add94007f0 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:44:40  task  INFO       rule: txt\3_fields_process_dob\f_l_gender.txt; pairs number: 1408314
+2017-08-07 22:45:47  concurrent.futures ERROR      exception calling callback for <Future at 0x1add94005f8 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline.py", line 101, in store_result_csv_job
+    line2 = result[19 : ]
+TypeError: 'datetime.datetime' object is not subscriptable
+2017-08-07 22:53:02  task  INFO       rule: txt\3_fields_process_dob\f_phone_middle.txt; pairs number: 9222
+2017-08-07 22:53:09  task  INFO       rule: txt\3_fields_process_dob\gender_phone_addr.txt; pairs number: 15288
+2017-08-07 22:53:21  task  INFO       rule: txt\3_fields_process_dob\l_gender_ssn.txt; pairs number: 28426
+2017-08-07 22:53:21  task  INFO       rule: txt\3_fields_process_dob\f_ssn_addr.txt; pairs number: 11060
+2017-08-07 22:53:37  task  INFO       rule: txt\3_fields_process_dob\f_l_middle.txt; pairs number: 20986
+2017-08-07 22:53:38  task  INFO       rule: txt\3_fields_process_dob\f_ssn_phone.txt; pairs number: 7348
+2017-08-07 22:53:59  task  INFO       rule: txt\3_fields_process_dob\f_l_addr.txt; pairs number: 24920
+2017-08-07 22:54:00  task  INFO       rule: txt\3_fields_process_dob\l_addr_phone.txt; pairs number: 15542
+2017-08-07 22:54:16  task  INFO       rule: txt\3_fields_process_dob\l_ssn_phone.txt; pairs number: 6670
+2017-08-07 22:54:18  task  INFO       rule: txt\3_fields_process_dob\l_middle_phone.txt; pairs number: 10712
+2017-08-07 22:54:27  task  INFO       rule: txt\3_fields_process_dob\f_l_phone.txt; pairs number: 44294
+2017-08-07 22:54:34  task  INFO       rule: txt\3_fields_process_dob\f_ssn_email.txt; pairs number: 0
+2017-08-07 22:54:36  task  INFO       rule: txt\3_fields_process_dob\l_middle_addr.txt; pairs number: 6080
+2017-08-07 22:54:54  task  INFO       rule: txt\3_fields_process_dob\f_addr_phone.txt; pairs number: 13446
+2017-08-07 22:54:55  task  INFO       rule: txt\3_fields_process_dob\l_ssn_addr.txt; pairs number: 11146
+2017-08-07 22:55:09  task  INFO       rule: txt\3_fields_process_dob\f_l_ssn.txt; pairs number: 32612
+2017-08-07 22:55:09  task  INFO       rule: txt\3_fields_process_dob\f_addr_middle.txt; pairs number: 6228
+2017-08-07 22:55:18  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_phone.txt; pairs number: 6816
+2017-08-07 22:55:24  task  INFO       rule: txt\3_fields_process_dob\l_middle_ssn.txt; pairs number: 5722
+2017-08-07 22:55:34  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_addr.txt; pairs number: 10252
+2017-08-07 22:56:07  task  INFO       rule: txt\3_fields_process_dob\l_gender_addr.txt; pairs number: 55394
+2017-08-07 23:12:55  task  INFO       rule: txt\3_fields_process_dob\f_l_gender.txt; pairs number: 1408314
+2017-08-07 23:18:25  task  INFO       rule: txt\3_fields_process_dob\l_middle_addr.txt; pairs number: 6080
+2017-08-07 23:21:58  task  INFO       rule: txt\3_fields_process_dob\f_phone_middle.txt; pairs number: 9222
+2017-08-07 23:22:02  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_addr.txt; pairs number: 10252
+2017-08-07 23:22:02  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_phone.txt; pairs number: 6816
+2017-08-07 23:22:20  task  INFO       rule: txt\3_fields_process_dob\l_middle_addr.txt; pairs number: 6080
+2017-08-07 23:22:24  task  INFO       rule: txt\3_fields_process_dob\f_l_middle.txt; pairs number: 20986
+2017-08-07 23:22:36  task  INFO       rule: txt\3_fields_process_dob\f_ssn_phone.txt; pairs number: 7348
+2017-08-07 23:22:41  task  INFO       rule: txt\3_fields_process_dob\f_addr_phone.txt; pairs number: 13446
+2017-08-07 23:22:46  task  INFO       rule: txt\3_fields_process_dob\l_ssn_phone.txt; pairs number: 6670
+2017-08-07 23:22:54  task  INFO       rule: txt\3_fields_process_dob\f_addr_middle.txt; pairs number: 6228
+2017-08-07 23:22:59  task  INFO       rule: txt\3_fields_process_dob\f_ssn_email.txt; pairs number: 0
+2017-08-07 23:23:14  task  INFO       rule: txt\3_fields_process_dob\l_gender_ssn.txt; pairs number: 28426
+2017-08-07 23:23:18  task  INFO       rule: txt\3_fields_process_dob\l_addr_phone.txt; pairs number: 15542
+2017-08-07 23:23:34  task  INFO       rule: txt\3_fields_process_dob\gender_phone_addr.txt; pairs number: 15288
+2017-08-07 23:23:38  task  INFO       rule: txt\3_fields_process_dob\f_l_ssn.txt; pairs number: 32612
+2017-08-07 23:23:41  task  INFO       rule: txt\3_fields_process_dob\f_ssn_addr.txt; pairs number: 11060
+2017-08-07 23:23:58  task  INFO       rule: txt\3_fields_process_dob\l_middle_phone.txt; pairs number: 10712
+2017-08-07 23:24:05  task  INFO       rule: txt\3_fields_process_dob\l_ssn_addr.txt; pairs number: 11146
+2017-08-07 23:24:13  task  INFO       rule: txt\3_fields_process_dob\l_middle_ssn.txt; pairs number: 5722
+2017-08-07 23:24:27  task  INFO       rule: txt\3_fields_process_dob\f_l_phone.txt; pairs number: 44294
+2017-08-07 23:24:51  task  INFO       rule: txt\3_fields_process_dob\l_gender_addr.txt; pairs number: 55394
+2017-08-07 23:24:52  task  INFO       rule: txt\3_fields_process_dob\f_l_addr.txt; pairs number: 24920
+2017-08-07 23:29:07  sqlalchemy.pool.QueuePool ERROR      Exception during reset or similar
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\pool.py", line 687, in _finalize_fairy
+    fairy._reset(pool)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\pool.py", line 829, in _reset
+    pool._dialect.do_rollback(self)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\engine\default.py", line 440, in do_rollback
+    dbapi_connection.rollback()
+KeyboardInterrupt
+2017-08-07 23:29:07  sqlalchemy.pool.QueuePool ERROR      Exception during reset or similar
+Traceback (most recent call last):
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\pool.py", line 687, in _finalize_fairy
+    fairy._reset(pool)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\pool.py", line 829, in _reset
+    pool._dialect.do_rollback(self)
+  File "D:\Python3.5.3\lib\site-packages\sqlalchemy\engine\default.py", line 440, in do_rollback
+    dbapi_connection.rollback()
+cx_Oracle.InterfaceError: not connected
+2017-08-07 23:30:34  task  INFO       rule: txt\3_fields_process_dob\l_middle_ssn.txt; pairs number: 5722
+2017-08-07 23:30:43  task  INFO       rule: txt\3_fields_process_dob\l_ssn_addr.txt; pairs number: 11146
+2017-08-07 23:30:49  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_phone.txt; pairs number: 6816
+2017-08-07 23:30:54  task  INFO       rule: txt\3_fields_process_dob\l_middle_addr.txt; pairs number: 6080
+2017-08-07 23:31:02  task  INFO       rule: txt\3_fields_process_dob\f_addr_middle.txt; pairs number: 6228
+2017-08-07 23:31:08  task  INFO       rule: txt\3_fields_process_dob\l_middle_phone.txt; pairs number: 10712
+2017-08-07 23:31:16  task  INFO       rule: txt\3_fields_process_dob\f_l_phone.txt; pairs number: 44294
+2017-08-07 23:31:19  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_addr.txt; pairs number: 10252
+2017-08-07 23:31:30  task  INFO       rule: txt\3_fields_process_dob\f_phone_middle.txt; pairs number: 9222
+2017-08-07 23:31:41  task  INFO       rule: txt\3_fields_process_dob\l_addr_phone.txt; pairs number: 15542
+2017-08-07 23:31:42  task  INFO       rule: txt\3_fields_process_dob\gender_phone_addr.txt; pairs number: 15288
+2017-08-07 23:31:54  task  INFO       rule: txt\3_fields_process_dob\f_addr_phone.txt; pairs number: 13446
+2017-08-07 23:32:05  task  INFO       rule: txt\3_fields_process_dob\f_ssn_addr.txt; pairs number: 11060
+2017-08-07 23:32:09  task  INFO       rule: txt\3_fields_process_dob\f_ssn_email.txt; pairs number: 0
+2017-08-07 23:32:16  task  INFO       rule: txt\3_fields_process_dob\f_l_addr.txt; pairs number: 24920
+2017-08-07 23:32:23  task  INFO       rule: txt\3_fields_process_dob\f_l_middle.txt; pairs number: 20986
+2017-08-07 23:32:25  task  INFO       rule: txt\3_fields_process_dob\f_ssn_phone.txt; pairs number: 7348
+2017-08-07 23:32:31  task  INFO       rule: txt\3_fields_process_dob\l_gender_ssn.txt; pairs number: 28426
+2017-08-07 23:32:41  task  INFO       rule: txt\3_fields_process_dob\l_ssn_phone.txt; pairs number: 6670
+2017-08-07 23:33:02  task  INFO       rule: txt\3_fields_process_dob\f_l_ssn.txt; pairs number: 32612
+2017-08-07 23:33:09  task  INFO       rule: txt\3_fields_process_dob\l_gender_addr.txt; pairs number: 55394
+2017-08-08 09:31:41  task  INFO       rule: txt\3_fields_process_dob\l_ssn_addr.txt; pairs number: 11146
+2017-08-08 09:32:00  task  INFO       rule: txt\3_fields_process_dob\f_l_middle.txt; pairs number: 20986
+2017-08-08 09:32:01  task  INFO       rule: txt\3_fields_process_dob\l_gender_ssn.txt; pairs number: 28426
+2017-08-08 09:32:13  task  INFO       rule: txt\3_fields_process_dob\f_addr_phone.txt; pairs number: 13446
+2017-08-08 09:32:20  task  INFO       rule: txt\3_fields_process_dob\l_middle_phone.txt; pairs number: 10712
+2017-08-08 09:32:28  task  INFO       rule: txt\3_fields_process_dob\l_ssn_phone.txt; pairs number: 6670
+2017-08-08 09:32:31  task  INFO       rule: txt\3_fields_process_dob\f_l_phone.txt; pairs number: 44294
+2017-08-08 09:32:36  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_addr.txt; pairs number: 10252
+2017-08-08 09:32:36  task  INFO       rule: txt\3_fields_process_dob\f_addr_middle.txt; pairs number: 6228
+2017-08-08 09:32:52  task  INFO       rule: txt\3_fields_process_dob\l_middle_ssn.txt; pairs number: 5722
+2017-08-08 09:33:01  task  INFO       rule: txt\3_fields_process_dob\f_phone_middle.txt; pairs number: 9222
+2017-08-08 09:33:10  task  INFO       rule: txt\3_fields_process_dob\l_addr_phone.txt; pairs number: 15542
+2017-08-08 09:33:14  task  INFO       rule: txt\3_fields_process_dob\gender_ssn_phone.txt; pairs number: 6816
+2017-08-08 09:33:25  task  INFO       rule: txt\3_fields_process_dob\f_l_addr.txt; pairs number: 24920
+2017-08-08 09:33:32  task  INFO       rule: txt\3_fields_process_dob\l_middle_addr.txt; pairs number: 6080
+2017-08-08 09:33:40  task  INFO       rule: txt\3_fields_process_dob\f_l_ssn.txt; pairs number: 32612
+2017-08-08 09:33:40  task  INFO       rule: txt\3_fields_process_dob\gender_phone_addr.txt; pairs number: 15288
+2017-08-08 09:33:51  task  INFO       rule: txt\3_fields_process_dob\f_ssn_email.txt; pairs number: 0
+2017-08-08 09:33:54  task  INFO       rule: txt\3_fields_process_dob\f_ssn_phone.txt; pairs number: 7348
+2017-08-08 09:34:02  task  INFO       rule: txt\3_fields_process_dob\f_ssn_addr.txt; pairs number: 11060
+2017-08-08 09:34:26  task  INFO       rule: txt\3_fields_process_dob\l_gender_addr.txt; pairs number: 55394

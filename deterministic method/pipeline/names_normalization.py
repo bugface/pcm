@@ -86,7 +86,7 @@ def process_names_from_csv(csv_file, name_option, threshold, output_file):
 
 				fir_name = ""
 				fir_id = ""
-				print("{}\t{}".format(name_option, len(matched_results)))
+				#print("{}\t{}".format(name_option, len(matched_results)))
 
 	output_result(matched_results, output_file)
 
