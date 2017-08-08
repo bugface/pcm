@@ -49,11 +49,17 @@
 	- submission: sub9.csv
 	- result: percision=0.993 => 8 out of 1112 are not true
 <br><br>
-10. - strategy: collect a set of rules into rule_detail_first.txt and rule_detail_last.txt which contained only three fields. The query resukts based on these rules will be combined and deduped with stgy7, respectively. The resutled data pairs will be checked again by the new name normalization rule which will compare the similarity of two names based on name normalization algorithms (string similarity and phonetic)
+10. - strategy: collect a set of rules into rule_detail_first.txt and rule_detail_last.txt which contained only three fields. The query results based on these rules will be combined and deduped with stgy7, respectively. The resutled data pairs will be checked again by the new name normalization rule which will compare the similarity of two names based on name normalization algorithms (string similarity and phonetic)
 	- txt files: process_first_name_222.txt (2971) and process_last_name_222.txt (843)
 	- submission sub10.csv and sub11.csv
 	- result 10: percision=0.9623 (112 of 2971 are not correct)
 	- result 11: percision=0.9525 (32 of 843 are not correct)
+<br><br>
+11. - strategy: collect a set of rules into rule_detail_dob.txt which contains three fields (not dob). The query results based on these rules deduped with previous obtained results. The resulted pairs were processed with dob normailization strategy (considering year, month, day independently).
+	- txt file: processed_dob.txt (533 pairs)
+	- submission: sub12.csv
+	- result 12: percision=0.861 (74 of 533 are not correct)
+	- after add result 12, the recall currently is 0.9328 (based on 57482 as total (3860 left to find))
 <br><br>
 #### *************************************************************************************************************
 

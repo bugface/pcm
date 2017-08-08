@@ -7,6 +7,7 @@ import os
 from multiprocessing import Process, Pool, cpu_count
 import concurrent.futures
 import functools
+import threading
 #from multiprocessing import pool
 
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
@@ -19,6 +20,7 @@ helper_title = ['ZIP', 'FIRST_', 'CITY', 'DOB', 'ADDRESS2', 'ADDRESS1', 'GENDER'
 				'MIDDLE', 'LAST_', 'SUFFIX_', 'MOTHERS_MADIDEN_NAME', 'MRN', 'STATE_', 'PHONE',
 				'PHONE2', 'EMAIL', 'ALIAS_', 'SSN']
 process_num = cpu_count()
+lock = threading.RLock()
 
 def create_submission_csv(txt_file, csv_file):
 	with open(txt_file, "r") as f:
@@ -48,10 +50,12 @@ def get_rules(file):
 	return d
 
 def pair2txt(file, data):
+	lock.acquire()
 	with open(file, "w") as f:
 		for each in data:
 			output = "{}\t{}".format(each[0], each[1])
 			print(output, file=f, end='\n')
+	lock.release()
 
 def store_result_job(folder, job, rule, sql):
 	file = folder + "\\" + rule + ".txt"
@@ -91,7 +95,7 @@ def store_result_csv_job(future, output_csv_file):
 	# 	mode = "a"
 	# else:
 	# 	mode = "w"
-
+	lock.acquire()
 	with open(output_csv_file, "a", newline='') as f:
 		writer = csv.writer(f)
 		for result in results:
@@ -99,7 +103,7 @@ def store_result_csv_job(future, output_csv_file):
 			line2 = result[19 : ]
 			writer.writerow(line1)
 			writer.writerow(line2)
-
+	lock.release()
 
 def store_result_as_pairs(rules, folder, job, rule_file):
 	output_csv_file = rule_file.split(".")[0] + "_all_in_one_csv.csv"
@@ -169,10 +173,12 @@ def get_extra_pairs_not_in_base(base, files):
 def pair2csv_helper_output(future, output_file):
 	results = future.result()
 
-	with open(output_file, "a") as f:
+	lock.acquire()
+	with open(output_file, "a", newline='') as f:
 		writer = csv.writer(f)
 		for result in results:
 			writer.writerow(result)
+	lock.release()
 
 def pair2csv_helper_query(i, pair):
 	l1 = [i]
@@ -237,10 +243,10 @@ def pairs2txt(data, file):
 			print(output, file=f, end='\n')
 
 def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job):
-	print("step1...")
-	rules = get_rules(rule_file)
-	print("step2...")
-	store_result_as_pairs(rules, folder, job, rule_file)
+	# print("step1...")
+	# rules = get_rules(rule_file)
+	# print("step2...")
+	# store_result_as_pairs(rules, folder, job, rule_file)
 	print("step3...")
 	new_pair_files = glob.glob(folder + "\\" + "*.txt")
 	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
@@ -249,6 +255,7 @@ def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pai
 	print("step4...")
 	pairs2txt(extra_pairs, output_pair_file)
 	pairs2csv(extra_pairs, output_csv_file)
+	print("done")
 
 def main():
 	#work 1 config input:
@@ -330,12 +337,12 @@ def main():
 
 
 	#process dob job
-	base_file = "stgy7_process_first_last_address_combined.txt"
-	rule_file = "rules_detail_dob.txt"
-	folder = "txt\\3_fields_process_dob"
-	job = "d"
-	output_csv_file = "process_dob.csv"
-	output_pair_file = "process_dob.txt"
+	# base_file = "stgy7_process_first_last_address_combined.txt"
+	# rule_file = "rules_detail_dob.txt"
+	# folder = "txt\\3_fields_process_dob"
+	# job = "d"
+	# output_csv_file = "process_dob1.csv"
+	# output_pair_file = "process_dob1.txt"
 
 	if not os.path.exists(folder):
 		os.makedirs(folder)
