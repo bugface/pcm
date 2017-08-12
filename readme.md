@@ -59,7 +59,13 @@
 	- txt file: processed_dob.txt (533 pairs)
 	- submission: sub12.csv
 	- result 12: percision=0.861 (74 of 533 are not correct)
-	- after add result 12, the recall currently is 0.9328 (based on 57482 as total (3860 left to find))
+	- after add result 12, the recall currently is 0.916 (based on 57482)
+<br><br>
+12. - strategy: collect a set of rules into rule_detail_ssn.txt which contains three fields (not ssn). The query results based on these rules deduped with previous obtained results. The resulted pairs were processed with ssn normalization strategy (jaro-winkler similarity).
+	- txt file: normalized_ssn_pairs.txt (646 pairs)
+	- submission: sub13.csv
+	- result 12: percision=0.983 (11 of 646 are not correct)
+	- after add result 12, the recall currently is 0.927 (based on 57482 as total (53713 found, 53310 correct matched))
 <br><br>
 #### *************************************************************************************************************
 

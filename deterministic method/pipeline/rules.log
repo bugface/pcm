@@ -35157,3 +35157,25 @@ cx_Oracle.InterfaceError: not connected
 2017-08-08 11:35:58  process_dob ERROR      'year'
 2017-08-08 11:35:58  process_dob ERROR      'year'
 2017-08-08 11:35:58  process_dob ERROR      'year'
+2017-08-12 15:14:32  task  INFO       rule: txt\3_fields_process_ssn\l_phone_addr.txt; pairs number: 15542
+2017-08-12 15:14:34  task  INFO       rule: txt\3_fields_process_ssn\f_phone_addr.txt; pairs number: 13446
+2017-08-12 15:14:40  task  INFO       rule: txt\3_fields_process_ssn\f_l_middle.txt; pairs number: 20986
+2017-08-12 15:14:59  task  INFO       rule: txt\3_fields_process_ssn\l_middle_dob.txt; pairs number: 17870
+2017-08-12 15:15:17  task  INFO       rule: txt\3_fields_process_ssn\dob_gender_addr.txt; pairs number: 27820
+2017-08-12 15:15:46  task  INFO       rule: txt\3_fields_process_ssn\f_dob_addr.txt; pairs number: 24048
+2017-08-12 15:15:54  task  INFO       rule: txt\3_fields_process_ssn\l_gender_phone.txt; pairs number: 49428
+2017-08-12 15:16:01  task  INFO       rule: txt\3_fields_process_ssn\f_dob_email.txt; pairs number: 10
+2017-08-12 15:16:27  task  INFO       rule: txt\3_fields_process_ssn\l_dob_phone.txt; pairs number: 48336
+2017-08-12 15:16:47  task  INFO       rule: txt\3_fields_process_ssn\f_l_phone.txt; pairs number: 44294
+2017-08-12 15:17:23  task  INFO       rule: txt\3_fields_process_ssn\f_gender_phone.txt; pairs number: 43760
+2017-08-12 15:17:46  task  INFO       rule: txt\3_fields_process_ssn\f_middle_dob.txt; pairs number: 16498
+2017-08-12 15:18:01  task  INFO       rule: txt\3_fields_process_ssn\l_dob_addr.txt; pairs number: 26790
+2017-08-12 15:18:39  task  INFO       rule: txt\3_fields_process_ssn\f_gender_dob.txt; pairs number: 138100
+2017-08-12 15:19:02  task  INFO       rule: txt\3_fields_process_ssn\l_gender_addr.txt; pairs number: 55394
+2017-08-12 15:19:13  task  INFO       rule: txt\3_fields_process_ssn\l_dob_gender.txt; pairs number: 84238
+2017-08-12 15:19:27  task  INFO       rule: txt\3_fields_process_ssn\gender_addr_phone.txt; pairs number: 15288
+2017-08-12 15:19:34  task  INFO       rule: txt\3_fields_process_ssn\f_l_addr.txt; pairs number: 24920
+2017-08-12 15:20:08  task  INFO       rule: txt\3_fields_process_ssn\dob_addr_phone.txt; pairs number: 14618
+2017-08-12 15:20:11  task  INFO       rule: txt\3_fields_process_ssn\dob_gender_phone.txt; pairs number: 47360
+2017-08-12 15:20:43  task  INFO       rule: txt\3_fields_process_ssn\f_l_dob.txt; pairs number: 74476
+2017-08-12 15:22:28  task  INFO       rule: txt\3_fields_process_ssn\f_gender_addr.txt; pairs number: 288056

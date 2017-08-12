@@ -51,11 +51,13 @@ def get_rules(file):
 
 def pair2txt(file, data):
 	lock.acquire()
-	with open(file, "w") as f:
-		for each in data:
-			output = "{}\t{}".format(each[0], each[1])
-			print(output, file=f, end='\n')
-	lock.release()
+	try:
+		with open(file, "w") as f:
+			for each in data:
+				output = "{}\t{}".format(each[0], each[1])
+				print(output, file=f, end='\n')
+	finally:
+		lock.release()
 
 def store_result_job(folder, job, rule, sql):
 	file = folder + "\\" + rule + ".txt"
@@ -96,14 +98,16 @@ def store_result_csv_job(future, output_csv_file):
 	# else:
 	# 	mode = "w"
 	lock.acquire()
-	with open(output_csv_file, "a", newline='') as f:
-		writer = csv.writer(f)
-		for result in results:
-			line1 = result[ : 19]
-			line2 = result[19 : ]
-			writer.writerow(line1)
-			writer.writerow(line2)
-	lock.release()
+	try:
+		with open(output_csv_file, "a", newline='') as f:
+			writer = csv.writer(f)
+			for result in results:
+				line1 = result[ : 19]
+				line2 = result[19 : ]
+				writer.writerow(line1)
+				writer.writerow(line2)
+	finally:
+		lock.release()
 
 def store_result_as_pairs(rules, folder, job, rule_file):
 	output_csv_file = rule_file.split(".")[0] + "_all_in_one_csv.csv"
@@ -137,6 +141,7 @@ def _dedupe(file, dataset):
 	with open(file, "r") as f:
 		for each in f:
 			data = each[:-1].split('\t')
+			#print(data)
 			t = (data[0], data[1])
 			tprim = (data[1], data[0])
 			if t not in dataset and tprim not in dataset:
@@ -174,11 +179,13 @@ def pair2csv_helper_output(future, output_file):
 	results = future.result()
 
 	lock.acquire()
-	with open(output_file, "a", newline='') as f:
-		writer = csv.writer(f)
-		for result in results:
-			writer.writerow(result)
-	lock.release()
+	try:
+		with open(output_file, "a", newline='') as f:
+			writer = csv.writer(f)
+			for result in results:
+				writer.writerow(result)
+	finally:
+		lock.release()
 
 def pair2csv_helper_query(i, pair):
 	l1 = [i]
@@ -343,6 +350,14 @@ def main():
 	# job = "d"
 	# output_csv_file = "process_dob1.csv"
 	# output_pair_file = "process_dob1.txt"
+
+	#process ssb job
+	# base_file = "stgy7_process_first_last_address_dob_combined.txt"
+	# rule_file = "rules_detail_ssn.txt"
+	# folder = "txt\\3_fields_process_ssn"
+	# job = "d"
+	# output_csv_file = "process_ssn.csv"
+	# output_pair_file = "process_ssn.txt"
 
 	if not os.path.exists(folder):
 		os.makedirs(folder)
