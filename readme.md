@@ -67,6 +67,15 @@
 	- result 12: percision=0.983 (11 of 646 are not correct)
 	- after add result 12, the recall currently is 0.927 (based on 57482 as total (53713 found, 53310 correct matched))
 <br><br>
+13. - Combining all current data together (no error check yet) for submission
+	- submission: sub14.csv
+	- result: recall=0.927; percision=0.992, f-score=0.9587
+<br><br>
+14. - strategy: deduplication the results from using dedupe with deterministic methods, obtain the dataset that in dedupe but not in deterministic methods, submit this dataset for check
+	- txt file: der_vs_pro.txt (8010 pairs)
+	- submission: sub15.csv
+	- result 14: percision=0.082 (only 656 pairs are corrected and not in deterministic methods-how to find them?)
+<br><br>
 #### *************************************************************************************************************
 
 ## table of fields combination

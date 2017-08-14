@@ -250,10 +250,10 @@ def pairs2txt(data, file):
 			print(output, file=f, end='\n')
 
 def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job):
-	# print("step1...")
-	# rules = get_rules(rule_file)
-	# print("step2...")
-	# store_result_as_pairs(rules, folder, job, rule_file)
+	print("step1...")
+	rules = get_rules(rule_file)
+	print("step2...")
+	store_result_as_pairs(rules, folder, job, rule_file)
 	print("step3...")
 	new_pair_files = glob.glob(folder + "\\" + "*.txt")
 	#combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
@@ -363,6 +363,7 @@ def main():
 		os.makedirs(folder)
 
 	pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
+	#create_submission_csv("stgy7_process_first_last_address_dob_ssn_combined.txt", "sub14.csv")
 
 if __name__ == '__main__':
 	main()
