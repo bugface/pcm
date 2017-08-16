@@ -1,10 +1,9 @@
 import jellyfish
 import csv
-from deterministic_rule_pipeline import create_submission_csv, pairs2csv, pair2csv_helper_query, pair2csv_helper_output, SQLALCHEMY_DATABASE_URI, engine
+from deterministic_rule_pipeline import create_submission_csv, pairs2csv
 from multiprocessing import Process, Pool, cpu_count
 import concurrent.futures
 import functools
-from sqlalchemy import create_engine
 # SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
 # engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 
@@ -73,3 +72,4 @@ def main():
 if __name__ == '__main__':
 	main()
 	#test()
+	#pass

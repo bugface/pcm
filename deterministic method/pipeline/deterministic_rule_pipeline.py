@@ -365,5 +365,6 @@ def main():
 	pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
 	#create_submission_csv("stgy7_process_first_last_address_dob_ssn_combined.txt", "sub14.csv")
 
+
 if __name__ == '__main__':
 	main()

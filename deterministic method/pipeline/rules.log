@@ -35179,3 +35179,115 @@ cx_Oracle.InterfaceError: not connected
 2017-08-12 15:20:11  task  INFO       rule: txt\3_fields_process_ssn\dob_gender_phone.txt; pairs number: 47360
 2017-08-12 15:20:43  task  INFO       rule: txt\3_fields_process_ssn\f_l_dob.txt; pairs number: 74476
 2017-08-12 15:22:28  task  INFO       rule: txt\3_fields_process_ssn\f_gender_addr.txt; pairs number: 288056
+2017-08-16 16:15:28  concurrent.futures ERROR      exception calling callback for <Future at 0x1c620e48b70 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1122, in _do_get
+    return self._pool.get(wait, self._timeout)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 145, in get
+    raise Empty
+sqlalchemy.util.queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 179, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 203, in pair2csv_helper_query
+    with engine.begin() as conn:
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1981, in begin
+    conn = self.contextual_connect(close_with_result=close_with_result)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2112, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 516, in checkout
+    rec = pool._do_get()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1138, in _do_get
+    self._dec_overflow()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1135, in _do_get
+    return self._create_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 333, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 461, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 797, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+TypeError: 'twophase' is an invalid keyword argument for this function
+2017-08-16 16:17:38  concurrent.futures ERROR      exception calling callback for <Future at 0x293610a8b70 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1122, in _do_get
+    return self._pool.get(wait, self._timeout)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 145, in get
+    raise Empty
+sqlalchemy.util.queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 179, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 203, in pair2csv_helper_query
+    with engine.begin() as conn:
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1981, in begin
+    conn = self.contextual_connect(close_with_result=close_with_result)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2112, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 516, in checkout
+    rec = pool._do_get()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1138, in _do_get
+    self._dec_overflow()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1135, in _do_get
+    return self._create_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 333, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 461, in __init__
+    self.__connect(first_connect_check=True)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 797, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+TypeError: 'twophase' is an invalid keyword argument for this function

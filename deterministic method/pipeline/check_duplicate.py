@@ -1,5 +1,5 @@
 import csv
-from deterministic_rule_pipeline import create_submission_csv
+from deterministic_rule_pipeline import create_submission_csv, pairs2csv, pair2csv_helper_query, pair2csv_helper_output
 
 def check_dupe(file1, file2, file3):
 	s = set()
@@ -24,11 +24,13 @@ def check_dupe(file1, file2, file3):
 				count += 1
 			else:
 				l.append(tp1)
-		print(count)
+		print(count, " pairs are overlaped.")
 
 	with open(file3, "w") as f:
 		for each in l:
 			print("{}\t{}".format(each[0], each[1]), file=f, end='\n')
+
+	return l
 
 def csv2txt(csv_file, txt_file):
 	with open(txt_file, "w") as f1:
@@ -40,9 +42,9 @@ def csv2txt(csv_file, txt_file):
 
 def main():
 	#csv2txt("submission2.csv", "submission2.txt")
-	#check_dupe("stgy7_process_first_last_address_dob_ssn_combined.txt", "submission2.txt", "der_vs_pro.txt")
-	# create_submission_csv("der_vs_pro.txt", "sub14.csv")
-	pass
+	pairs = check_dupe("stgy7_process_first_last_address_dob_ssn_combined.txt", "submission2.txt", "der_vs_pro.txt")
+	#create_submission_csv("der_vs_pro.txt", "sub14.csv")
+	pairs2csv(pairs, "der_vs_pro_after_dedupe.csv")
 
 if __name__ == '__main__':
 	main()

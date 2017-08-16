@@ -74,7 +74,13 @@
 14. - strategy: deduplication the results from using dedupe with deterministic methods, obtain the dataset that in dedupe but not in deterministic methods, submit this dataset for check
 	- txt file: der_vs_pro.txt (8010 pairs)
 	- submission: sub15.csv
-	- result 14: percision=0.082 (only 656 pairs are corrected and not in deterministic methods-how to find them?)
+	- result 14a: percision=0.082 (657 of 8010 are corrected)
+	- using previous implemented ssn, dob, address normalization methods process the 8010 pairs obtained 689 pairs left. All the data are collected for submission
+	- submission: sub16.csv
+	- result 14b: percision=0.81 (558 of 689 are corrected)
+	- using previous implemented ssn, dob, address normalization methods and mrn normalization process the 8010 pairs obtained 780 pairs left. All the data are collected for submission
+	- submission: sub17.csv
+	- result 14c: percision=0.823 (642 of 780 are corrected) (only 15 paris are missing) (the detailed pairs record are stored in pro_vs_der_after_check_pairs.csv)
 <br><br>
 #### *************************************************************************************************************
 
