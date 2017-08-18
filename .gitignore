@@ -6,5 +6,5 @@
 *.ipynb
 project/
 data/
-*.log
+deterministic method/pipeline/rules.log
 *.pyc

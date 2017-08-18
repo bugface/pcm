@@ -56,6 +56,8 @@ def input_rules(source_file, indicator):
 				query_fields.append('middle')
 			elif each == 'zip':
 				query_fields.append('zip')
+			elif each == 'mrn':
+				query_fields.append('mrn')
 
 		fields_num = len(query_fields)
 		where_clause = []

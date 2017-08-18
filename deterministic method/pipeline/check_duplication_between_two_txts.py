@@ -2,7 +2,7 @@ import os
 
 f1 = None
 f2 = None
-file1 = ""
+file1 = "stgy7_process_first_last_address_dob_ssn_merged_with_dedupe_combined.txt"
 file2 = ""
 
 if os.path.getsize(file1) > os.path.getsize(file2):
@@ -27,7 +27,7 @@ print(i)
 
 if i > len(base):
 	print(file1 + " has duplicated records.")
-
+k = 0
 with open(file2, "r") as f:
 	for each in f:
 		p = each[:-1].split("\t")
@@ -37,4 +37,6 @@ with open(file2, "r") as f:
 			#print("ok")
 			pass
 		else:
-			print(t, " duplicated.")
+			k += 1
+
+print("dupe num: {}".format(k))
