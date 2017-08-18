@@ -83,7 +83,7 @@
 	- result 14c: percision=0.823 (642 of 780 are corrected) (only 15 paris are missing) (the detailed pairs record are stored in pro_vs_der_after_check_pairs.csv)
 <br><br>
 15. - strategy: collect a set of rules into rule_detail_mrn.txt which contains three fields (not mrn). The query results based on these rules deduped with previous obtained results. The resulted pairs were processed with mrn similarity strategy.
-	- txt file: normalized_mrn_pairs.txt (646 pairs)
+	- txt file: normalized_mrn_pairs.txt (944 pairs)
 	- submission: sub18.csv
 	- result 12: percision=0.983 (16 of 944 are not correct)
 	- after add result 15, the recall currently is 0.9547 (based on 57482 as total (55437 found, 54880 correct matched))
