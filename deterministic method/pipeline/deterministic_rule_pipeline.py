@@ -244,10 +244,14 @@ def pairs2csv(pairs, output_file):
 
 
 def pairs2txt(data, file):
+    # lock.acquire()
+    # try:
     with open(file, "w") as f:
         for each in data:
             output = "{}\t{}".format(each[0], each[1])
             print(output, file=f, end='\n')
+    # finally:
+    #     lock.release()
 
 def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job):
     print("step1...")
@@ -367,10 +371,19 @@ def main():
     # output_csv_file = "process_mrn.csv"
     # output_pair_file = "process_mrn.txt"
 
+    #process alternative job
+    # base_file = "55437.txt"
+    # rule_file = "rules_detail_alternative.txt"
+    # folder = "txt\\3_fields_process_alternative"
+    # job = "d"
+    # output_csv_file = "process_alternative.csv"
+    # output_pair_file = "process_alternative.txt"
+
     if not os.path.exists(folder):
         os.makedirs(folder)
 
     pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
+    #create_submission_csv("stgy7_process_first_last_address_dob_ssn_merged_with_dedupe_combined.txt", "sub19.csv")
 
 
 if __name__ == '__main__':

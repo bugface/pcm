@@ -88,6 +88,15 @@
 	- result 12: percision=0.983 (16 of 944 are not correct)
 	- after add result 15, the recall currently is 0.9547 (based on 57482 as total (55437 found, 54880 correct matched))
 <br><br>
+16. - Combining all current data together (no error check yet) for submission
+	- submission: sub19.csv
+	- result: recall=0.9546; percision=0.99, f-score=0.972
+<br><br>
+17. - strategy: collect a set of rules into rule_detail_alternative.txt which contains three fields (not first). The query results based on these rules deduped with previous obtained results. The resulted pairs were processed with alternative strategy.
+	- txt file: processed_alternative.txt (3419 pairs)
+	- submission: sub20.csv
+	- result 12: percision=0.183 (626 of 3419 are not correct) (need to improve this methods)
+<br><br>
 #### *************************************************************************************************************
 
 ## table of fields combination
