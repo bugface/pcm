@@ -85,7 +85,7 @@
 15. - strategy: collect a set of rules into rule_detail_mrn.txt which contains three fields (not mrn). The query results based on these rules deduped with previous obtained results. The resulted pairs were processed with mrn similarity strategy.
 	- txt file: normalized_mrn_pairs.txt (944 pairs)
 	- submission: sub18.csv
-	- result 12: percision=0.983 (16 of 944 are not correct)
+	- result 15: percision=0.983 (16 of 944 are not correct)
 	- after add result 15, the recall currently is 0.9547 (based on 57482 as total (55437 found, 54880 correct matched))
 <br><br>
 16. - Combining all current data together (no error check yet) for submission
@@ -95,7 +95,16 @@
 17. - strategy: collect a set of rules into rule_detail_alternative.txt which contains three fields (not first). The query results based on these rules deduped with previous obtained results. The resulted pairs were processed with alternative strategy.
 	- txt file: processed_alternative.txt (3419 pairs)
 	- submission: sub20.csv
-	- result 12: percision=0.183 (626 of 3419 are not correct) (need to improve this methods)
+	- result 17: percision=0.183 (625 of 3419 are correct) (need to improve this methods)
+	- to imporve percision, quick_check_csv.py used
+	- submission sub21b.csv
+	- result: perision=0.834, recall no change (625 of 749 are correct)
+	- result: after revision, another 83 are removed
+	- result: percision=0.99 (625 of 631 are correct)
+<br><br>
+18. - Combining all current data together (no error check yet) for submission
+	- submission: sub22.csv
+	- result: recall=0.9655; percision=0.9898, f-score=0.9775
 <br><br>
 #### *************************************************************************************************************
 

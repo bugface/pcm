@@ -1026,3 +1026,948 @@ Traceback (most recent call last):
   File "process_name_alternative_spelling.py", line 63, in process_alternative_name
     if measure_ssn_similarity(f_ssn, s_ssn, "w") > 0.95:
 TypeError: measure_ssn_similarity() missing 1 required positional argument: 'sign'
+2017-08-20 00:29:29  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8dfbd668 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:29  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8dfbd7b8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:30  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8dfbda58 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:30  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8dfbda90 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:31  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0144e0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:31  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0145c0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:31  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014668 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:33  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0147b8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:33  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014710 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:33  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014860 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:34  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014908 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:35  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0149b0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:36  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014a58 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:36  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014b00 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:39  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014ba8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:40  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014c50 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:40  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014da0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:40  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014cf8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:44  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014e48 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:45  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014ef0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:46  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e014f98 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:46  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025080 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:51  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025128 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:51  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0251d0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:52  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025278 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:53  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025320 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:59  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0253c8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:59  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025470 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:29:59  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025518 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:01  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0255c0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:08  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025710 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:08  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025668 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:09  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0257b8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:11  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025860 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:17  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025908 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:18  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0259b0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:20  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025a58 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:21  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025b00 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:29  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025c50 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:30  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025ba8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:31  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025cf8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:32  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025da0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:41  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025e48 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:43  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025f98 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:43  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e025ef0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:45  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031080 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:56  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031128 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:57  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031278 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:57  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0311d0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:30:57  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031320 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_ssn += each["SSN"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:11  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0313c8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:11  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031470 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:12  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031518 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:13  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0315c0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:26  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031668 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:26  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031710 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:28  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0317b8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:29  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031860 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:43  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e0319b0 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:43  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031908 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:45  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031a58 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:46  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031b00 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-20 00:31:49  concurrent.futures ERROR      exception calling callback for <Future at 0x28a8e031ba8 state=finished raised UnboundLocalError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 72, in output_matched_result
+    pairs = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
+    f_id += each["ENTERPRISEID"]
+UnboundLocalError: local variable 'f_ssn' referenced before assignment

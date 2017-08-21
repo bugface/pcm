@@ -19,56 +19,54 @@ def create_alternative_name_dict():
 
     return name_dict
 
+def single_task_setup(input_file, output_file, alternative_spelling_dict):
+    f_id = ""
+    ff = ""
+    f_ssn = ""
+    f_mrn = ""
+    matched_result = set()
 
+    with open(input_file, "r") as f:
+        reader = csv.DictReader(f)
+        t = 0
+        for i, each in enumerate(reader):
+            if i % 2 == 0:
+                f_id += each["ENTERPRISEID"]
+                ff += each["FIRST_"]
+                f_ssn += each["SSN"]
+                f_mrn += each["MRN"]
+            else:
+                s_id = each["ENTERPRISEID"]
+                sf = each["FIRST_"]
+                s_ssn = each["SSN"]
+                s_mrn = each["MRN"]
 
-# def single_task_setup(input_file, output_file, alternative_spelling_dict):
-#     f_id = ""
-#     ff = ""
-#     f_ssn = ""
-#     f_mrn = ""
-#     matched_result = set()
+                if ff in alternative_spelling_dict:
+                    ff = alternative_spelling_dict[ff]
+                if sf in alternative_spelling_dict:
+                    sf = alternative_spelling_dict[sf]
 
-#     with open(input_file, "r") as f:
-#         reader = csv.DictReader(f)
-#         t = 0
-#         for i, each in enumerate(reader):
-#             if i % 2 == 0:
-#                 f_id += each["ENTERPRISEID"]
-#                 ff += each["FIRST_"]
-#                 f_ssn += each["SSN"]
-#                 f_mrn += each["MRN"]
-#             else:
-#                 s_id = each["ENTERPRISEID"]
-#                 sf = each["FIRST_"]
-#                 s_ssn = each["SSN"]
-#                 s_mrn = each["MRN"]
+                if ff == sf and ff != "":
+                    matched_result.add((f_id, s_id))
 
-#                 if ff in alternative_spelling_dict:
-#                     ff = alternative_spelling_dict[ff]
-#                 if sf in alternative_spelling_dict:
-#                     sf = alternative_spelling_dict[sf]
+                if measure_ssn_similarity(f_ssn, s_ssn, "w") > 0.9:
+                    matched_result.add((f_id, s_id))
 
-#                 if ff == sf and ff != "":
-#                     matched_result.add((f_id, s_id))
+                if measure_mrn_similarity(f_mrn, s_mrn, "w") > 0.8:
+                    matched_result.add((f_id, s_id))
 
-#                 if measure_ssn_similarity(f_ssn, s_ssn, "w") > 0.9:
-#                     matched_result.add((f_id, s_id))
+                ff = ""
+                f_id = ""
+                f_ssn = ""
+                f_mrn = ""
+                t = i
 
-#                 if measure_mrn_similarity(f_mrn, s_mrn, "w") > 0.8:
-#                     matched_result.add((f_id, s_id))
+    print(t)
+    print(len(matched_result))
 
-#                 ff = ""
-#                 f_id = ""
-#                 f_ssn = ""
-#                 f_mrn = ""
-#                 t = i
-
-#     print(t)
-#     print(len(matched_result))
-
-#     with open(output_file, "w") as f:
-#         for each in matched_result:
-#             print("{}\t{}".format(each[0], each[1]), file=f, end='\n')
+    with open(output_file, "w") as f:
+        for each in matched_result:
+            print("{}\t{}".format(each[0], each[1]), file=f, end='\n')
 
 def output_matched_result(future, output_file):
     pairs = future.result()
@@ -77,18 +75,19 @@ def output_matched_result(future, output_file):
         mode = "a"
     else:
         mode = "w"
-
-    with open(output_file, mode) as f:
-        lock.acquire()
-        try:
+    lock.acquire()
+    try:
+        with open(output_file, mode) as f:
             for pair in pairs:
                 print("{}\t{}".format(pair[0], pair[1]), file=f, end='\n')
-        finally:
-            lock.release()
+    finally:
+        lock.release()
 
 def process_alternative_name(alternative_spelling_dict, csv_input_file, se):
     f_id = ""
     ff = ""
+    f_ssn = ""
+    f_mrn = ""
     matched_result = set()
     start = se[0]
     end = se[1]
@@ -117,8 +116,16 @@ def process_alternative_name(alternative_spelling_dict, csv_input_file, se):
                     if ff == sf and ff != "":
                         matched_result.add((f_id, s_id))
 
+                    if measure_ssn_similarity(f_ssn, s_ssn, "w") > 0.9:
+                        matched_result.add((f_id, s_id))
+
+                    if measure_mrn_similarity(f_mrn, s_mrn, "w") > 0.8:
+                        matched_result.add((f_id, s_id))
+
                     ff = ""
                     f_id = ""
+                    f_ssn = ""
+                    f_mrn = ""
             elif i == end:
                 break
 
@@ -149,7 +156,7 @@ def multi_task_setup(input_file, output_file, tasks, alternative_spelling_dict):
 
 def main():
     input_file = "process_alternative.csv"
-    output_file = "processed_alternative.txt"
+    output_file = "processed_alternative11.txt"
     alternative_spelling_dict = create_alternative_name_dict()
     #single thread is way faster than multithreading
     #single_task_setup(input_file, output_file, alternative_spelling_dict)
@@ -160,23 +167,21 @@ def main():
     # # b = n // 2
     # # c = n // 4 * 3
     # # tasks = [(0, a), (a, b), (b, c), (c, n)]
-    for j in range(1, 64):
-        task = (n*((j-1)/64), n*(j/64))
-        tasks.append(task)
+    # for j in range(1, 65):
+    #     task = (n*((j-1)/64), n*(j/64))
+    #     tasks.append(task)
 
-    multi_task_setup(input_file, output_file, tasks, alternative_spelling_dict)
+    # multi_task_setup(input_file, output_file, tasks, alternative_spelling_dict)
 
-    # pairs = set()
-    # with open(output_file, "r") as f:
-    #     for each in f:
-    #         t = each[:-1].split("\t")
-    #         pairs.add((int(t[0]), int(t[1])))
-    # print(len(pairs))
-    # pairs2csv(pairs, "processed_alternaitve.csv")
+    pairs = set()
+    with open(output_file, "r") as f:
+        for each in f:
+            t = each[:-1].split("\t")
+            pairs.add((int(t[0]), int(t[1])))
+    print(len(pairs))
+    pairs2csv(pairs, "processed_alternaitve.csv")
 
     #create_submission_csv(output_file, "sub20.csv")
-
-
 
 if __name__ == '__main__':
     main()
