@@ -15,47 +15,64 @@ def create_alternative_name_dict():
     with open(src, "r") as f:
         for each in f:
             l = each[:-1].split("\t")
-            name_dict[l[0]] = l[1]
+            key = l[0]
+            value = l[1]
+            if key in name_dict:
+                name_dict[key].append(value)
+            else:
+                name_dict[key] = [value]
 
     return name_dict
 
 def single_task_setup(input_file, output_file, alternative_spelling_dict):
     f_id = ""
     ff = ""
+    ff_list = []
+    fl = ""
+    fl_list = []
     f_ssn = ""
     f_mrn = ""
     matched_result = set()
 
     with open(input_file, "r") as f:
         reader = csv.DictReader(f)
-        t = 0
+        t = None
         for i, each in enumerate(reader):
             if i % 2 == 0:
                 f_id += each["ENTERPRISEID"]
                 ff += each["FIRST_"]
+                ff += each["LAST_"]
                 f_ssn += each["SSN"]
                 f_mrn += each["MRN"]
             else:
                 s_id = each["ENTERPRISEID"]
                 sf = each["FIRST_"]
+                sl = each["LAST_"]
                 s_ssn = each["SSN"]
                 s_mrn = each["MRN"]
 
                 if ff in alternative_spelling_dict:
-                    ff = alternative_spelling_dict[ff]
-                if sf in alternative_spelling_dict:
-                    sf = alternative_spelling_dict[sf]
+                    ff_list = alternative_spelling_dict[ff][:]
 
-                if ff == sf and ff != "":
+                if sf in ff_list:
                     matched_result.add((f_id, s_id))
 
-                if measure_ssn_similarity(f_ssn, s_ssn, "w") > 0.9:
+                if fl in alternative_spelling_dict:
+                    fl_list = alternative_spelling_dict[fl][:]
+
+                if sl in fl_list or (fl == sl and fl != ""):
+                    matched_result.add((f_id, s_id))
+
+                if measure_ssn_similarity(f_ssn, s_ssn, "w") > 0.95:
                     matched_result.add((f_id, s_id))
 
                 if measure_mrn_similarity(f_mrn, s_mrn, "w") > 0.8:
                     matched_result.add((f_id, s_id))
 
                 ff = ""
+                ff_list = []
+                fl = ""
+                fl_list = []
                 f_id = ""
                 f_ssn = ""
                 f_mrn = ""
@@ -64,9 +81,9 @@ def single_task_setup(input_file, output_file, alternative_spelling_dict):
     print(t)
     print(len(matched_result))
 
-    with open(output_file, "w") as f:
-        for each in matched_result:
-            print("{}\t{}".format(each[0], each[1]), file=f, end='\n')
+    # with open(output_file, "w") as f:
+    #     for each in matched_result:
+    #         print("{}\t{}".format(each[0], each[1]), file=f, end='\n')
 
 def output_matched_result(future, output_file):
     pairs = future.result()
@@ -109,9 +126,7 @@ def process_alternative_name(alternative_spelling_dict, csv_input_file, se):
                     s_mrn = each["MRN"]
 
                     if ff in alternative_spelling_dict:
-                        ff = alternative_spelling_dict[ff]
-                    if sf in alternative_spelling_dict:
-                        sf = alternative_spelling_dict[sf]
+                        ff = alternative_spelling_dict[ff].append(ff)
 
                     if ff == sf and ff != "":
                         matched_result.add((f_id, s_id))
@@ -155,11 +170,11 @@ def multi_task_setup(input_file, output_file, tasks, alternative_spelling_dict):
         wait(futures_)
 
 def main():
-    input_file = "process_alternative.csv"
-    output_file = "processed_alternative11.txt"
+    input_file = "process_alter_last.csv"
+    output_file = "processed_alter_last.txt"
     alternative_spelling_dict = create_alternative_name_dict()
     #single thread is way faster than multithreading
-    #single_task_setup(input_file, output_file, alternative_spelling_dict)
+    single_task_setup(input_file, output_file, alternative_spelling_dict)
 
     # n = bufcount(input_file) - 1
     # tasks = []
@@ -173,15 +188,15 @@ def main():
 
     # multi_task_setup(input_file, output_file, tasks, alternative_spelling_dict)
 
-    pairs = set()
-    with open(output_file, "r") as f:
-        for each in f:
-            t = each[:-1].split("\t")
-            pairs.add((int(t[0]), int(t[1])))
-    print(len(pairs))
-    pairs2csv(pairs, "processed_alternaitve.csv")
+    # pairs = set()
+    # with open(output_file, "r") as f:
+    #     for each in f:
+    #         t = each[:-1].split("\t")
+    #         pairs.add((int(t[0]), int(t[1])))
+    # print(len(pairs))
+    # pairs2csv(pairs, "processed_alternaitve.csv")
 
-    #create_submission_csv(output_file, "sub20.csv")
+    # create_submission_csv(output_file, "sub23.csv")
 
 if __name__ == '__main__':
     main()

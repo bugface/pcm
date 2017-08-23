@@ -86,7 +86,7 @@
 	- txt file: normalized_mrn_pairs.txt (944 pairs)
 	- submission: sub18.csv
 	- result 15: percision=0.983 (16 of 944 are not correct)
-	- after add result 15, the recall currently is 0.9547 (based on 57482 as total (55437 found, 54880 correct matched))
+	- after add result 15, the recall currently is 0.9547 (based on 57489 as total (55437 found, 54880 correct matched))
 <br><br>
 16. - Combining all current data together (no error check yet) for submission
 	- submission: sub19.csv
@@ -104,8 +104,13 @@
 <br><br>
 18. - Combining all current data together (no error check yet) for submission
 	- submission: sub22.csv
-	- result: recall=0.9655; percision=0.9898, f-score=0.9775
+	- result: recall=0.9655; percision=0.9898, f-score=0.9775 (from pcm)
+	- data: (56068 total find, 55505 correct matched)
 <br><br>
+19. - strategy: collect a set of rules into rule_detail_alter_last.txt which contains three fields (not last). The query results based on these rules deduped with previous obtained results. The resulted pairs were processed with alternative strategy. The total raw data number collected from the database are 363873. After filter, there are 893 pairs left. Submit the raw data got a feed back that comparing to the filtered data, only 26 pairs are missing. we proceed without worring about these pairs.
+	- txt file: processed_alter_last.txt (893 pairs)
+	- submission: sub23.csv
+	- result 17: percision=0.5789 (517 of 893 are correct)
 #### *************************************************************************************************************
 
 ## table of fields combination

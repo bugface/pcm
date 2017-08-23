@@ -1971,3 +1971,1307 @@ Traceback (most recent call last):
   File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\process_name_alternative_spelling.py", line 101, in process_alternative_name
     f_id += each["ENTERPRISEID"]
 UnboundLocalError: local variable 'f_ssn' referenced before assignment
+2017-08-22 16:10:08  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_middle.txt; pairs number: 16498
+2017-08-22 16:10:19  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_addr.txt; pairs number: 24048
+2017-08-22 16:10:51  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_ssn.txt; pairs number: 36286
+2017-08-22 16:11:23  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_phone.txt; pairs number: 42308
+2017-08-22 16:11:49  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_ssn.txt; pairs number: 34754
+2017-08-22 16:13:05  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_phone.txt; pairs number: 43760
+2017-08-22 16:13:24  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_ssn.txt; pairs number: 6040
+2017-08-22 16:13:36  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_addr.txt; pairs number: 6228
+2017-08-22 16:14:19  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_phone.txt; pairs number: 9222
+2017-08-22 16:14:34  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_gender.txt; pairs number: 138100
+2017-08-22 16:14:45  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_addr.txt; pairs number: 11060
+2017-08-22 16:15:03  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_phone.txt; pairs number: 7348
+2017-08-22 16:15:11  task  INFO       rule: txt\3_fields_process_alter_last\f_email_ssn.txt; pairs number: 0
+2017-08-22 16:15:16  task  INFO       rule: txt\3_fields_process_alter_last\f_email_dob.txt; pairs number: 10
+2017-08-22 16:15:26  task  INFO       rule: txt\3_fields_process_alter_last\f_addr_phone.txt; pairs number: 13446
+2017-08-22 16:16:22  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_middle.txt; pairs number: 35758
+2017-08-22 16:17:46  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_ssn.txt; pairs number: 32220
+2017-08-22 16:18:38  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_addr.txt; pairs number: 27820
+2017-08-22 16:18:54  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_addr.txt; pairs number: 288056
+2017-08-22 16:19:12  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_ssn.txt; pairs number: 6068
+2017-08-22 16:19:25  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_addr.txt; pairs number: 5894
+2017-08-22 16:19:44  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_phone.txt; pairs number: 10522
+2017-08-22 16:20:55  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_addr.txt; pairs number: 12072
+2017-08-22 16:21:13  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_phone.txt; pairs number: 6758
+2017-08-22 16:21:24  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_ssn.txt; pairs number: 4666
+2017-08-22 16:21:44  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_phone.txt; pairs number: 47360
+2017-08-22 16:22:24  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_phone.txt; pairs number: 10566
+2017-08-22 16:22:39  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_addr.txt; pairs number: 82342
+2017-08-22 16:22:48  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_addr.txt; pairs number: 10252
+2017-08-22 16:22:56  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_phone.txt; pairs number: 6816
+2017-08-22 16:23:09  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_addr.txt; pairs number: 2032
+2017-08-22 16:23:14  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_phone.txt; pairs number: 930
+2017-08-22 16:23:23  task  INFO       rule: txt\3_fields_process_alter_last\middle_addr_phone.txt; pairs number: 3272
+2017-08-22 16:23:33  task  INFO       rule: txt\3_fields_process_alter_last\gender_addr_phone.txt; pairs number: 15288
+2017-08-22 16:23:34  task  INFO       rule: txt\3_fields_process_alter_last\ssn_addr_phone.txt; pairs number: 2396
+2017-08-22 16:25:35  task  INFO       rule: txt\3_fields_process_alter_last\f_email_gender.txt; pairs number: 306294
+2017-08-22 16:45:19  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_middle.txt; pairs number: 16498
+2017-08-22 16:45:35  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_addr.txt; pairs number: 24048
+2017-08-22 16:46:07  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_ssn.txt; pairs number: 36286
+2017-08-22 16:46:45  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_phone.txt; pairs number: 42308
+2017-08-22 16:47:09  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_ssn.txt; pairs number: 34754
+2017-08-22 20:14:20  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_middle.txt; pairs number: 16498
+2017-08-22 20:14:27  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_addr.txt; pairs number: 24048
+2017-08-22 20:14:57  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_ssn.txt; pairs number: 36286
+2017-08-22 20:15:23  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_phone.txt; pairs number: 42308
+2017-08-22 20:16:00  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_ssn.txt; pairs number: 34754
+2017-08-22 20:36:53  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 20:37:02  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 20:37:02  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 20:37:02  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 20:37:19  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_middle.txt; pairs number: 10163
+2017-08-22 20:37:31  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_ssn.txt; pairs number: 21304
+2017-08-22 20:37:32  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_addr.txt; pairs number: 11255
+2017-08-22 20:37:46  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_ssn.txt; pairs number: 4118
+2017-08-22 20:37:51  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_ssn.txt; pairs number: 19807
+2017-08-22 20:37:57  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_addr.txt; pairs number: 3050
+2017-08-22 20:37:57  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_phone.txt; pairs number: 23628
+2017-08-22 20:38:17  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_phone.txt; pairs number: 6018
+2017-08-22 20:38:25  task  INFO       rule: txt\3_fields_process_alter_last\f_email_ssn.txt; pairs number: 0
+2017-08-22 20:38:30  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_phone.txt; pairs number: 5034
+2017-08-22 20:38:37  task  INFO       rule: txt\3_fields_process_alter_last\f_email_dob.txt; pairs number: 10
+2017-08-22 20:38:52  task  INFO       rule: txt\3_fields_process_alter_last\f_addr_phone.txt; pairs number: 6683
+2017-08-22 20:38:52  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_addr.txt; pairs number: 5769
+2017-08-22 20:39:26  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_phone.txt; pairs number: 24190
+2017-08-22 20:39:27  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_middle.txt; pairs number: 21618
+2017-08-22 20:39:41  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_gender.txt; pairs number: 48158
+2017-08-22 20:39:41  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_ssn.txt; pairs number: 4336
+2017-08-22 20:40:07  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_addr.txt; pairs number: 3364
+2017-08-22 20:40:20  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_addr.txt; pairs number: 14417
+2017-08-22 20:40:21  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_ssn.txt; pairs number: 19665
+2017-08-22 20:40:21  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_phone.txt; pairs number: 7174
+2017-08-22 20:40:36  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_addr.txt; pairs number: 7164
+2017-08-22 20:40:45  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_ssn.txt; pairs number: 3321
+2017-08-22 20:40:54  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_phone.txt; pairs number: 7206
+2017-08-22 20:40:55  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_phone.txt; pairs number: 4876
+2017-08-22 20:41:14  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_phone.txt; pairs number: 27277
+2017-08-22 20:41:18  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_addr.txt; pairs number: 5739
+2017-08-22 20:41:28  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_addr.txt; pairs number: 1212
+2017-08-22 20:41:29  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_phone.txt; pairs number: 719
+2017-08-22 20:41:41  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_phone.txt; pairs number: 4850
+2017-08-22 20:41:44  task  INFO       rule: txt\3_fields_process_alter_last\ssn_addr_phone.txt; pairs number: 1467
+2017-08-22 20:41:48  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_addr.txt; pairs number: 20786
+2017-08-22 20:41:48  task  INFO       rule: txt\3_fields_process_alter_last\gender_addr_phone.txt; pairs number: 8403
+2017-08-22 20:41:49  task  INFO       rule: txt\3_fields_process_alter_last\middle_addr_phone.txt; pairs number: 1962
+2017-08-22 20:43:25  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_addr.txt; pairs number: 12354
+2017-08-22 20:45:52  task  INFO       rule: txt\3_fields_process_alter_last\f_email_gender.txt; pairs number: 22528
+2017-08-22 21:04:53  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:04:53  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:04:58  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:04:58  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:05:06  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_middle.txt; pairs number: 10163
+2017-08-22 21:05:21  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_addr.txt; pairs number: 11255
+2017-08-22 21:05:38  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_ssn.txt; pairs number: 4118
+2017-08-22 21:05:44  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_ssn.txt; pairs number: 19807
+2017-08-22 21:05:48  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_ssn.txt; pairs number: 21304
+2017-08-22 21:05:58  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_addr.txt; pairs number: 3050
+2017-08-22 21:06:01  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_phone.txt; pairs number: 23628
+2017-08-22 21:06:15  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_phone.txt; pairs number: 6018
+2017-08-22 21:06:22  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_ssn.txt; pairs number: 0
+2017-08-22 21:06:30  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_dob.txt; pairs number: 10
+2017-08-22 21:06:40  task  INFO       rule: txt\3_fields_process_alter_last_1\f_ssn_phone.txt; pairs number: 5034
+2017-08-22 21:06:47  task  INFO       rule: txt\3_fields_process_alter_last_1\f_ssn_addr.txt; pairs number: 5769
+2017-08-22 21:06:51  task  INFO       rule: txt\3_fields_process_alter_last_1\f_addr_phone.txt; pairs number: 6683
+2017-08-22 21:07:11  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_phone.txt; pairs number: 24190
+2017-08-22 21:07:27  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_middle.txt; pairs number: 21618
+2017-08-22 21:07:38  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_ssn.txt; pairs number: 4336
+2017-08-22 21:07:39  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_addr.txt; pairs number: 14417
+2017-08-22 21:07:58  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_phone.txt; pairs number: 7174
+2017-08-22 21:08:05  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_addr.txt; pairs number: 3364
+2017-08-22 21:08:12  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_ssn.txt; pairs number: 19665
+2017-08-22 21:08:22  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_ssn.txt; pairs number: 3321
+2017-08-22 21:08:27  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_ssn_phone.txt; pairs number: 4876
+2017-08-22 21:09:07  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_ssn_addr.txt; pairs number: 7164
+2017-08-22 21:09:20  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_phone.txt; pairs number: 7206
+2017-08-22 21:09:25  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_ssn_addr.txt; pairs number: 5739
+2017-08-22 21:09:38  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_ssn_phone.txt; pairs number: 4850
+2017-08-22 21:09:41  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_addr.txt; pairs number: 20786
+2017-08-22 21:09:49  task  INFO       rule: txt\3_fields_process_alter_last_1\middle_ssn_phone.txt; pairs number: 719
+2017-08-22 21:09:57  task  INFO       rule: txt\3_fields_process_alter_last_1\middle_ssn_addr.txt; pairs number: 1212
+2017-08-22 21:09:57  task  INFO       rule: txt\3_fields_process_alter_last_1\middle_addr_phone.txt; pairs number: 1962
+2017-08-22 21:10:13  task  INFO       rule: txt\3_fields_process_alter_last_1\ssn_addr_phone.txt; pairs number: 1467
+2017-08-22 21:10:24  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_phone.txt; pairs number: 27277
+2017-08-22 21:10:32  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_addr_phone.txt; pairs number: 8403
+2017-08-22 21:10:35  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_gender.txt; pairs number: 48158
+2017-08-22 21:11:19  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_addr.txt; pairs number: 12354
+2017-08-22 21:13:51  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_gender.txt; pairs number: 22528
+2017-08-22 21:20:54  task  INFO       rule: txt\3_fields_process_alter_last_2\f_gender_middle.txt; pairs number: 0
+2017-08-22 21:20:54  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_middle.txt; pairs number: 0
+2017-08-22 21:21:01  task  INFO       rule: txt\3_fields_process_alter_last_2\f_gender_ssn.txt; pairs number: 0
+2017-08-22 21:21:12  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_ssn.txt; pairs number: 0
+2017-08-22 21:21:18  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_ssn.txt; pairs number: 0
+2017-08-22 21:21:23  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_addr.txt; pairs number: 0
+2017-08-22 21:21:45  task  INFO       rule: txt\3_fields_process_alter_last_2\f_email_gender.txt; pairs number: 0
+2017-08-22 21:21:51  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_middle.txt; pairs number: 0
+2017-08-22 21:22:02  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_middle_ssn.txt; pairs number: 0
+2017-08-22 21:22:10  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_phone.txt; pairs number: 0
+2017-08-22 21:22:14  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_middle_addr.txt; pairs number: 0
+2017-08-22 21:22:36  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:22:36  task  INFO       rule: txt\3_fields_process_alter_last_2\f_email_ssn.txt; pairs number: 0
+2017-08-22 21:22:38  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:22:38  task  INFO       rule: txt\3_fields_process_alter_last_2\f_email_dob.txt; pairs number: 0
+2017-08-22 21:24:20  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:24:27  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:24:28  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:24:29  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:24:45  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_middle.txt; pairs number: 10163
+2017-08-22 21:24:47  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_addr.txt; pairs number: 11255
+2017-08-22 21:25:01  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_ssn.txt; pairs number: 4118
+2017-08-22 21:25:13  task  INFO       rule: txt\3_fields_process_alter_last_2\f_gender_ssn.txt; pairs number: 19807
+2017-08-22 21:25:18  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_ssn.txt; pairs number: 21304
+2017-08-22 21:25:22  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_addr.txt; pairs number: 3050
+2017-08-22 21:25:37  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_phone.txt; pairs number: 23628
+2017-08-22 21:25:46  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_phone.txt; pairs number: 6018
+2017-08-22 21:25:51  task  INFO       rule: txt\3_fields_process_alter_last_2\f_ssn_addr.txt; pairs number: 5769
+2017-08-22 21:25:58  task  INFO       rule: txt\3_fields_process_alter_last_2\f_email_ssn.txt; pairs number: 0
+2017-08-22 21:26:03  task  INFO       rule: txt\3_fields_process_alter_last_2\f_email_dob.txt; pairs number: 10
+2017-08-22 21:26:15  task  INFO       rule: txt\3_fields_process_alter_last_2\f_ssn_phone.txt; pairs number: 5034
+2017-08-22 21:26:48  task  INFO       rule: txt\3_fields_process_alter_last_2\f_addr_phone.txt; pairs number: 6683
+2017-08-22 21:27:03  task  INFO       rule: txt\3_fields_process_alter_last_2\f_gender_phone.txt; pairs number: 24190
+2017-08-22 21:27:19  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_ssn.txt; pairs number: 19665
+2017-08-22 21:27:26  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_addr.txt; pairs number: 14417
+2017-08-22 21:27:40  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_middle_addr.txt; pairs number: 3364
+2017-08-22 21:27:41  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_middle_ssn.txt; pairs number: 4336
+2017-08-22 21:27:42  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_middle.txt; pairs number: 21618
+2017-08-22 21:28:02  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_middle_phone.txt; pairs number: 7174
+2017-08-22 21:28:10  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_ssn_phone.txt; pairs number: 4876
+2017-08-22 21:28:17  task  INFO       rule: txt\3_fields_process_alter_last_2\gender_middle_ssn.txt; pairs number: 3321
+2017-08-22 21:28:36  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_ssn_addr.txt; pairs number: 7164
+2017-08-22 21:28:41  task  INFO       rule: txt\3_fields_process_alter_last_2\gender_middle_phone.txt; pairs number: 7206
+2017-08-22 21:28:49  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_gender.txt; pairs number: 48158
+2017-08-22 21:29:02  task  INFO       rule: txt\3_fields_process_alter_last_2\gender_ssn_phone.txt; pairs number: 4850
+2017-08-22 21:29:09  task  INFO       rule: txt\3_fields_process_alter_last_2\middle_ssn_addr.txt; pairs number: 1212
+2017-08-22 21:30:02  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:30:03  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:30:03  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:30:03  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-22 21:30:18  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_middle.txt; pairs number: 10163
+2017-08-22 21:30:30  task  INFO       rule: txt\3_fields_process_alter_last_2\f_gender_ssn.txt; pairs number: 19807
+2017-08-22 21:30:37  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_addr.txt; pairs number: 11255
+2017-08-22 21:30:45  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_ssn.txt; pairs number: 4118
+2017-08-22 21:30:53  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_ssn.txt; pairs number: 21304
+2017-08-22 21:31:00  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_addr.txt; pairs number: 3050
+2017-08-22 21:31:02  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_phone.txt; pairs number: 6018
+2017-08-22 21:31:13  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_phone.txt; pairs number: 23628
+2017-08-22 21:31:19  task  INFO       rule: txt\3_fields_process_alter_last_2\f_email_ssn.txt; pairs number: 0
+2017-08-22 21:31:27  task  INFO       rule: txt\3_fields_process_alter_last_2\f_email_dob.txt; pairs number: 10
+2017-08-22 21:31:38  task  INFO       rule: txt\3_fields_process_alter_last_2\f_ssn_phone.txt; pairs number: 5034
+2017-08-22 21:32:00  task  INFO       rule: txt\3_fields_process_alter_last_2\f_ssn_addr.txt; pairs number: 5769
+2017-08-22 21:32:05  task  INFO       rule: txt\3_fields_process_alter_last_2\f_addr_phone.txt; pairs number: 6683
+2017-08-22 21:32:37  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_ssn.txt; pairs number: 19665
+2017-08-22 21:32:54  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_middle.txt; pairs number: 21618
+2017-08-22 21:33:09  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_middle_ssn.txt; pairs number: 4336
+2017-08-22 21:33:09  task  INFO       rule: txt\3_fields_process_alter_last_2\f_gender_phone.txt; pairs number: 24190
+2017-08-22 21:33:24  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_middle_addr.txt; pairs number: 3364
+2017-08-22 21:33:36  task  INFO       rule: txt\3_fields_process_alter_last_2\f_dob_gender.txt; pairs number: 48158
+2017-08-22 21:33:43  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_addr.txt; pairs number: 14417
+2017-08-22 21:33:51  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_middle_phone.txt; pairs number: 7174
+2017-08-22 21:33:57  task  INFO       rule: txt\3_fields_process_alter_last_2\gender_middle_ssn.txt; pairs number: 3321
+2017-08-22 21:34:04  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_ssn_phone.txt; pairs number: 4876
+2017-08-22 21:34:25  task  INFO       rule: txt\3_fields_process_alter_last_2\gender_ssn_addr.txt; pairs number: 5739
+2017-08-22 21:34:30  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_ssn_addr.txt; pairs number: 7164
+2017-08-22 21:34:41  task  INFO       rule: txt\3_fields_process_alter_last_2\gender_ssn_phone.txt; pairs number: 4850
+2017-08-22 21:34:45  task  INFO       rule: txt\3_fields_process_alter_last_2\f_gender_addr.txt; pairs number: 20786
+2017-08-22 21:35:07  concurrent.futures ERROR      exception calling callback for <Future at 0x1c690c5a668 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_method_pipeline.py", line 93, in store_result_csv_job
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_method_pipeline.py", line 64, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_method_pipeline.py", line 39, in execute_sql
+    res = conn.execute(rule)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-01652: unable to extend temp segment by 128 in tablespace TEMP [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.address1 = p2.address1 and p1.dob = p2.dob and p1.first_ = p2.first_']
+2017-08-22 21:35:07  concurrent.futures ERROR      exception calling callback for <Future at 0x1c690c5a128 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_method_pipeline.py", line 93, in store_result_csv_job
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_method_pipeline.py", line 64, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_method_pipeline.py", line 39, in execute_sql
+    res = conn.execute(rule)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-01652: unable to extend temp segment by 128 in tablespace TEMP [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.dob = p2.dob and p1.first_ = p2.first_ and p1.gender = p2.gender']
+2017-08-22 21:35:19  task  INFO       rule: txt\3_fields_process_alter_last_2\middle_ssn_phone.txt; pairs number: 719
+2017-08-22 21:35:29  task  INFO       rule: txt\3_fields_process_alter_last_2\gender_middle_phone.txt; pairs number: 7206
+2017-08-22 21:35:30  task  INFO       rule: txt\3_fields_process_alter_last_2\middle_ssn_addr.txt; pairs number: 1212
+2017-08-22 21:35:40  task  INFO       rule: txt\3_fields_process_alter_last_2\middle_addr_phone.txt; pairs number: 1962
+2017-08-22 21:35:55  task  INFO       rule: txt\3_fields_process_alter_last_2\dob_gender_phone.txt; pairs number: 27277
+2017-08-22 21:36:02  task  INFO       rule: txt\3_fields_process_alter_last_2\ssn_addr_phone.txt; pairs number: 1467
+2017-08-22 21:36:05  task  INFO       rule: txt\3_fields_process_alter_last_3\f_dob_ssn.txt; pairs number: 21304
+2017-08-22 21:36:05  concurrent.futures ERROR      exception calling callback for <Future at 0x1c690c5a470 state=finished returned NoneType>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_method_pipeline.py", line 104, in store_result_csv_job
+    for result in results:
+TypeError: 'NoneType' object is not iterable
+2017-08-22 21:40:43  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_middle.txt; pairs number: 10163
+2017-08-22 21:40:59  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_addr.txt; pairs number: 11255
+2017-08-22 21:41:07  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_ssn.txt; pairs number: 21304
+2017-08-22 21:41:34  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_phone.txt; pairs number: 23628
+2017-08-22 21:42:13  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_ssn.txt; pairs number: 19807
+2017-08-22 21:43:00  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_phone.txt; pairs number: 24190
+2017-08-22 21:43:04  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_gender.txt; pairs number: 48158
+2017-08-22 21:43:12  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_addr.txt; pairs number: 3050
+2017-08-22 21:43:17  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_ssn.txt; pairs number: 4118
+2017-08-22 21:43:30  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_addr.txt; pairs number: 5769
+2017-08-22 21:43:32  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_phone.txt; pairs number: 6018
+2017-08-22 21:43:51  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_phone.txt; pairs number: 5034
+2017-08-22 21:43:54  task  INFO       rule: txt\3_fields_process_alter_last\f_email_ssn.txt; pairs number: 0
+2017-08-22 21:44:00  task  INFO       rule: txt\3_fields_process_alter_last\f_addr_phone.txt; pairs number: 6683
+2017-08-22 21:44:01  task  INFO       rule: txt\3_fields_process_alter_last\f_email_dob.txt; pairs number: 10
+2017-08-22 21:44:40  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_middle.txt; pairs number: 21618
+2017-08-22 21:45:37  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_ssn.txt; pairs number: 19665
+2017-08-22 21:46:17  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_addr.txt; pairs number: 14417
+2017-08-22 21:46:39  sqlalchemy.pool.QueuePool ERROR      Error closing cursor
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1174, in fetchone
+    row = self._fetchone_impl()
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1055, in _fetchone_impl
+    return self.cursor.fetchone()
+cx_Oracle.DatabaseError: DPI-1010: not connected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _safe_close_cursor
+    cursor.close()
+cx_Oracle.DatabaseError: DPI-1010: not connected
+2017-08-22 21:46:39  concurrent.futures ERROR      exception calling callback for <Future at 0x16cf00455c0 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1174, in fetchone
+    row = self._fetchone_impl()
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1055, in _fetchone_impl
+    return self.cursor.fetchone()
+cx_Oracle.DatabaseError: DPI-1010: not connected
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 101, in store_result_job
+    for each_res in res:
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 870, in __iter__
+    row = self.fetchone()
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1183, in fetchone
+    self.cursor, self.context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1174, in fetchone
+    row = self._fetchone_impl()
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1055, in _fetchone_impl
+    return self.cursor.fetchone()
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) DPI-1010: not connected
+2017-08-22 21:46:46  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_addr.txt; pairs number: 20786
+2017-08-22 21:46:51  sqlalchemy.pool.QueuePool ERROR      Error closing cursor
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1174, in fetchone
+    row = self._fetchone_impl()
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1055, in _fetchone_impl
+    return self.cursor.fetchone()
+cx_Oracle.DatabaseError: DPI-1010: not connected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _safe_close_cursor
+    cursor.close()
+cx_Oracle.DatabaseError: DPI-1010: not connected
+2017-08-22 21:46:51  concurrent.futures ERROR      exception calling callback for <Future at 0x16cf0064198 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1174, in fetchone
+    row = self._fetchone_impl()
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1055, in _fetchone_impl
+    return self.cursor.fetchone()
+cx_Oracle.DatabaseError: DPI-1010: not connected
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 101, in store_result_job
+    for each_res in res:
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 870, in __iter__
+    row = self.fetchone()
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1183, in fetchone
+    self.cursor, self.context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1174, in fetchone
+    row = self._fetchone_impl()
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\result.py", line 1055, in _fetchone_impl
+    return self.cursor.fetchone()
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) DPI-1010: not connected
+2017-08-22 21:47:10  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_ssn.txt; pairs number: 4336
+2017-08-22 21:47:20  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_addr.txt; pairs number: 3364
+2017-08-22 21:47:31  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_phone.txt; pairs number: 7174
+2017-08-22 21:48:32  concurrent.futures ERROR      exception calling callback for <Future at 0x28d06d36390 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 95, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_rule_pipeline_new_version.py", line 40, in execute_sql
+    res = conn.execute(rule)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-01652: unable to extend temp segment by 128 in tablespace TEMP [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.dob = p2.dob and p1.first_ = p2.first_ and p1.gender = p2.gender']
+2017-08-22 21:48:32  concurrent.futures ERROR      exception calling callback for <Future at 0x28d06d540f0 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 95, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_rule_pipeline_new_version.py", line 40, in execute_sql
+    res = conn.execute(rule)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-01652: unable to extend temp segment by 128 in tablespace TEMP [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.address1 = p2.address1 and p1.first_ = p2.first_ and p1.gender = p2.gender']
+2017-08-22 21:48:32  concurrent.futures ERROR      exception calling callback for <Future at 0x28d06d368d0 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 95, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_rule_pipeline_new_version.py", line 40, in execute_sql
+    res = conn.execute(rule)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-01652: unable to extend temp segment by 128 in tablespace TEMP [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.address1 = p2.address1 and p1.dob = p2.dob and p1.first_ = p2.first_']
+2017-08-22 21:48:32  concurrent.futures ERROR      exception calling callback for <Future at 0x28d06d36ac8 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 95, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_rule_pipeline_new_version.py", line 40, in execute_sql
+    res = conn.execute(rule)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-01652: unable to extend temp segment by 128 in tablespace TEMP [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.dob = p2.dob and p1.first_ = p2.first_ and p1.phone = p2.phone']
+2017-08-22 21:49:05  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_addr.txt; pairs number: 7164
+2017-08-22 21:49:06  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_ssn.txt; pairs number: 4118
+2017-08-22 21:49:16  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_addr.txt; pairs number: 3050
+2017-08-22 21:49:23  concurrent.futures ERROR      exception calling callback for <Future at 0x28d06d54630 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 95, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_rule_pipeline_new_version.py", line 40, in execute_sql
+    res = conn.execute(rule)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-01652: unable to extend temp segment by 128 in tablespace TEMP [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.first_ = p2.first_ and p1.phone = p2.phone and p1.ssn = p2.ssn']
+2017-08-22 21:49:29  concurrent.futures ERROR      exception calling callback for <Future at 0x28d06d546d8 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: ORA-01652: unable to extend temp segment by 128 in tablespace TEMP
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\python3.6.2\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\python3.6.2\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 95, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_rule_pipeline_new_version.py", line 40, in execute_sql
+    res = conn.execute(rule)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\python3.6.2\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-01652: unable to extend temp segment by 128 in tablespace TEMP [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.address1 = p2.address1 and p1.first_ = p2.first_ and p1.phone = p2.phone']
+2017-08-22 21:49:38  task  INFO       rule: txt\3_fields_process_alter_last_2\f_middle_phone.txt; pairs number: 6018
+2017-08-22 21:49:38  task  INFO       rule: txt\3_fields_process_alter_last_2\f_email_ssn.txt; pairs number: 0
+2017-08-22 21:49:58  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_phone.txt; pairs number: 4876
+2017-08-22 21:50:06  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_ssn.txt; pairs number: 3321
+2017-08-22 21:50:42  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_phone.txt; pairs number: 27277
+2017-08-22 21:51:13  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_phone.txt; pairs number: 7206
+2017-08-22 21:51:17  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_addr.txt; pairs number: 12354
+2017-08-22 21:51:28  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_addr.txt; pairs number: 5739
+2017-08-22 21:51:30  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_phone.txt; pairs number: 4850
+2017-08-22 21:51:42  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_addr.txt; pairs number: 1212
+2017-08-22 21:51:47  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_phone.txt; pairs number: 719
+2017-08-22 21:51:56  task  INFO       rule: txt\3_fields_process_alter_last\middle_addr_phone.txt; pairs number: 1962
+2017-08-22 21:52:05  task  INFO       rule: txt\3_fields_process_alter_last\ssn_addr_phone.txt; pairs number: 1467
+2017-08-22 21:52:05  task  INFO       rule: txt\3_fields_process_alter_last\gender_addr_phone.txt; pairs number: 8403
+2017-08-22 21:55:15  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_middle.txt; pairs number: 8249
+2017-08-22 21:55:24  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_addr.txt; pairs number: 12024
+2017-08-22 21:55:42  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_ssn.txt; pairs number: 18143
+2017-08-22 21:56:03  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_phone.txt; pairs number: 21154
+2017-08-22 21:56:45  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_ssn.txt; pairs number: 17377
+2017-08-22 21:57:32  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_phone.txt; pairs number: 21880
+2017-08-22 21:57:35  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_gender.txt; pairs number: 69050
+2017-08-22 21:57:45  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_addr.txt; pairs number: 3114
+2017-08-22 21:57:50  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_ssn.txt; pairs number: 3020
+2017-08-22 21:58:04  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_addr.txt; pairs number: 5530
+2017-08-22 21:58:06  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_phone.txt; pairs number: 4611
+2017-08-22 21:58:24  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_phone.txt; pairs number: 3674
+2017-08-22 21:58:29  task  INFO       rule: txt\3_fields_process_alter_last\f_email_ssn.txt; pairs number: 0
+2017-08-22 21:58:31  task  INFO       rule: txt\3_fields_process_alter_last\f_addr_phone.txt; pairs number: 6723
+2017-08-22 21:58:38  task  INFO       rule: txt\3_fields_process_alter_last\f_email_dob.txt; pairs number: 5
+2017-08-22 21:59:15  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_middle.txt; pairs number: 17879
+2017-08-22 22:00:12  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_ssn.txt; pairs number: 16110
+2017-08-22 22:00:58  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_addr.txt; pairs number: 144028
+2017-08-22 22:01:27  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_addr.txt; pairs number: 13910
+2017-08-22 22:01:37  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_ssn.txt; pairs number: 3034
+2017-08-22 22:01:44  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_addr.txt; pairs number: 2947
+2017-08-22 22:01:51  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_phone.txt; pairs number: 23680
+2017-08-22 22:02:05  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_addr.txt; pairs number: 6036
+2017-08-22 22:02:18  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_phone.txt; pairs number: 5261
+2017-08-22 22:02:21  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_phone.txt; pairs number: 3379
+2017-08-22 22:02:28  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_ssn.txt; pairs number: 2333
+2017-08-22 22:02:42  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_phone.txt; pairs number: 5283
+2017-08-22 22:02:55  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_addr.txt; pairs number: 5126
+2017-08-22 22:03:09  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_phone.txt; pairs number: 3408
+2017-08-22 22:04:02  task  INFO       rule: txt\3_fields_process_alter_last\gender_addr_phone.txt; pairs number: 7644
+2017-08-22 22:04:07  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_addr.txt; pairs number: 1016
+2017-08-22 22:04:12  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_phone.txt; pairs number: 465
+2017-08-22 22:04:18  task  INFO       rule: txt\3_fields_process_alter_last\middle_addr_phone.txt; pairs number: 1636
+2017-08-22 22:04:31  task  INFO       rule: txt\3_fields_process_alter_last\ssn_addr_phone.txt; pairs number: 1198
+2017-08-22 22:05:58  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_addr.txt; pairs number: 41171
+2017-08-22 22:08:42  task  INFO       rule: txt\3_fields_process_alter_last\f_email_gender.txt; pairs number: 153147
+2017-08-22 23:08:15  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_middle.txt; pairs number: 2409264
+2017-08-22 23:13:57  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_middle.txt; pairs number: 8249
+2017-08-22 23:14:05  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_addr.txt; pairs number: 12024
+2017-08-22 23:14:21  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_ssn.txt; pairs number: 18143
+2017-08-22 23:14:41  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_ssn.txt; pairs number: 17377
+2017-08-22 23:14:42  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_phone.txt; pairs number: 21154
+2017-08-22 23:14:55  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_ssn.txt; pairs number: 3020
+2017-08-22 23:15:06  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_addr.txt; pairs number: 3114
+2017-08-22 23:15:33  task  INFO       rule: txt\3_fields_process_alter_last\f_middle_phone.txt; pairs number: 4611
+2017-08-22 23:15:33  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_phone.txt; pairs number: 21880
+2017-08-22 23:15:48  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_phone.txt; pairs number: 3674
+2017-08-22 23:15:53  task  INFO       rule: txt\3_fields_process_alter_last\f_ssn_addr.txt; pairs number: 5530
+2017-08-22 23:16:00  task  INFO       rule: txt\3_fields_process_alter_last\f_email_ssn.txt; pairs number: 0
+2017-08-22 23:16:06  task  INFO       rule: txt\3_fields_process_alter_last\f_email_dob.txt; pairs number: 5
+2017-08-22 23:16:18  task  INFO       rule: txt\3_fields_process_alter_last\f_addr_phone.txt; pairs number: 6723
+2017-08-22 23:16:54  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_middle.txt; pairs number: 17879
+2017-08-22 23:17:34  task  INFO       rule: txt\3_fields_process_alter_last\f_dob_gender.txt; pairs number: 69050
+2017-08-22 23:18:03  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_ssn.txt; pairs number: 16110
+2017-08-22 23:18:05  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_addr.txt; pairs number: 13910
+2017-08-22 23:18:16  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_ssn.txt; pairs number: 3034
+2017-08-22 23:18:30  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_addr.txt; pairs number: 2947
+2017-08-22 23:18:43  task  INFO       rule: txt\3_fields_process_alter_last\dob_middle_phone.txt; pairs number: 5261
+2017-08-22 23:19:20  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_addr.txt; pairs number: 6036
+2017-08-22 23:19:32  task  INFO       rule: txt\3_fields_process_alter_last\dob_ssn_phone.txt; pairs number: 3379
+2017-08-22 23:19:40  task  INFO       rule: txt\3_fields_process_alter_last\dob_gender_phone.txt; pairs number: 23680
+2017-08-22 23:19:48  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_ssn.txt; pairs number: 2333
+2017-08-22 23:20:08  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_phone.txt; pairs number: 5283
+2017-08-22 23:20:20  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_addr.txt; pairs number: 5126
+2017-08-22 23:20:36  task  INFO       rule: txt\3_fields_process_alter_last\gender_ssn_phone.txt; pairs number: 3408
+2017-08-22 23:21:04  task  INFO       rule: txt\3_fields_process_alter_last\gender_addr_phone.txt; pairs number: 7644
+2017-08-22 23:21:07  task  INFO       rule: txt\3_fields_process_alter_last\f_gender_addr.txt; pairs number: 144028
+2017-08-22 23:21:08  task  INFO       rule: txt\3_fields_process_alter_last\gender_middle_addr.txt; pairs number: 41171
+2017-08-22 23:21:19  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_phone.txt; pairs number: 465
+2017-08-22 23:21:25  task  INFO       rule: txt\3_fields_process_alter_last\middle_ssn_addr.txt; pairs number: 1016
+2017-08-22 23:21:26  task  INFO       rule: txt\3_fields_process_alter_last\middle_addr_phone.txt; pairs number: 1636
+2017-08-22 23:21:28  task  INFO       rule: txt\3_fields_process_alter_last\ssn_addr_phone.txt; pairs number: 1198
+2017-08-22 23:21:50  task  INFO       rule: txt\3_fields_process_alter_last\f_email_gender.txt; pairs number: 153147
+2017-08-23 14:04:09  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-23 14:04:14  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-23 14:04:14  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-23 14:04:14  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 1110, in _do_return_conn
+    self._pool.put(conn, False)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\queue.py", line 104, in put
+    raise Full
+sqlalchemy.util.queue.Full
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-23 14:04:39  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_middle.txt; pairs number: 8249
+2017-08-23 14:04:57  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_addr.txt; pairs number: 12024
+2017-08-23 14:05:04  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_ssn.txt; pairs number: 3020
+2017-08-23 14:05:33  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_phone.txt; pairs number: 4611
+2017-08-23 14:05:33  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_addr.txt; pairs number: 3114
+2017-08-23 14:05:35  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_ssn.txt; pairs number: 17377
+2017-08-23 14:05:56  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_phone.txt; pairs number: 21154
+2017-08-23 14:05:56  task  INFO       rule: txt\3_fields_process_alter_last_1\f_ssn_phone.txt; pairs number: 3674
+2017-08-23 14:06:01  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_ssn.txt; pairs number: 0
+2017-08-23 14:06:02  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_dob.txt; pairs number: 5
+2017-08-23 14:06:18  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_ssn.txt; pairs number: 18143
+2017-08-23 14:06:21  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_phone.txt; pairs number: 21880
+2017-08-23 14:06:33  task  INFO       rule: txt\3_fields_process_alter_last_1\f_ssn_addr.txt; pairs number: 5530
+2017-08-23 14:06:53  task  INFO       rule: txt\3_fields_process_alter_last_1\f_addr_phone.txt; pairs number: 6723
+2017-08-23 14:07:20  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_ssn.txt; pairs number: 3034
+2017-08-23 14:07:29  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_addr.txt; pairs number: 13910
+2017-08-23 14:07:48  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_addr.txt; pairs number: 2947
+2017-08-23 14:07:49  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_ssn.txt; pairs number: 16110
+2017-08-23 14:07:54  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_phone.txt; pairs number: 5261
+2017-08-23 14:08:07  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_middle.txt; pairs number: 17879
+2017-08-23 14:08:09  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_ssn.txt; pairs number: 2333
+2017-08-23 14:08:24  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_ssn_phone.txt; pairs number: 3379
+2017-08-23 14:08:40  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_phone.txt; pairs number: 5283
+2017-08-23 14:08:43  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_gender.txt; pairs number: 69050
+2017-08-23 14:09:03  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_ssn_phone.txt; pairs number: 3408
+2017-08-23 14:09:12  task  INFO       rule: txt\3_fields_process_alter_last_1\middle_ssn_addr.txt; pairs number: 1016
+2017-08-23 14:09:24  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_ssn_addr.txt; pairs number: 6036
+2017-08-23 14:09:31  task  INFO       rule: txt\3_fields_process_alter_last_1\middle_ssn_phone.txt; pairs number: 465
+2017-08-23 14:09:36  task  INFO       rule: txt\3_fields_process_alter_last_1\middle_addr_phone.txt; pairs number: 1636
+2017-08-23 14:09:44  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_ssn_addr.txt; pairs number: 5126
+2017-08-23 14:09:51  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_addr_phone.txt; pairs number: 7644
+2017-08-23 14:09:52  task  INFO       rule: txt\3_fields_process_alter_last_1\ssn_addr_phone.txt; pairs number: 1198
+2017-08-23 14:10:00  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_addr.txt; pairs number: 144028
+2017-08-23 14:10:18  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_phone.txt; pairs number: 23680
+2017-08-23 14:10:26  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_addr.txt; pairs number: 41171
+2017-08-23 14:14:23  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_gender.txt; pairs number: 153147
+2017-08-23 14:41:55  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_middle.txt; pairs number: 8249
+2017-08-23 14:42:08  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_addr.txt; pairs number: 12024
+2017-08-23 14:43:05  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_ssn.txt; pairs number: 18143
+2017-08-23 14:43:44  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_phone.txt; pairs number: 21154
+2017-08-23 14:43:59  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_ssn.txt; pairs number: 17377
+2017-08-23 14:44:14  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_ssn.txt; pairs number: 3020
+2017-08-23 14:44:41  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_addr.txt; pairs number: 3114
+2017-08-23 14:45:13  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_phone.txt; pairs number: 21880
+2017-08-23 14:45:17  task  INFO       rule: txt\3_fields_process_alter_last_1\f_middle_phone.txt; pairs number: 4611
+2017-08-23 14:45:43  task  INFO       rule: txt\3_fields_process_alter_last_1\f_ssn_phone.txt; pairs number: 3674
+2017-08-23 14:45:45  task  INFO       rule: txt\3_fields_process_alter_last_1\f_ssn_addr.txt; pairs number: 5530
+2017-08-23 14:45:51  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_ssn.txt; pairs number: 0
+2017-08-23 14:45:56  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_dob.txt; pairs number: 5
+2017-08-23 14:46:46  task  INFO       rule: txt\3_fields_process_alter_last_1\f_addr_phone.txt; pairs number: 6723
+2017-08-23 14:47:35  task  INFO       rule: txt\3_fields_process_alter_last_1\f_dob_gender.txt; pairs number: 69050
+2017-08-23 14:48:22  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_middle.txt; pairs number: 17879
+2017-08-23 14:49:26  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_addr.txt; pairs number: 13910
+2017-08-23 14:49:26  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_ssn.txt; pairs number: 16110
+2017-08-23 14:49:52  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_ssn.txt; pairs number: 3034
+2017-08-23 14:50:14  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_addr.txt; pairs number: 2947
+2017-08-23 14:50:21  task  INFO       rule: txt\3_fields_process_alter_last_1\f_gender_addr.txt; pairs number: 144028
+2017-08-23 14:50:37  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_middle_phone.txt; pairs number: 5261
+2017-08-23 14:50:51  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_ssn_addr.txt; pairs number: 6036
+2017-08-23 14:51:07  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_ssn.txt; pairs number: 2333
+2017-08-23 14:51:26  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_ssn_phone.txt; pairs number: 3379
+2017-08-23 14:51:53  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_phone.txt; pairs number: 5283
+2017-08-23 14:52:48  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_middle_addr.txt; pairs number: 41171
+2017-08-23 14:52:58  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_ssn_addr.txt; pairs number: 5126
+2017-08-23 14:58:58  task  INFO       rule: txt\3_fields_process_alter_last_1\dob_gender_phone.txt; pairs number: 23680
+2017-08-23 14:58:58  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.OperationalError: ORA-03135: connection lost contact
+Process ID: 22393
+Session ID: 54 Serial number: 15601
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03135: connection lost contact
+Process ID: 22393
+Session ID: 54 Serial number: 15601 [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.address1 = p2.address1 and p1.middle = p2.middle and p1.ssn = p2.ssn']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-23 14:58:58  concurrent.futures ERROR      exception calling callback for <Future at 0x279d2851a58 state=finished raised OperationalError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.OperationalError: ORA-03135: connection lost contact
+Process ID: 22393
+Session ID: 54 Serial number: 15601
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "deterministic_rule_pipeline_new_version.py", line 70, in pair2txt_multi
+    data = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "deterministic_rule_pipeline_new_version.py", line 95, in store_result_job
+    res = execute_sql(sql)
+  File "deterministic_rule_pipeline_new_version.py", line 40, in execute_sql
+    res = conn.execute(rule)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03135: connection lost contact
+Process ID: 22393
+Session ID: 54 Serial number: 15601 [SQL: 'select * from pcm p1, pcm p2 where p1.ENTERPRISEID <> p2.ENTERPRISEID and p1.address1 = p2.address1 and p1.middle = p2.middle and p1.ssn = p2.ssn']
+2017-08-23 14:58:58  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-23 14:59:07  task  INFO       rule: txt\3_fields_process_alter_last_1\middle_ssn_phone.txt; pairs number: 465
+2017-08-23 14:59:07  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-23 14:59:16  task  INFO       rule: txt\3_fields_process_alter_last_1\middle_addr_phone.txt; pairs number: 1636
+2017-08-23 14:59:28  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_ssn_phone.txt; pairs number: 3408
+2017-08-23 14:59:29  task  INFO       rule: txt\3_fields_process_alter_last_1\ssn_addr_phone.txt; pairs number: 1198
+2017-08-23 14:59:55  task  INFO       rule: txt\3_fields_process_alter_last_1\gender_addr_phone.txt; pairs number: 7644
+2017-08-23 15:00:02  task  INFO       rule: txt\3_fields_process_alter_last_1\f_email_gender.txt; pairs number: 153147
+2017-08-23 15:59:14  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.OperationalError: ORA-03135: connection lost contact
+Process ID: 23164
+Session ID: 50 Serial number: 20131
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03135: connection lost contact
+Process ID: 23164
+Session ID: 50 Serial number: 20131 [SQL: 'select * from\n                     (select * from pcm where enterpriseid=12381793)\n                     union\n                     (select * from pcm  where ENTERPRISEID=14417353)\n                ']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist

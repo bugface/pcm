@@ -1,5 +1,6 @@
 import sys
 import os.path
+import os
 
 def input_rules(source_file, indicator):
 	if not os.path.isfile(source_file):
@@ -7,6 +8,7 @@ def input_rules(source_file, indicator):
 			pass
 
 	while 1:
+		os.system("cls")
 		all_rules = []
 		print("Current rules: ")
 		with open(source_file, 'r') as f:
