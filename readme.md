@@ -111,6 +111,16 @@
 	- txt file: processed_alter_last.txt (893 pairs)
 	- submission: sub23.csv
 	- result 17: percision=0.5789 (517 of 893 are correct)
+	- revision: manuelly check records to imporve the percision
+	- sumission: sub23a.csv -> 21 are correct from 381
+	- submission: sub23_revised_1 -> 2 correct are lost and 20 are incorrect still remain
+	- manully removed some other dupes -> left 520 records
+<br><br>
+20. - Combining all current data together (no error check yet) for submission
+	- submission: sub24.csv
+	- result: recall=0.9744; percision=0.9898, f-score=0.982 (from pcm)
+	- data: based on 57489 as total -> 56588 total find and 56013 correct matched
+<br><br>
 #### *************************************************************************************************************
 
 ## table of fields combination

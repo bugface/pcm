@@ -388,7 +388,7 @@ def main():
     # output_csv_file = "process_ssn.csv"
     # output_pair_file = "process_ssn.txt"
 
-    #process mrn job
+    #process mrn jobP
     # base_file = "stgy7_process_first_last_address_dob_ssn_merged_with_dedupe_combined.txt"
     # rule_file = "rules_detail_mrn.txt"
     # folder = "txt\\3_fields_process_mrn"
@@ -406,11 +406,11 @@ def main():
 
     #process alter_last job
     base_file = "56068.txt"
-    rule_file = "rules_detail_alter_last.txt"
-    folder = "txt\\3_fields_process_alter_last_1"
+    rule_file = "rules_detail_missing.txt"
+    folder = "txt\\missing"
     job = "p"
-    output_csv_file = "process_alter_last_1.csv"
-    output_pair_file = "process_alter_last_1.txt"
+    output_csv_file = "process_missing.csv"
+    output_pair_file = "process_missing.txt"
 
     if not os.path.exists(folder):
         os.makedirs(folder)

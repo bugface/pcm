@@ -7,8 +7,8 @@ def check():
 	# file1 = "55437.txt"
 	# file2 = "processed_alternative.txt"
 
-	file1 = "process_alter_last.txt"
-	file2 = "56068.txt"
+	file1 = "process_full_cover.txt"
+	file2 = "56588.txt"
 
 	if os.path.getsize(file1) > os.path.getsize(file2):
 		f1 = file1
@@ -44,7 +44,6 @@ def check():
 			else:
 				k += 1
 
-	create_submission_csv(file1, "sub23_raw.csv")
 	print("dupe num: {}".format(k))
 
 def cal_len():
@@ -62,9 +61,9 @@ def cal_len():
 
 
 def main():
-	check()
+	#check()
 	#cal_len()
-
+	create_submission_csv("gou.txt", "gou.csv")
 
 if __name__ == '__main__':
 	main()

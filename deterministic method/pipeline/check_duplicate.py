@@ -1,5 +1,5 @@
 import csv
-from deterministic_rule_pipeline import create_submission_csv, pairs2csv, pair2csv_helper_query, pair2csv_helper_output
+from deterministic_rule_pipeline import create_submission_csv, pairs2csv
 
 def check_dupe(file1, file2, file3):
 	s = set()
@@ -42,9 +42,8 @@ def csv2txt(csv_file, txt_file):
 
 def main():
 	#csv2txt("submission2.csv", "submission2.txt")
-	pairs = check_dupe("stgy7_process_first_last_address_dob_ssn_combined.txt", "submission2.txt", "der_vs_pro.txt")
-	#create_submission_csv("der_vs_pro.txt", "sub14.csv")
-	pairs2csv(pairs, "der_vs_pro_after_dedupe.csv")
+	pairs = check_dupe("56588.txt", "process_full_cover.txt", "process_full_cover_1.txt")
+	pairs2csv(pairs, "process_full_cover.csv")
 
 if __name__ == '__main__':
 	main()

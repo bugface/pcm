@@ -3275,3 +3275,656 @@ Traceback (most recent call last):
   File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
     dbapi_connection.close()
 cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-26 19:47:38  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1405, in _handle_dbapi_exception
+    util.reraise(*exc_info)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 857, in output_type_handler
+    def output_type_handler(cursor, name, defaultType,
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-26 19:49:13  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1405, in _handle_dbapi_exception
+    util.reraise(*exc_info)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 857, in output_type_handler
+    def output_type_handler(cursor, name, defaultType,
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-27 00:54:31  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.OperationalError: ORA-03113: end-of-file on communication channel
+Process ID: 16213
+Session ID: 48 Serial number: 5021
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03113: end-of-file on communication channel
+Process ID: 16213
+Session ID: 48 Serial number: 5021 [SQL: 'select * from\n             (select * from pcm where enterpriseid=15367484)\n             union\n             (select * from pcm  where ENTERPRISEID=13414371)\n        ']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-27 00:54:31  sqlalchemy.pool.QueuePool ERROR      Exception during reset or similar
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 687, in _finalize_fairy
+    fairy._reset(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 829, in _reset
+    pool._dialect.do_rollback(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 440, in do_rollback
+    dbapi_connection.rollback()
+cx_Oracle.OperationalError: ORA-03113: end-of-file on communication channel
+Process ID: 16215
+Session ID: 56 Serial number: 31151
+2017-08-27 00:54:31  sqlalchemy.pool.QueuePool ERROR      Exception closing connection <cx_Oracle.Connection to alexgre@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=temp1.clx2hx01phun.us-east-1.rds.amazonaws.com)(PORT=1521))(CONNECT_DATA=(SID=ORCL)))>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.OperationalError: ORA-03113: end-of-file on communication channel
+Process ID: 16217
+Session ID: 41 Serial number: 55587
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03113: end-of-file on communication channel
+Process ID: 16217
+Session ID: 41 Serial number: 55587 [SQL: 'select * from\n             (select * from pcm where enterpriseid=12405973)\n             union\n             (select * from pcm  where ENTERPRISEID=12922334)\n        ']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 300, in _close_connection
+    self._dialect.do_close(connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 446, in do_close
+    dbapi_connection.close()
+cx_Oracle.DatabaseError: DPI-1054: connection cannot be closed when open statements or LOBs exist
+2017-08-27 00:54:31  concurrent.futures ERROR      exception calling callback for <Future at 0x1ba9be552b0 state=finished raised OperationalError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 721, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 443, in do_commit
+    dbapi_connection.commit()
+cx_Oracle.OperationalError: ORA-03113: end-of-file on communication channel
+Process ID: 16219
+Session ID: 36 Serial number: 40225
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 178, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 206, in pair2csv_helper_query
+    res.close()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1944, in __exit__
+    self.transaction.commit()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1632, in commit
+    self._do_commit()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1663, in _do_commit
+    self.connection._commit_impl()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 723, in _commit_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 721, in _commit_impl
+    self.engine.dialect.do_commit(self.connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 443, in do_commit
+    dbapi_connection.commit()
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03113: end-of-file on communication channel
+Process ID: 16219
+Session ID: 36 Serial number: 40225
+2017-08-27 00:54:31  concurrent.futures ERROR      exception calling callback for <Future at 0x1ba9be55358 state=finished raised OperationalError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.OperationalError: ORA-03113: end-of-file on communication channel
+Process ID: 16213
+Session ID: 48 Serial number: 5021
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 178, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 203, in pair2csv_helper_query
+    res = conn.execute(sql)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03113: end-of-file on communication channel
+Process ID: 16213
+Session ID: 48 Serial number: 5021 [SQL: 'select * from\n             (select * from pcm where enterpriseid=15367484)\n             union\n             (select * from pcm  where ENTERPRISEID=13414371)\n        ']
+2017-08-27 00:54:31  concurrent.futures ERROR      exception calling callback for <Future at 0x1ba9be55400 state=finished raised OperationalError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.OperationalError: ORA-03113: end-of-file on communication channel
+Process ID: 16217
+Session ID: 41 Serial number: 55587
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 178, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 203, in pair2csv_helper_query
+    res = conn.execute(sql)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (cx_Oracle.OperationalError) ORA-03113: end-of-file on communication channel
+Process ID: 16217
+Session ID: 41 Serial number: 55587 [SQL: 'select * from\n             (select * from pcm where enterpriseid=12405973)\n             union\n             (select * from pcm  where ENTERPRISEID=12922334)\n        ']
+2017-08-27 00:54:52  concurrent.futures ERROR      exception calling callback for <Future at 0x1ba9be555f8 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 521, in checkout
+    rec.checkin()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 518, in checkout
+    dbapi_connection = rec.get_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 607, in get_connection
+    self.__connect()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 794, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+cx_Oracle.DatabaseError: ORA-12170: TNS:Connect timeout occurred
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 178, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 202, in pair2csv_helper_query
+    with engine.begin() as conn:
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1981, in begin
+    conn = self.contextual_connect(close_with_result=close_with_result)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2112, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2151, in _wrap_pool_connect
+    e, dialect, self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1465, in _handle_dbapi_exception_noconnection
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 521, in checkout
+    rec.checkin()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 518, in checkout
+    dbapi_connection = rec.get_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 607, in get_connection
+    self.__connect()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 794, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-12170: TNS:Connect timeout occurred
+2017-08-27 00:54:53  concurrent.futures ERROR      exception calling callback for <Future at 0x1ba9be556a0 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 521, in checkout
+    rec.checkin()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 518, in checkout
+    dbapi_connection = rec.get_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 607, in get_connection
+    self.__connect()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 794, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+cx_Oracle.DatabaseError: ORA-12170: TNS:Connect timeout occurred
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 178, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 202, in pair2csv_helper_query
+    with engine.begin() as conn:
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1981, in begin
+    conn = self.contextual_connect(close_with_result=close_with_result)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2112, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2151, in _wrap_pool_connect
+    e, dialect, self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1465, in _handle_dbapi_exception_noconnection
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 521, in checkout
+    rec.checkin()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 518, in checkout
+    dbapi_connection = rec.get_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 607, in get_connection
+    self.__connect()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 794, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-12170: TNS:Connect timeout occurred
+2017-08-27 00:54:53  concurrent.futures ERROR      exception calling callback for <Future at 0x1ba9be554a8 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 521, in checkout
+    rec.checkin()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 518, in checkout
+    dbapi_connection = rec.get_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 607, in get_connection
+    self.__connect()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 794, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+cx_Oracle.DatabaseError: ORA-12170: TNS:Connect timeout occurred
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 178, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 202, in pair2csv_helper_query
+    with engine.begin() as conn:
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1981, in begin
+    conn = self.contextual_connect(close_with_result=close_with_result)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2112, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2151, in _wrap_pool_connect
+    e, dialect, self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1465, in _handle_dbapi_exception_noconnection
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 521, in checkout
+    rec.checkin()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 518, in checkout
+    dbapi_connection = rec.get_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 607, in get_connection
+    self.__connect()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 794, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-12170: TNS:Connect timeout occurred
+2017-08-27 00:54:53  concurrent.futures ERROR      exception calling callback for <Future at 0x1ba9be55550 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 521, in checkout
+    rec.checkin()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 518, in checkout
+    dbapi_connection = rec.get_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 607, in get_connection
+    self.__connect()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 794, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+cx_Oracle.DatabaseError: ORA-12170: TNS:Connect timeout occurred
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 178, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 202, in pair2csv_helper_query
+    with engine.begin() as conn:
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1981, in begin
+    conn = self.contextual_connect(close_with_result=close_with_result)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2112, in contextual_connect
+    self._wrap_pool_connect(self.pool.connect, None),
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2151, in _wrap_pool_connect
+    e, dialect, self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1465, in _handle_dbapi_exception_noconnection
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 2147, in _wrap_pool_connect
+    return fn()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 387, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 766, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 521, in checkout
+    rec.checkin()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 187, in reraise
+    raise value
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 518, in checkout
+    dbapi_connection = rec.get_connection()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 607, in get_connection
+    self.__connect()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\pool.py", line 651, in __connect
+    connection = pool._invoke_creator(self)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\strategies.py", line 105, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\dialects\oracle\cx_oracle.py", line 794, in connect
+    *cargs, **cparams)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 393, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) ORA-12170: TNS:Connect timeout occurred
+2017-08-27 02:54:54  concurrent.futures ERROR      exception calling callback for <Future at 0x1bac657f550 state=finished raised DatabaseError>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+cx_Oracle.DatabaseError: DPI-1002: invalid OCI handle
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 203, in pair2csv_helper_query
+    res = conn.execute(sql)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 939, in execute
+    return self._execute_text(object, multiparams, params)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1097, in _execute_text
+    statement, parameters
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1189, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1182, in _execute_context
+    context)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) DPI-1002: invalid OCI handle [SQL: 'select * from\n             (select * from pcm where enterpriseid=14045622)\n             union\n             (select * from pcm  where ENTERPRISEID=15147110)\n        ']
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 701, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 440, in do_rollback
+    dbapi_connection.rollback()
+cx_Oracle.DatabaseError: DPI-1002: invalid OCI handle
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 178, in pair2csv_helper_output
+    results = future.result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 398, in result
+    return self.__get_result()
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 357, in __get_result
+    raise self._exception
+  File "D:\anacoda\lib\concurrent\futures\thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline.py", line 206, in pair2csv_helper_query
+    res.close()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1942, in __exit__
+    self.transaction.rollback()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1621, in rollback
+    self._do_rollback()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1659, in _do_rollback
+    self.connection._rollback_impl()
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 703, in _rollback_impl
+    self._handle_dbapi_exception(e, None, None, None, None)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\util\compat.py", line 186, in reraise
+    raise value.with_traceback(tb)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\base.py", line 701, in _rollback_impl
+    self.engine.dialect.do_rollback(self.connection)
+  File "D:\anacoda\lib\site-packages\sqlalchemy\engine\default.py", line 440, in do_rollback
+    dbapi_connection.rollback()
+sqlalchemy.exc.DatabaseError: (cx_Oracle.DatabaseError) DPI-1002: invalid OCI handle

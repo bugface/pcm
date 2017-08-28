@@ -63,7 +63,7 @@ def single_task_setup(input_file, output_file, alternative_spelling_dict):
                 if sl in fl_list or (fl == sl and fl != ""):
                     matched_result.add((f_id, s_id))
 
-                if measure_ssn_similarity(f_ssn, s_ssn, "w") > 0.95:
+                if measure_ssn_similarity(f_ssn, s_ssn, "w") > 0.9:
                     matched_result.add((f_id, s_id))
 
                 if measure_mrn_similarity(f_mrn, s_mrn, "w") > 0.8:
@@ -170,11 +170,11 @@ def multi_task_setup(input_file, output_file, tasks, alternative_spelling_dict):
         wait(futures_)
 
 def main():
-    input_file = "process_alter_last.csv"
-    output_file = "processed_alter_last.txt"
-    alternative_spelling_dict = create_alternative_name_dict()
+    #input_file = "process_alter_last.csv"
+    output_file = "processed_alter_last_diff_v2.txt"
+    #alternative_spelling_dict = create_alternative_name_dict()
     #single thread is way faster than multithreading
-    single_task_setup(input_file, output_file, alternative_spelling_dict)
+    #single_task_setup(input_file, output_file, alternative_spelling_dict)
 
     # n = bufcount(input_file) - 1
     # tasks = []
@@ -194,9 +194,9 @@ def main():
     #         t = each[:-1].split("\t")
     #         pairs.add((int(t[0]), int(t[1])))
     # print(len(pairs))
-    # pairs2csv(pairs, "processed_alternaitve.csv")
+    # pairs2csv(pairs, "processed_alter_last_diff.csv")
 
-    # create_submission_csv(output_file, "sub23.csv")
+    create_submission_csv(output_file, "sub23diffb.csv")
 
 if __name__ == '__main__':
     main()

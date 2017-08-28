@@ -29,6 +29,7 @@ def create_submission_csv(txt_file, csv_file):
             for each in f:
                 l = []
                 data = each[:-1].split('\t')
+                print(data)
                 l.append(data[0])
                 l.append(data[1])
                 l.append(1)
