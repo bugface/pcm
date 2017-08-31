@@ -9,6 +9,7 @@ from deterministic_rule_pipeline import pairs2csv, create_submission_csv
 
 lock = RLock()
 
+
 def create_alternative_name_dict():
     src = "spellingalternative"
     name_dict = dict()
@@ -23,6 +24,7 @@ def create_alternative_name_dict():
                 name_dict[key] = [value]
 
     return name_dict
+
 
 def single_task_setup(input_file, output_file, alternative_spelling_dict):
     f_id = ""
@@ -85,6 +87,7 @@ def single_task_setup(input_file, output_file, alternative_spelling_dict):
     #     for each in matched_result:
     #         print("{}\t{}".format(each[0], each[1]), file=f, end='\n')
 
+
 def output_matched_result(future, output_file):
     pairs = future.result()
 
@@ -99,6 +102,7 @@ def output_matched_result(future, output_file):
                 print("{}\t{}".format(pair[0], pair[1]), file=f, end='\n')
     finally:
         lock.release()
+
 
 def process_alternative_name(alternative_spelling_dict, csv_input_file, se):
     f_id = ""
@@ -151,7 +155,7 @@ def bufcount(filename):
     f = open(filename)
     lines = 0
     buf_size = 1024 * 1024
-    read_f = f.read # loop optimization
+    read_f = f.read  # loop optimization
 
     buf = read_f(buf_size)
     while buf:
@@ -160,20 +164,24 @@ def bufcount(filename):
 
     return lines
 
+
 def multi_task_setup(input_file, output_file, tasks, alternative_spelling_dict):
     futures_ = []
     with ThreadPoolExecutor(max_workers=4) as excutor:
         for task in tasks:
-            future_ = excutor.submit(process_alternative_name, alternative_spelling_dict=alternative_spelling_dict, csv_input_file=input_file, se=task)
-            future_.add_done_callback(functools.partial(output_matched_result, output_file=output_file))
+            future_ = excutor.submit(
+                process_alternative_name, alternative_spelling_dict=alternative_spelling_dict, csv_input_file=input_file, se=task)
+            future_.add_done_callback(functools.partial(
+                output_matched_result, output_file=output_file))
             futures_.append(future_)
         wait(futures_)
+
 
 def main():
     #input_file = "process_alter_last.csv"
     output_file = "processed_alter_last_diff_v2.txt"
     #alternative_spelling_dict = create_alternative_name_dict()
-    #single thread is way faster than multithreading
+    # single thread is way faster than multithreading
     #single_task_setup(input_file, output_file, alternative_spelling_dict)
 
     # n = bufcount(input_file) - 1
@@ -197,6 +205,7 @@ def main():
     # pairs2csv(pairs, "processed_alter_last_diff.csv")
 
     create_submission_csv(output_file, "sub23diffb.csv")
+
 
 if __name__ == '__main__':
     main()

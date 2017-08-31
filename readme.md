@@ -121,6 +121,19 @@
 	- result: recall=0.9744; percision=0.9898, f-score=0.982 (from pcm)
 	- data: based on 57489 as total -> 56588 total find and 56013 correct matched
 <br><br>
+20. - using all the 4-fields-rule that not used before and all the 3-fields rules
+	- totally obtained 337497 pairs
+	- submission: sub25_raw.csv
+	- data: based on pcm -> 232 are correct pairs
+	- revision: filter_pipeline
+	- result:
+<br><br>
+21 - using the 56588 data set apply the negative filter (ssn similarity < 0.9 and mrn distance is larger than 400) to obtain a negative dataset for false pairs check
+   - all the filtered pairs are stored in the 56588_neg.txt (7344 pairs)
+   - related detail of each records are stored in the 56588_neg.csv
+   - submission: sub26_neg.csv
+   - result: percision: 0.4522 (3321 are correct which means rest are not (does not make sense at all))
+<br><br>
 #### *************************************************************************************************************
 
 ## table of fields combination

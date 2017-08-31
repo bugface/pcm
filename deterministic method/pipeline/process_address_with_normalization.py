@@ -4,49 +4,49 @@ import re
 import time
 import sys
 
-#pre config for process address
-    #street name pattern
+# pre config for process address
+# street name pattern
 pat1 = re.compile('^[0-9]+[DHNRST]{2}[STAVEDR]*$')
 pat2 = re.compile("^[0-9]+$")
 pat11 = re.compile("^[0-9]+STR$")
 pat3 = re.compile("^[0-9]+\s+[0-9]+[DHNRST]*$")
 pat5 = re.compile("^[A-Z]+[0-9]+[DHNRST]*$")
-#p7: '38 BORKEL' this has been matched but not processed correctly
+# p7: '38 BORKEL' this has been matched but not processed correctly
 pat7 = re.compile("^[0-9]+[A-Z]*\s+[A-Z]+$")
 #pat8 = re.compile("^[0-9]+\s[DHNRST]*\s*[A-Z]*$")
 pat8 = re.compile("^[0-9]+\s[DHNRST]*$")
 pat10 = re.compile("^[0-9]+[DHNRST]{2}[0-9]+$")
-#street number pattern
+# street number pattern
 pat4 = re.compile("^[0-9]+[A-Z]+$")
 pat6 = re.compile("^[0-9]+-[0-9]+$")
 pat9 = re.compile("^[0-9]+\s[0-9]+$")
 
 numeric2num = {
-    'THIRD':'3',
-    'SIXTH':'6',
-    'FIFTH':'5',
-    'SEVENTH':'7',
-    'SEVENTEENTH':'17',
-    'FOURTH':'4',
-    'TWELFTH':'12',
-    'TENTH':'10',
-    'ELEVENTH':'11',
-    'NINETEENTH':'19',
-    'FIFTEENTH':'15',
-    'THIRTEENTH':'13',
-    'NINTH':'9',
-    'FOURTEENTH':'14',
-    'EIGHTEENTH':'18',
-    'SIXTEENTH':'16',
-    'EIGHTH':'8',
-    'SECOND':'2',
-    'FIRST':'1'
+    'THIRD': '3',
+    'SIXTH': '6',
+    'FIFTH': '5',
+    'SEVENTH': '7',
+    'SEVENTEENTH': '17',
+    'FOURTH': '4',
+    'TWELFTH': '12',
+    'TENTH': '10',
+    'ELEVENTH': '11',
+    'NINETEENTH': '19',
+    'FIFTEENTH': '15',
+    'THIRTEENTH': '13',
+    'NINTH': '9',
+    'FOURTEENTH': '14',
+    'EIGHTEENTH': '18',
+    'SIXTEENTH': '16',
+    'EIGHTH': '8',
+    'SECOND': '2',
+    'FIRST': '1'
 }
 
 numdict = {
-    "one":1, "two":2, "three":3, "four":4, "five":5, "six":6, "seven":7, "eight":8,
-        "nine":9, "ten":10, "eleven":11, "twelve":12, "thirteen":13, "fourteen":14, "fifteen":15,
-        "sixteen":16, "seventeen":17, "eighteen":18, "nineteen":19
+    "one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8,
+    "nine": 9, "ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
+    "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19
 }
 
 road2abbv = {
@@ -67,10 +67,10 @@ addvdic = {
 }
 
 direction2abbv = {
-    "WEST":"W",
-    "EAST":"E",
-    "SOUTH":"S",
-    "NORTH":"N",
+    "WEST": "W",
+    "EAST": "E",
+    "SOUTH": "S",
+    "NORTH": "N",
     "SOUTHEAST": "SE",
     "SOUTHWEST": "SW",
     "NORTHEAST": "NE",
@@ -78,16 +78,19 @@ direction2abbv = {
 }
 
 post_type = ['ST.', 'ST', 'STREET', 'AVE', 'AVENUE', 'PKWY', 'WAY', 'PL',
-            'ROAD', 'RD', 'PLZ', 'HWY', 'TER', 'TERR', 'STREE', 'PLACE',
-            'BLVD', 'BOULEVARD', 'DRIVE', 'DR', 'CIRCLE', 'AV', 'LOOP',
-            'CIR', 'HTS', 'CT', "PATH", "LN", 'LANE', 'BVLD', 'LAN', 'BLUD']
+             'ROAD', 'RD', 'PLZ', 'HWY', 'TER', 'TERR', 'STREE', 'PLACE',
+             'BLVD', 'BOULEVARD', 'DRIVE', 'DR', 'CIRCLE', 'AV', 'LOOP',
+             'CIR', 'HTS', 'CT', "PATH", "LN", 'LANE', 'BVLD', 'LAN', 'BLUD']
 
-#helper functions
+# helper functions
+
+
 def contain_digit(s):
     for each in s:
         if each.isdigit():
             return True
     return False
+
 
 def normalize_address(addr_from_csv):
     raw_an = None
@@ -110,7 +113,7 @@ def normalize_address(addr_from_csv):
     dic = naddr[0]
     # print(dic)
 
-    #process address number
+    # process address number
     '''
     question: some address numbe match a pattern like "B123" or "123A",
     should we care about the character in front of or after the number?
@@ -124,7 +127,7 @@ def normalize_address(addr_from_csv):
             pure_an += re.findall("[0-9]+", raw_an)[0]
             if pat4.match(raw_an):
                 s = re.findall("[A-Z]+", raw_an)[0]
-                if s in ['W','S','E','N'] or s in direction2abbv:
+                if s in ['W', 'S', 'E', 'N'] or s in direction2abbv:
                     extra_for_sn += s
             elif pat6.match(raw_an):
                 pure_an += re.findall("[0-9]+", raw_an)[1]
@@ -136,16 +139,16 @@ def normalize_address(addr_from_csv):
     if pure_an[0:1] == '0':
         pure_an = pure_an[1:]
 
-    #process address street name
+    # process address street name
     if 'StreetName' in dic:
         raw_sn = extra_for_sn + dic['StreetName']
 
         if "'" in raw_sn:
             i = raw_sn.index("'")
-            raw_sn = raw_sn[:i] + raw_sn[i+1:]
+            raw_sn = raw_sn[:i] + raw_sn[i + 1:]
 
         if pat1.match(raw_sn) or pat2.match(raw_sn) or pat11.match(raw_sn):
-            #print("11111111")
+            # print("11111111")
             pure_sn += re.findall("[0-9]+", raw_sn)[0]
         elif pat3.match(raw_sn):
             nums = raw_sn.split(" ")
@@ -166,7 +169,7 @@ def normalize_address(addr_from_csv):
             extra_for_predecorator = raw_sn[:index]
             pure_sn += re.findall("[0-9]+", raw_sn[index:])[0]
         elif pat8.match(raw_sn):
-            #print("888888888888888")
+            # print("888888888888888")
             nums = raw_sn.split(" ")
             pure_sn += nums[0]
         elif pat7.match(raw_sn):
@@ -177,7 +180,7 @@ def normalize_address(addr_from_csv):
             '''
             p7_parts = raw_sn.split(" ")
             pure_sn += re.findall("[0-9]+",  p7_parts[0])[0]
-            if  p7_parts[1] not in post_type:
+            if p7_parts[1] not in post_type:
                 pure_sn += p7_parts[1]
 #                 sec = raw_sn.split(" ")
 #                 help_pat1 = re.compile("^[]$")
@@ -185,10 +188,10 @@ def normalize_address(addr_from_csv):
             if " " in raw_sn:
                 idx = raw_sn.index(" ")
                 fir = raw_sn[:idx]
-                sec = raw_sn[idx+1:]
+                sec = raw_sn[idx + 1:]
                 if fir in addvdic:
                     fir = addvdic[fir]
-                #print(sec)
+                # print(sec)
                 #print(sec in addvdic)
                 pure_sn += fir
                 if sec in addvdic:
@@ -197,10 +200,10 @@ def normalize_address(addr_from_csv):
                 elif sec in post_type:
                     #pure_sn += fir
                     sec = ""
-                #elif sec in [addvdic[x] for x in addvdic]:
+                # elif sec in [addvdic[x] for x in addvdic]:
                     #pure_sn += fir
                     #pure_sn += sec
-                #else:
+                # else:
                     #pure_sn += raw_sn.replace(" ", "")
                 pure_sn += sec
             else:
@@ -209,7 +212,7 @@ def normalize_address(addr_from_csv):
     elif extra_for_sn != "":
         pure_sn += extra_for_sn
 
-    #process street pre decorator
+    # process street pre decorator
     '''
     question: what does 'ST in front of a name of street mean? st == saint?'
     '''
@@ -232,7 +235,7 @@ def normalize_address(addr_from_csv):
         elif dic['StreetNamePostDirectional'] in val:
             pure_sn += dic['StreetNamePostDirectional']
 
-    #process StreetNamePreType
+    # process StreetNamePreType
     if 'StreetNamePreType' in dic:
         val = [road2abbv[x] for x in road2abbv]
         if dic['StreetNamePreType'] in road2abbv:
@@ -240,7 +243,7 @@ def normalize_address(addr_from_csv):
         elif dic['StreetNamePreType'] in val:
             pure_sn = dic['StreetNamePreType'] + pure_sn
 
-    #process StreetNamePostType:
+    # process StreetNamePostType:
     if 'StreetNamePostType' in dic:
         if dic['StreetNamePostType'] not in post_type:
             if " " in dic['StreetNamePostType']:
@@ -251,15 +254,15 @@ def normalize_address(addr_from_csv):
             else:
                 pure_sn += dic['StreetNamePostType']
 
-    res = "".join([pure_an,raw_snpd,pure_sn])
+    res = "".join([pure_an, raw_snpd, pure_sn])
     if pat10.match(res):
-        #print("!!!!!!!!")
+        # print("!!!!!!!!")
         res = re.findall("[0-9]+", res)[0]
     elif res.endswith('AVENUEE') or res.endswith('AVENUIE'):
         res = res[:-7]
 #         print(res)
 
-    #process occupyidentifier
+    # process occupyidentifier
     if 'OccupancyIdentifier' in dic:
         pat_occ_1 = re.compile("^[0-9]+[EWNS]{1}\s[0-9]+[DHNRST]*$")
         pat_occ_2 = re.compile("^[0-9]+[DHNRST]*\s[A-Z]+[0-9]*[A-Z]*")
@@ -272,21 +275,23 @@ def normalize_address(addr_from_csv):
             parts = dic['OccupancyIdentifier'].split(' ')
             res += re.findall("[0-9]+", parts[0])[0]
         elif pat_occ_3.match(dic['OccupancyIdentifier']):
-            #print(1)
+            # print(1)
             m = re.search("^[0-9]+[EWNS]{1}[0-9]+", dic['OccupancyIdentifier'])
-            #print(m)
+            # print(m)
             if m:
                 res += m.group(0)
     return res
+
 
 def record2txt(pairs):
     with open('addr_to_process_final_pairs.txt', "w") as f:
         for pair in pairs:
             print("{}\t{}".format(pair[0], pair[1]), file=f, end='\n')
 
+
 def main():
     csv_file = "addr_to_process2.csv"
-    pairs = [] #each pair append as a tuple
+    pairs = []  # each pair append as a tuple
     with open(csv_file, "r") as f:
         reader = csv.DictReader(f)
         addr1 = ""
@@ -306,6 +311,7 @@ def main():
                 addr1 = ""
                 eid1 = ""
     record2txt(pairs)
+
 
 if __name__ == '__main__':
     main()

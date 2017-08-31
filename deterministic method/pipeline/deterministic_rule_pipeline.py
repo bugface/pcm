@@ -12,15 +12,18 @@ import threading
 
 SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
 FORMAT = '%(asctime)-20s %(name)-5s %(levelname)-10s %(message)s'
-logging.basicConfig(filename='rules_log.log',level=logging.INFO, format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
+logging.basicConfig(filename='rules_log.log', level=logging.INFO,
+                    format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
 logger = logging.getLogger("task")
-title = ['ENTERPRISEID','LAST_','FIRST_','MIDDLE','SUFFIX_','DOB','GENDER','SSN','ADDRESS1','ADDRESS2', 'ZIP','MOTHERS_MAIDEN_NAME','MRN','CITY','STATE_','PHONE','PHONE2','EMAIL','ALIAS_']
+title = ['ENTERPRISEID', 'LAST_', 'FIRST_', 'MIDDLE', 'SUFFIX_', 'DOB', 'GENDER', 'SSN', 'ADDRESS1',
+         'ADDRESS2', 'ZIP', 'MOTHERS_MAIDEN_NAME', 'MRN', 'CITY', 'STATE_', 'PHONE', 'PHONE2', 'EMAIL', 'ALIAS_']
 engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 helper_title = ['ZIP', 'FIRST_', 'CITY', 'DOB', 'ADDRESS2', 'ADDRESS1', 'GENDER', 'ENTERPRISEID',
                 'MIDDLE', 'LAST_', 'SUFFIX_', 'MOTHERS_MADIDEN_NAME', 'MRN', 'STATE_', 'PHONE',
                 'PHONE2', 'EMAIL', 'ALIAS_', 'SSN']
 process_num = cpu_count()
 lock = threading.RLock()
+
 
 def create_submission_csv(txt_file, csv_file):
     with open(txt_file, "r") as f:
@@ -29,16 +32,18 @@ def create_submission_csv(txt_file, csv_file):
             for each in f:
                 l = []
                 data = each[:-1].split('\t')
-                print(data)
+                # print(data)
                 l.append(data[0])
                 l.append(data[1])
                 l.append(1)
                 writer.writerow(l)
 
+
 def execute_sql(rule):
     with engine.begin() as conn:
         res = conn.execute(rule)
     return res
+
 
 def get_rules(file):
     d = dict()
@@ -50,6 +55,7 @@ def get_rules(file):
             d[rule_title] = rule_sql
     return d
 
+
 def pair2txt(file, data):
     lock.acquire()
     try:
@@ -59,6 +65,7 @@ def pair2txt(file, data):
                 print(output, file=f, end='\n')
     finally:
         lock.release()
+
 
 def store_result_job(folder, job, rule, sql):
     file = folder + "\\" + rule + ".txt"
@@ -89,6 +96,7 @@ def store_result_job(folder, job, rule, sql):
 
     return detail
 
+
 def store_result_csv_job(future, output_csv_file):
     results = future.result()
 
@@ -102,12 +110,13 @@ def store_result_csv_job(future, output_csv_file):
         with open(output_csv_file, "a", newline='') as f:
             writer = csv.writer(f)
             for result in results:
-                line1 = result[ : 19]
-                line2 = result[19 : ]
+                line1 = result[: 19]
+                line2 = result[19:]
                 writer.writerow(line1)
                 writer.writerow(line2)
     finally:
         lock.release()
+
 
 def store_result_as_pairs(rules, folder, job, rule_file):
     output_csv_file = rule_file.split(".")[0] + "_all_in_one_csv.csv"
@@ -117,35 +126,39 @@ def store_result_as_pairs(rules, folder, job, rule_file):
         writer = csv.writer(f)
         writer.writerow(helper_title)
 
-    #with  concurrent.futures.ProcessPoolExecutor(max_workers=process_num) as excutor:
-    with  concurrent.futures.ThreadPoolExecutor(max_workers=process_num) as excutor:
+    # with  concurrent.futures.ProcessPoolExecutor(max_workers=process_num) as excutor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=process_num) as excutor:
         for rule, sql in rules.items():
             try:
-                future_ = excutor.submit(store_result_job, folder=folder, job=job, rule=rule, sql=sql)
-                future_.add_done_callback(functools.partial(store_result_csv_job, output_csv_file=output_csv_file))
+                future_ = excutor.submit(
+                    store_result_job, folder=folder, job=job, rule=rule, sql=sql)
+                future_.add_done_callback(functools.partial(
+                    store_result_csv_job, output_csv_file=output_csv_file))
                 futures_.append(future_)
             except Exception as e:
                 logger.error(e)
 
         concurrent.futures.wait(futures_)
-        #executor.shutdown()
+        # executor.shutdown()
 
-    #another way to implement
+    # another way to implement
     # pool = Pool(processes=process_num)
     # for rule, sql in rules.items():
     #   pool.apply_async(store_result_job, args=(rule, sql))
     # pool.close()
     # pool.join()
 
+
 def _dedupe(file, dataset):
     with open(file, "r") as f:
         for each in f:
             data = each[:-1].split('\t')
-            #print(data)
+            # print(data)
             t = (data[0], data[1])
             tprim = (data[1], data[0])
             if t not in dataset and tprim not in dataset:
                 dataset.add(t)
+
 
 def combine_pair_files_with_dedupe(base_file, new_files, output_file):
     pairs = set()
@@ -157,7 +170,8 @@ def combine_pair_files_with_dedupe(base_file, new_files, output_file):
     with open(output_file, "w") as f:
         for each in pairs:
             output = "{}\t{}".format(each[0], each[1])
-            print(output, file = f, end='\n')
+            print(output, file=f, end='\n')
+
 
 def get_extra_pairs_not_in_base(base, files):
     pairs = set()
@@ -175,6 +189,7 @@ def get_extra_pairs_not_in_base(base, files):
                     diff_pairs.add(t)
     return diff_pairs
 
+
 def pair2csv_helper_output(future, output_file):
     results = future.result()
 
@@ -186,6 +201,7 @@ def pair2csv_helper_output(future, output_file):
                 writer.writerow(result)
     finally:
         lock.release()
+
 
 def pair2csv_helper_query(i, pair):
     l1 = [i]
@@ -208,6 +224,7 @@ def pair2csv_helper_query(i, pair):
 
     return l
 
+
 def pairs2csv(pairs, output_file):
     title.insert(0, "index")
     #engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
@@ -221,7 +238,8 @@ def pairs2csv(pairs, output_file):
     with concurrent.futures.ThreadPoolExecutor(max_workers=process_num) as executor:
         for i, pair in enumerate(pairs):
             future_ = executor.submit(pair2csv_helper_query, i=i, pair=pair)
-            future_.add_done_callback(functools.partial(pair2csv_helper_output, output_file=output_file))
+            future_.add_done_callback(functools.partial(
+                pair2csv_helper_output, output_file=output_file))
             futures_.append(future_)
 
         concurrent.futures.wait(futures_)
@@ -252,6 +270,7 @@ def pairs2txt(data, file):
     # finally:
     #     lock.release()
 
+
 def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job):
     print("step1...")
     rules = get_rules(rule_file)
@@ -267,8 +286,9 @@ def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pai
     pairs2csv(extra_pairs, output_csv_file)
     print("done")
 
+
 def main():
-    #work 1 config input:
+    # work 1 config input:
     # base_file = "stgy7.txt"
     # rule_file = "rules_detail_process_address.txt"
     # folder = "txt\\3_fields_process_address"
@@ -280,7 +300,7 @@ def main():
     #   os.makedirs(folder)
     # pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
 
-    #work 2 config input:
+    # work 2 config input:
     # input_file = "addr_to_process_final_pairs2.txt"
     # output_file = "addr_to_process_final_pairs2.csv"
     # pairs = []
@@ -295,7 +315,7 @@ def main():
     #       pairs.append(ts)
     # pairs2csv(pairs, output_file)
 
-    #work 3
+    # work 3
     '''
     condfig:
     output query file names for name normalization:
@@ -305,7 +325,7 @@ def main():
         process_first_name.txt
         process_last_name.txt
     '''
-    #files used in project
+    # files used in project
     # base_file = "stgy7.txt"
     # rule_file_first = "rules_detail_first.txt"
     # rule_file_last = "rules_detail_last.txt"
@@ -345,8 +365,7 @@ def main():
     # print(len(e))
     # pairs2txt(e, "ex.txt")
 
-
-    #process dob job
+    # process dob job
     # base_file = "stgy7_process_first_last_address_combined.txt"
     # rule_file = "rules_detail_dob.txt"
     # folder = "txt\\3_fields_process_dob"
@@ -354,7 +373,7 @@ def main():
     # output_csv_file = "process_dob1.csv"
     # output_pair_file = "process_dob1.txt"
 
-    #process ssn job
+    # process ssn job
     # base_file = "stgy7_process_first_last_address_dob_combined.txt"
     # rule_file = "rules_detail_ssn.txt"
     # folder = "txt\\3_fields_process_ssn"
@@ -362,7 +381,7 @@ def main():
     # output_csv_file = "process_ssn.csv"
     # output_pair_file = "process_ssn.txt"
 
-    #process mrn job
+    # process mrn job
     # base_file = "stgy7_process_first_last_address_dob_ssn_merged_with_dedupe_combined.txt"
     # rule_file = "rules_detail_mrn.txt"
     # folder = "txt\\3_fields_process_mrn"
@@ -370,7 +389,7 @@ def main():
     # output_csv_file = "process_mrn.csv"
     # output_pair_file = "process_mrn.txt"
 
-    #process alternative job
+    # process alternative job
     # base_file = "55437.txt"
     # rule_file = "rules_detail_alternative.txt"
     # folder = "txt\\3_fields_process_alternative"
@@ -388,7 +407,8 @@ def main():
     if not os.path.exists(folder):
         os.makedirs(folder)
 
-    pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job)
+    pipline_get_detail(rule_file, folder, base_file,
+                       output_csv_file, output_pair_file, job)
     #create_submission_csv("stgy7_process_first_last_address_dob_ssn_merged_with_dedupe_combined.txt", "sub19.csv")
 
 

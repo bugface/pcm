@@ -2,18 +2,26 @@ import jellyfish
 import csv
 from deterministic_rule_pipeline import create_submission_csv, pairs2csv
 
+
 def measure_mrn_similarity(ssn1, ssn2, sign):
     if ssn1 == "" or ssn2 == "" or ssn1 is None or ssn2 is None:
         return 0
 
     r1 = jellyfish.jaro_winkler(ssn1, ssn2)
-    r2 = 1 - jellyfish.hamming_distance(ssn1, ssn2)/len(ssn1)
-
+    r2 = 1 - jellyfish.hamming_distance(ssn1, ssn2) / len(ssn1)
 
     if sign == "t":
         print("jw-{} vs hd-{}".format(r1, r2))
     elif sign == "w":
         return max(r1, r2)
+
+
+def measure_mrn_distance(mrn1, mrn2):
+    if mrn1 == "" or mrn2 == "" or mrn1 is None or mrn2 is None:
+        return -1
+
+    return abs(int(mrn1) - int(mrn2))
+
 
 def process_mrn_from_csv(csv_file, threshold, sign):
     matched_results = []
@@ -39,11 +47,13 @@ def process_mrn_from_csv(csv_file, threshold, sign):
 
     return matched_results
 
+
 def output_mrn_similarity_result(data, output_file):
     with open(output_file, "w") as f:
         for each in data:
             output_data = "{}\t{}".format(each[0], each[1])
             print(output_data, file=f, end='\n')
+
 
 def main():
     threshold = 0.8
@@ -53,11 +63,12 @@ def main():
     sign = "w"
 
     res = process_mrn_from_csv(input_file, threshold, sign)
-    #print(res)
+    # print(res)
     output_mrn_similarity_result(res, output_file)
 
     pairs2csv(res, "check_mrn.csv")
     create_submission_csv(output_file, output_sub)
+
 
 if __name__ == '__main__':
     main()
