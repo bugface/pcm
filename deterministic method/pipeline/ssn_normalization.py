@@ -1,16 +1,9 @@
 import jellyfish
 import csv
-from deterministic_rule_pipeline import create_submission_csv, pairs2csv
-# from multiprocessing import Process, Pool, cpu_count
-# import concurrent.futures
-# import functools
-# SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
-# engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
-
 
 def measure_ssn_similarity(ssn1, ssn2, sign):
     if ssn1 == "" or ssn2 == "" or ssn1 is None or ssn2 is None:
-        return 0
+        return -1
 
     r1 = jellyfish.jaro_winkler(ssn1, ssn2)
     r2 = 1 - jellyfish.hamming_distance(ssn1, ssn2) / len(ssn1)
@@ -60,22 +53,3 @@ def output_ssn_similarity_result(data, output_file):
             output_data = "{}\t{}".format(each[0], each[1])
             print(output_data, file=f, end='\n')
 
-
-def main():
-    threshold = 0.9
-    input_file = "process_ssn.csv"
-    output_file = "normalized_ssn_pairs.txt"
-    output_sub = "sub13.csv"
-    sign = "w"
-
-    res = process_ssn_from_csv(input_file, threshold, output_file, sign)
-    output_ssn_similarity_result(res, output_file)
-
-    pairs2csv(res, "check_ssn.csv")
-    create_submission_csv(output_file, output_sub)
-
-
-if __name__ == '__main__':
-    main()
-    # test()
-    # pass

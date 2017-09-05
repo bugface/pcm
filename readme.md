@@ -134,6 +134,8 @@
    - submission: sub26_neg.csv
    - result: percision: 0.4522 (3321 are correct which means rest are not (does not make sense at all))
 <br><br>
+22 - result for submission of processed_neg_56588: percision: 0.435; total: 154 (67); number need to filter off: 87
+   - result for submission of processed_full_cover: percision: 0.8456; total: 149(126); number need to filter off:19
 #### *************************************************************************************************************
 
 ## table of fields combination

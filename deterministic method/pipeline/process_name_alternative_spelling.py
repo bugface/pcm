@@ -1,13 +1,14 @@
 import csv
-from threading import RLock
-from concurrent.futures import ThreadPoolExecutor, wait
-import functools
-from ssn_normalization import measure_ssn_similarity
-from mrn_similarity_meaasurement import measure_mrn_similarity
-import os
-from deterministic_rule_pipeline import pairs2csv, create_submission_csv
+# from threading import RLock
+# from concurrent.futures import ThreadPoolExecutor, wait
+# import functools
+# from ssn_normalization import measure_ssn_similarity
+# from mrn_similarity_meaasurement import measure_mrn_similarity
+# import os
+# from deterministic_rule_pipeline import pairs2csv, create_submission_csv
+import json
 
-lock = RLock()
+# lock = RLock()
 
 
 def create_alternative_name_dict():
@@ -179,8 +180,10 @@ def multi_task_setup(input_file, output_file, tasks, alternative_spelling_dict):
 
 def main():
     #input_file = "process_alter_last.csv"
-    output_file = "processed_alter_last_diff_v2.txt"
-    #alternative_spelling_dict = create_alternative_name_dict()
+    #output_file = "processed_alter_last_diff_v2.txt"
+    alternative_spelling_dict = create_alternative_name_dict()
+    with open('data.json', 'w') as outfile:
+        json.dump(alternative_spelling_dict, outfile)
     # single thread is way faster than multithreading
     #single_task_setup(input_file, output_file, alternative_spelling_dict)
 
@@ -204,7 +207,7 @@ def main():
     # print(len(pairs))
     # pairs2csv(pairs, "processed_alter_last_diff.csv")
 
-    create_submission_csv(output_file, "sub23diffb.csv")
+    #create_submission_csv(output_file, "sub23diffb.csv")
 
 
 if __name__ == '__main__':

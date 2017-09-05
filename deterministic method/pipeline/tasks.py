@@ -1,7 +1,15 @@
-from deterministic_rule_pipeline_new_version import pipline_get_detail, pairs2csv, pair2txt
+from deterministic_rule_pipeline_new_version import pipline_get_detail, pairs2csv, pair2txt, create_submission_csv
 from filter_pipeline import filter_data_in_csv
 
+
+def task1(csv_file, out_txt, out_csv, s, m, i):
+    res = filter_data_in_csv(csv_file, s, m, i)
+    pair2txt(out_txt, res)
+    pairs2csv(res, out_csv)
+
+
 def main():
+    #create_submission_csv("pairs_in_txt_generated_from_pipline\\process_full_cover.txt", "sub25_raw.csv")
     # work 1 config input:
     # base_file = "stgy7.txt"
     # rule_file = "rules_detail_process_address.txt"
@@ -111,22 +119,24 @@ def main():
     # output_csv_file = "process_alternative.csv"
     # output_pair_file = "process_alternative.txt"
 
+    # csv_file1 = "process_full_cover.csv"
+    # out_txt1 = "processed_full_cover.txt"
+    # out_csv1 = "processed_full_cover.csv"
 
+    # csv_file2 = "56588.csv"
+    # out_txt2 = "processed_neg_56588.txt"
+    # out_csv2 = "processed_neg_56588.csv"
 
-    csv_file = "process_full_cover.csv"
-    out_txt = "processed_full_cover.txt"
-    out_csv = "processed_full_cover.csv"
-    res = filter_data_in_csv(csv_file, 0.90, 400)
-    # pair2txt(out_txt, res)
-    # pairs2csv(res, out_csv)
+    # task1(csv_file2, out_txt2, out_csv2, 0.9, 400, "neg")
 
+    # from multiprocessing import Process
+    # p1 = Process(target=task1, args=(csv_file1, out_txt1, out_csv1, 0.9, 400, "pos"))
+    # p2 = Process(target=task1, args=(csv_file2, out_txt2, out_csv2, 0.9, 200, "neg"))
 
-    csv_file = "56588.csv"
-    out_txt = "processed_neg_56588.txt"
-    out_csv = "processed_neg_56588.csv"
-    res = filter_data_in_csv(csv_file, 0, 300, "neg")
-    #pair2txt(out_txt, res)
-    #pairs2csv(res, out_csv)
+    # p1.start()
+    # p2.start()
+    # p1.join()
+    # p2.join()
 
     # process alter_last job
     # base_file = "56588.txt"
@@ -147,6 +157,8 @@ def main():
 
     #create_submission_csv("stgy7_process_first_last_address_dob_ssn_merged_with_dedupe_combined.txt", "sub19.csv")
 
+    create_submission_csv("processed_neg_56588.txt", "processed_neg_56588.csv")
+    create_submission_csv("processed_full_cover.txt", "processed_full_cover.csv")
 
 if __name__ == '__main__':
     main()
