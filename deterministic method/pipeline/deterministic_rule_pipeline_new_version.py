@@ -98,7 +98,6 @@ def store_result_csv_job(future, output_csv_file):
     finally:
         lock.release()
 
-
 def store_result_job(job, rule, sql, file):
     res = execute_sql(sql)
     #data = []
@@ -217,6 +216,39 @@ def get_extra_pairs_not_in_base(base, files):
     return diff_pairs
 
 
+def pairs2csv_single(pairs, output_file):
+    helper_title.insert(0, "index")
+    #engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
+    with open(output_file, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(helper_title)
+        helper_title.pop(0)
+    for i, pair in enumerate(pairs):
+        pair1 = int(pair[0])
+        pair2 = int(pair[1])
+        sql = '''select * from
+                 (select * from pcm where enterpriseid={})
+                 union
+                 (select * from pcm where ENTERPRISEID={})
+            '''.format(pair1, pair2)
+
+        l = []
+
+        with engine.begin() as conn:
+            res = conn.execute(sql)
+            for each in res:
+                l.append(each)
+            res.close()
+
+        row1 = [i] + list(l[0])
+        row2 = [i] + list(l[1])
+        with open(output_file, "a", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(row1)
+            writer.writerow(row2)
+
+
+
 def pair2csv_helper_output(future, index, output_file):
     results = future.result()
 
@@ -271,29 +303,6 @@ def pairs2csv(pairs, output_file):
             futures_.append(future_)
 
         concurrent.futures.wait(futures_)
-
-    # with open(output_file, "w", newline='') as f:
-    #     writer = csv.writer(f)
-    #     writer.writerow(helper_title)
-    #     title.pop(0)
-    #     for i, pair in enumerate(pairs):
-    #         l = []
-    #         pair1 = int(pair[0])
-    #         pair2 = int(pair[1])
-    #         sql = '''select * from
-    #                  (select * from pcm where enterpriseid={})
-    #                  union
-    #                  (select * from pcm  where ENTERPRISEID={})
-    #             '''.format(pair1, pair2)
-
-    #         with engine.begin() as conn:
-    #             res = conn.execute(sql)
-    #             for each in res:
-    #                 l.append(each)
-    #             res.close()
-    #         for each in l:
-    #             writer.writerow(each[:19])
-    #             writer.writerow(each[19:])
 
 #stage 1
 def generate_individual_pairs_file_from_rules(rule_file, rules, folder, job):

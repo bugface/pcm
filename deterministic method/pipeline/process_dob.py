@@ -24,7 +24,7 @@ def pre_processing_dob_string(s):
 
 
 def check_dob(d1, d2):
-    if d1 == "" or d2 == "" or d1 == None or d2 == None:
+    if d1 == "" or d2 == "":
         return False
     else:
         result = False

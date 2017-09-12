@@ -328,3 +328,10 @@ Traceback (most recent call last):
   File "deterministic_rule_pipeline_new_version.py", line 209, in pair2csv_helper_output
     with open(output_file, "a", newline="") as f:
 PermissionError: [Errno 13] Permission denied: 'process_full_cover.csv'
+2017-09-07 13:25:40  concurrent.futures ERROR      exception calling callback for <Future at 0x22a9fac4e10 state=finished returned list>
+Traceback (most recent call last):
+  File "D:\anacoda\lib\concurrent\futures\_base.py", line 297, in _invoke_callbacks
+    callback(self)
+  File "C:\Users\alex\Desktop\pcm\deterministic method\pipeline\deterministic_rule_pipeline_new_version.py", line 258, in pair2csv_helper_output
+    row2 = [index] + list(results[1])
+IndexError: list index out of range

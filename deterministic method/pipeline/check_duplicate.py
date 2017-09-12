@@ -45,15 +45,7 @@ def csv2txt(csv_file, txt_file):
 
 def main():
     #csv2txt("submission2.csv", "submission2.txt")
-    #pairs = check_dupe("56588.txt", "process_full_cover.txt", "process_full_cover_1.txt")
-    pairs = []
-    with open("56588.txt", "r") as f:
-        for each in f:
-            p = each[:-1].split("\t")
-            pairs.append((p[0], p[1]))
-    print(len(pairs))
-    pairs2csv(pairs, "56588.csv")
-
+    pairs = check_dupe("processed_neg_56588_percision_0.txt", "56713.txt", "56626.txt")
 
 if __name__ == '__main__':
     main()

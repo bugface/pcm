@@ -1,4 +1,4 @@
-from deterministic_rule_pipeline_new_version import pipline_get_detail, pairs2csv, pair2txt, create_submission_csv
+from deterministic_rule_pipeline_new_version import pipline_get_detail, pairs2csv, pair2txt, create_submission_csv, extract_pairs_from_txt, pairs2csv_single
 from filter_pipeline import filter_data_in_csv
 
 
@@ -146,8 +146,6 @@ def main():
     # output_csv_file = "process_full_cover.csv"
     # output_pair_file = "process_full_cover.txt"
 
-
-
     # if not os.path.exists(folder):
     #     os.makedirs(folder)
 
@@ -157,8 +155,34 @@ def main():
 
     #create_submission_csv("stgy7_process_first_last_address_dob_ssn_merged_with_dedupe_combined.txt", "sub19.csv")
 
-    create_submission_csv("processed_neg_56588.txt", "processed_neg_56588.csv")
-    create_submission_csv("processed_full_cover.txt", "processed_full_cover.csv")
+    # create_submission_csv("processed_neg_56588.txt", "processed_neg_56588.csv")
+    # create_submission_csv("processed_full_cover.txt", "processed_full_cover.csv")
+
+
+    pairs = extract_pairs_from_txt("56626.txt")
+    pairs2csv(pairs, "56626.csv")
+    #pairs2csv_single(pairs, "56626(1).csv")
+
+    #create_submission_csv("56626.txt", "sub27.csv")
+
 
 if __name__ == '__main__':
     main()
+
+'''
+pipeline work template:
+
+#process alter_last job
+base_file = "56588.txt"
+rule_file = "rules_detail_full_cover.txt"
+folder = "txt\\full_cover"
+job = "p"
+output_csv_file = "process_full_cover.csv"
+output_pair_file = "process_full_cover.txt"
+
+if not os.path.exists(folder):
+    os.makedirs(folder)
+
+pipline_get_detail(rule_file, folder, base_file,
+                   output_csv_file, output_pair_file, job)
+'''

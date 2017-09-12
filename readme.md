@@ -4,8 +4,8 @@
 <br><br>
 #### *************************************************************************************************************
 
-
 ## Deterministic Experiments:
+### Version 1:
 1. 	- strategy: query db for same f+l+dob+ssn+gender
 	- txt files: f_l_dob_ssn_g.txt (total: 10950)
 	- submission file: per1.csv
@@ -126,16 +126,22 @@
 	- submission: sub25_raw.csv
 	- data: based on pcm -> 232 are correct pairs
 	- revision: filter_pipeline
-	- result:
 <br><br>
-21 - using the 56588 data set apply the negative filter (ssn similarity < 0.9 and mrn distance is larger than 400) to obtain a negative dataset for false pairs check
+21. - using the 56588 data set apply the negative filter (ssn similarity < 0.9 and mrn distance is larger than 400) to obtain a negative dataset for false pairs check
    - all the filtered pairs are stored in the 56588_neg.txt (7344 pairs)
    - related detail of each records are stored in the 56588_neg.csv
    - submission: sub26_neg.csv
    - result: percision: 0.4522 (3321 are correct which means rest are not (does not make sense at all))
 <br><br>
-22 - result for submission of processed_neg_56588: percision: 0.435; total: 154 (67); number need to filter off: 87
-   - result for submission of processed_full_cover: percision: 0.8456; total: 149(126); number need to filter off:19
+
+## PCM Answer Key Update
+### after update our previous result changed to p=0.995, r=0.91, f=0.951
+#### start version 2
+1. - result for submission of processed_neg_56588: percision: 0.435; total: 154 (67); number need to filter off: 87
+    - result for submission of processed_full_cover: percision: 0.8456; total: 149(126); number need to filter off:19
+    - the pairs need to be filtered have been targeted. The results from above are merged with previous result to yield a new file: 56626.txt
+    - the submission 27 is created based on 56626.txt yield result: p= , r= , f= (from pcm)
+<br><br>
 #### *************************************************************************************************************
 
 ## table of fields combination
