@@ -8,7 +8,7 @@ from address_normalization import normalize_address
 
 
 def filter_check():
-    csv_file = "process_full_cover.csv"
+    csv_file = "processed_full_cover_detail.csv"
 
     with open(csv_file, "r") as f:
         reader = csv.DictReader(f)
@@ -53,8 +53,8 @@ def filter_check():
                 if measure_ssn_similarity(f_ssn, s_ssn, "w") >= 0.90:
                     matched_results.add((f_id, s_id))
 
-                elif check_dob(f_dob, s_dob):
-                    matched_results.add((f_id, s_id))
+                # elif check_dob(f_dob, s_dob):
+                #     matched_results.add((f_id, s_id))
 
                 # elif f_addr != "" and f_addr == s_addr:
                 #     matched_results.add((f_id, s_id))
@@ -65,7 +65,7 @@ def filter_check():
                 # elif measure_mrn_similarity(f_mrn, s_mrn, "w") >= 0.90:
                 #     matched_results.add((f_id, s_id))
 
-                elif measure_mrn_distance(f_mrn, s_mrn) < 300 and measure_mrn_distance(f_mrn, s_mrn) > 0:
+                elif measure_mrn_distance(f_mrn, s_mrn) < 500 and measure_mrn_distance(f_mrn, s_mrn) > 0:
                     matched_results.add((f_id, s_id))
 
                 else:
@@ -105,9 +105,9 @@ def filter_check():
     #         f.remove(s2)
     # print(f)
 
-    #pairs2txt(matched_results ,"alter_last_check_pairs.txt")
+    pair2txt("check_now.txt", matched_results)
     #create_submission_csv("altern_last_check_pairs.txt", "sub21b.csv")
-    #pairs2csv(matched_results, "alternaitve_check_pairs_1.csv")
+    pairs2csv(list(matched_results), "chekc_now.csv")
 
 
 def exclude_check():

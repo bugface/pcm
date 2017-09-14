@@ -121,13 +121,13 @@
 	- result: recall=0.9744; percision=0.9898, f-score=0.982 (from pcm)
 	- data: based on 57489 as total -> 56588 total find and 56013 correct matched
 <br><br>
-20. - using all the 4-fields-rule that not used before and all the 3-fields rules
+21. - using all the 4-fields-rule that not used before and all the 3-fields rules
 	- totally obtained 337497 pairs
 	- submission: sub25_raw.csv
 	- data: based on pcm -> 232 are correct pairs
 	- revision: filter_pipeline
 <br><br>
-21. - using the 56588 data set apply the negative filter (ssn similarity < 0.9 and mrn distance is larger than 400) to obtain a negative dataset for false pairs check
+22. - using the 56588 data set apply the negative filter (ssn similarity < 0.9 and mrn distance is larger than 400) to obtain a negative dataset for false pairs check
    - all the filtered pairs are stored in the 56588_neg.txt (7344 pairs)
    - related detail of each records are stored in the 56588_neg.csv
    - submission: sub26_neg.csv
@@ -135,13 +135,23 @@
 <br><br>
 
 ## PCM Answer Key Update
-### after update our previous result changed to p=0.995, r=0.91, f=0.951
+### after update our previous result changed to p=0.996, r=0.91, f=0.951
+##### after update the current data set only contains 217 pairs of mismatched records; the total answer key contains 61874 pairs of records
 #### start version 2
 1. - result for submission of processed_neg_56588: percision: 0.435; total: 154 (67); number need to filter off: 87
     - result for submission of processed_full_cover: percision: 0.8456; total: 149(126); number need to filter off:19
     - the pairs need to be filtered have been targeted. The results from above are merged with previous result to yield a new file: 56626.txt
-    - the submission 27 is created based on 56626.txt yield result: p= , r= , f= (from pcm)
+    - the submission 27 is created based on 56626.txt yield result: p=0.996 , r=0.911 , f=0.952 (from pcm)
 <br><br>
+2. - using all the 4-fields-rule that not used before and all the 3-fields rules
+	- totally obtained 337373 pairs
+	- submission: processed_full_cover_sub.csv
+	- data: based on pcm ->  1834 are correct pairs
+	- using filter_pipeline to extract these corrected pairs
+	- result: extracted 1881 pairs, submit to pcm as sub28.csv, get feed back p=0.112174375332 (211 are corrected);
+<br><br>
+
+
 #### *************************************************************************************************************
 
 ## table of fields combination
@@ -175,6 +185,7 @@
 <br><br>
 
 
+#### *************************************************************************************************************
 
 note:
 TODO List:

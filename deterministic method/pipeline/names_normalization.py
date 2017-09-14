@@ -20,6 +20,9 @@ def measure_string_distance(s1, s2, method):
     '''
     result = 0
 
+    if s1 == '' or s2 == '':
+        return result
+
     if method == 1:
         result = jellyfish.jaro_winkler(s1, s2)
     elif method == 2:

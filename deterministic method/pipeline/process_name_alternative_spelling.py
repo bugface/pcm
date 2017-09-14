@@ -10,7 +10,6 @@ import json
 
 # lock = RLock()
 
-
 def create_alternative_name_dict():
     src = "spellingalternative"
     name_dict = dict()
