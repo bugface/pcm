@@ -1,3 +1,11 @@
+# This is a project of Patient Matching Algorithm Challenge
+##### more information: https://www.patientmatchingchallenge.com/
+
+> The current work is using deterministic method which the most of the work are in deterministic method\pipeline
+> All the previous submissions are in folder for submission
+> The database is oracle with table name as pcm and pcm_update. The database is hosted at amazon aws with SQLALCHEMY_DATABASE_URI = "oracle://alexgre:alex1988@temp1.clx2hx01phun.us-east-1.rds.amazonaws.com/ORCL"
+> All the results are list below
+
 ## dedupe
 1. use csvdedupe_modified.py obtained a submission result as submission1 -> precision=0.413 recall=0.3
 2. seperate 3 records into two or three pairs -> obtain submission2 -> precision=0.84 recall 0.65
@@ -148,9 +156,17 @@
 	- submission: processed_full_cover_sub.csv
 	- data: based on pcm ->  1834 are correct pairs
 	- using filter_pipeline to extract these corrected pairs
-	- result: extracted 1881 pairs, submit to pcm as sub28.csv, get feed back p=0.112174375332 (211 are corrected);
+	- result: extracted 1881 pairs, submit to pcm as sub28.csv, get feed back p=0.112174375332 (211 are corrected)
 <br><br>
-
+3. 	- using negative filter pipeline on 56656.txt in order to obtain the error pairs
+	- after filter totally ontained 3700 pairs in which 135 pairs are error pairs (result from pmc check)
+	- next step: use postive filter or multi-field filter to shrink the file in order for human check or find rules that detaily filter the negative pairs
+	- result1: using positive filter, obtained 1849 pairs, only 1 of them are error pairs (files as neg_latest.txt and neg_latest.csv)
+	- we can find that 1 pair and remove the left 1848 pairs from the previous filtered results, so that we only need to find 134 pairs from 1852 pairs
+4. - using combined rule f+l+dob+addr+m filter the 330000 pairs generate a dataset merged with privious filtered results generated -> filtered_full_cover_comnined_deduped.txt
+   - the new combined dataset has 5605 (p=0.0776) total pairs and 435 pairs of corrected pairs
+   - use filtered_full_cover_comnined_deduped.csv for continue experiments
+<br><br>
 
 #### *************************************************************************************************************
 

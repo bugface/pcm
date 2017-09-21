@@ -3,29 +3,32 @@ from deterministic_rule_pipeline_new_version import create_submission_csv, pairs
 
 
 def check_dupe(file1, file2, file3):
-    s = set()
-    l = []
+    s1 = set()
+    s2 = set()
     with open(file1, "r") as f:
         for each in f:
             t = each[:-1].split("\t")
             t1 = t[0]
             t2 = t[1]
-            s.add((t1, t2))
+            s1.add((t1, t2))
 
     with open(file2, "r") as f:
-        count = 0
         for each in f:
             t = each[:-1].split("\t")
             t1 = t[0]
             t2 = t[1]
+            s2.add((t1, t2))
 
-            tp1 = (t1, t2)
-            tp2 = (t2, t1)
-            if tp1 in s or tp2 in s:
-                count += 1
-            else:
-                l.append(tp1)
-        print(count, " pairs are overlaped.")
+    for each in s1:
+        if each not in s2:
+            print(each)
+
+    #remove shared pairs and output into a new file
+    l = []
+    for each in s1:
+        each_p = (each[1], each[0])
+        if not each in s2 and not each_p in s2:
+            l.append(each)
 
     with open(file3, "w") as f:
         for each in l:
@@ -44,10 +47,8 @@ def csv2txt(csv_file, txt_file):
 
 
 def main():
-    #csv2txt("submission2.csv", "submission2.txt")
-    #pairs = check_dupe("56626.txt", "process_full_cover.txt", "processed_full_cover.txt")
-    create_submission_csv("processed_full_cover.txt", "processed_full_cover_sub.csv")
-    pairs2csv(extract_pairs_from_txt("processed_full_cover.txt"), "processed_full_cover_detail.csv")
+    p = check_dupe("todo/filtered_56626_neg_1.txt", "todo/neg_lastest.txt", "todo/56626_neg.txt")
+    pairs2csv(p, "todo/56626_neg.csv")
 
 if __name__ == '__main__':
     main()

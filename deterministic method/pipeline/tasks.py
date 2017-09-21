@@ -1,6 +1,11 @@
 from deterministic_rule_pipeline_new_version import pipline_get_detail, pairs2csv, pair2txt, create_submission_csv, extract_pairs_from_txt, pairs2csv_single
 from filter_pipeline import filter_data_in_csv
 from multiprocessing import Process
+from concurrent.futures import ThreadPoolExecutor
+from address_normalization import geocoding
+import csv
+import time
+from geopy.geocoders import Nominatim
 
 def task1(csv_file, out_txt, out_csv, s, m, i):
     res = filter_data_in_csv(csv_file, s, m, i)
@@ -170,30 +175,62 @@ def main():
 
     # print("mul: ")
 
-    p1 = Process(target=filter_data_in_csv, args=("processed_full_cover_detail.csv", "pos", 0.99, 500, 4, 0.8, "latest_result.txt"))
-    #p2 = Process(target=filter_data_in_csv, args=("processed_full_cover_detail.csv", "mul", 0.95, 1000, 3, 0.85, "latest_result.txt"))
-    #pairs2csv(pairs, "filtered_full_cover.csv")
-    #p3 = Process(target=filter_data_in_csv, args=("56626.csv", "neg", 1, 200, 3, 0.85, "latest_result.txt"))
-    p1.start()
-    #p2.start()
-    #p3.start()
-    p1.join()
-    #p2.join()
-    #p3.join()
+    # p1 = Process(target=filter_data_in_csv, args=(".csv", "pos", 0.95, 500, 4, 0.8, "latest_result.txt"))
+    # p2 = Process(target=filter_data_in_csv, args=(".csv", "mul", 1, 300, 4, 0.85, "latest_result.txt"))
+    # # p3 = Process(target=filter_data_in_csv, args=("56626.csv", "neg", 1, 500, 3, 0.85, "latest_result.txt"))
 
-    #filter_data_in_csv("processed_full_cover_detail.csv", "mul", 0.95, 300, 4, 0.8, "latest_result.txt")
+    # p1.start()
+    # p2.start()
+    # # p3.start()
+
+    # p1.join()
+    # p2.join()
+    # p3.join()
+
+    # pairs = filter_data_in_csv("todo/filtered_56626_neg_1(135 error).csv", "mul", 1, 300, 4, 0.85, "dummyb.txt")
+    # print(len(pairs))
+    # task1(pairs, "neg_lastest.txt", "sub_neg_lastest.csv", "neg_lastest.csv")
 
     #### redo again
     # p1 = filter_data_in_csv("processed_full_cover_detail.csv", "mul", 0.95, 1000, 3, 0.85, "latest_result.txt")
     # task1(p1, "filtered_full_cover_1.txt", "sub28_1.csv", "filtered_full_cover_1.csv")
 
-    # p2 = filter_data_in_csv("56626.csv", "neg", 0.95, 300, 4, 0.85, "latest_result.txt")
+    # p2 = filter_data_in_csv("56626.csv", "neg", 1, 500, 3, 0.85, "latest_result.txt")
     # task1(p2, "filtered_56626_neg_1.txt", "sub_56626_neg_1.csv", "filtered_56626_neg_1.csv")
+    # locator = Nominatim(country_bias="us")
+
+    # with open("processed_full_cover_detail.csv", "r") as f:
+    #     reader = csv.DictReader(f)
+    #     for each in reader:
+    #         addr = ",".join([each['ADDRESS1'], each['CITY'], each['STATE_'].strip(), "USA"])
+    #         #used for google API or Nominatim
+    #         na = locator.geocode(query=addr, timeout=10)
+    #         print(addr)
+    #         if na is not None:
+    #             print(na.address)
+    #         else:
+    #             print("None")
+    #         time.sleep(2)
+
+    # s = set()
+    # with open("todo/filtered_full_cover_comnined.txt", "r") as f:
+    #     for each in f:
+    #         p = each[:-1].split("\t")
+    #         t = (p[0], p[1])
+    #         tp = (p[1], p[0])
+    #         if tp not in s and t not in s:
+    #             s.add(t)
+
+    # # print(s)
+    # # print(len(s))
+    # pair2txt("filtered_full_cover_comnined_deduped.txt", list(s))
+    # create_submission_csv("filtered_full_cover_comnined_deduped.txt", "sub_filtered_full_cover_comnined_deduped.csv")
+    # pairs2csv(list(s), "filtered_full_cover_comnined_deduped.csv")
 
 def task1(pairs, file, sub, detail):
     pair2txt(file, pairs)
-    pairs2csv(pairs, detail)
     create_submission_csv(file, sub)
+    pairs2csv(pairs, detail)
 
 if __name__ == '__main__':
     main()

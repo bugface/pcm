@@ -3,6 +3,12 @@ import usaddress
 import re
 import time
 import sys
+import csv
+import time
+from geopy.geocoders import Nominatim, GeocoderDotUS, GoogleV3, Bing
+
+#BING API_KEY
+BING_API_KEY = "AhHdobtqQ-mhLgtzjqrt9bcZf_P3ON7ioCf0MsU-lbNuDMHQRSqPkBZTUqPpiM63"
 
 # pre config for process address
 # street name pattern
@@ -91,7 +97,6 @@ def contain_digit(s):
             return True
     return False
 
-
 def normalize_address(addr_from_csv):
     raw_an = None
     raw_sn = None
@@ -148,7 +153,6 @@ def normalize_address(addr_from_csv):
             raw_sn = raw_sn[:i] + raw_sn[i + 1:]
 
         if pat1.match(raw_sn) or pat2.match(raw_sn) or pat11.match(raw_sn):
-            # print("11111111")
             pure_sn += re.findall("[0-9]+", raw_sn)[0]
         elif pat3.match(raw_sn):
             nums = raw_sn.split(" ")
@@ -169,7 +173,6 @@ def normalize_address(addr_from_csv):
             extra_for_predecorator = raw_sn[:index]
             pure_sn += re.findall("[0-9]+", raw_sn[index:])[0]
         elif pat8.match(raw_sn):
-            # print("888888888888888")
             nums = raw_sn.split(" ")
             pure_sn += nums[0]
         elif pat7.match(raw_sn):
@@ -282,36 +285,57 @@ def normalize_address(addr_from_csv):
                 res += m.group(0)
     return res
 
+def geocoding(addr, flag='b'):
+    res = None
+    if flag == 'b':
+        locator = Bing(BING_API_KEY)
+        na = locator.geocode(query=addr, timeout=10, culture='en')
+        if na is not None:
+            q = na.address.split(",")
+            n = len(q)
+            if n < 4:
+                res = addr
+            else:
+                res = ",".join([q[0], q[1]])
+        else:
+            res = addr
+    elif flag == 'g':
+        locator = GoogleV3()
+    elif flag == 'n':
+        locator = Nominatim()
 
-def record2txt(pairs):
-    with open('addr_to_process_final_pairs.txt', "w") as f:
-        for pair in pairs:
-            print("{}\t{}".format(pair[0], pair[1]), file=f, end='\n')
-
-
-def main():
-    csv_file = "addr_to_process2.csv"
-    pairs = []  # each pair append as a tuple
-    with open(csv_file, "r") as f:
-        reader = csv.DictReader(f)
-        addr1 = ""
-        eid1 = ""
-        for i, row in enumerate(reader):
-            if i % 2 == 0:
-                addr1 += normalize_address(row['ADDRESS1'])
-                eid1 += row['ENTERPRISEID']
-            if i % 2 == 1:
-                addr2 = normalize_address(row['ADDRESS1'])
-                eid2 = row['ENTERPRISEID']
-                # print(addr1)
-                # print(addr2)
-                # time.sleep(2)
-                if addr1 != "" and addr1 == addr2:
-                    pairs.append((eid1, eid2))
-                addr1 = ""
-                eid1 = ""
-    record2txt(pairs)
+    return res
 
 
-if __name__ == '__main__':
-    main()
+#bing api key=AhHdobtqQ-mhLgtzjqrt9bcZf_P3ON7ioCf0MsU-lbNuDMHQRSqPkBZTUqPpiM63
+#with open("processed_full_cover_detail.csv", "r") as f:
+# with open("56626_ma.csv", "w", newline='') as f:
+#     with open("56626.csv", "r") as f1:
+#         writer = csv.writer(f)
+#         reader = csv.DictReader(f1)
+#         fields = reader.fieldnames
+#         f
+#         writer.writerow(fields)
+#         for each in reader:
+#             to_write = []
+#             time.sleep(1)
+#             #print(locator.geocode(query=(each['ADDRESS1'] + ' ' + each['CITY']), timeout=5))
+#             #google v3
+#             #na = locator1.geocode(query=(each['ADDRESS1'] + ' ' + each['CITY'] + ' USA'), timeout=5)
+
+#             #use for bing
+#
+
+#             for k, v in each.items():
+#                 to_write.append(v)
+#             ##use for bing
+#             if n <= 3:
+#                 to_write.append(each['ADDRESS1'])
+#             else:
+#                 to_write.append(na.address)
+#             ##used for google v3
+#             # if na is not None:
+#             #     to_write.append(na.raw['place_id'])
+#             # else:
+#             #     to_write.append(each['ADDRESS1'])
+#             writer.writerow(to_write)

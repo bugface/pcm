@@ -101,9 +101,9 @@ def positive_filter(measured_ssn_level, ssn_level, measured_mrn_level, mrn_level
 
 
 def negative_filter(measured_ssn_level, ssn_level, measured_mrn_level, mrn_level):
-    if measured_ssn_level < ssn_level and measured_mrn_level > mrn_level:
-        return True
-    return False
+    if measured_ssn_level >= ssn_level or (measured_mrn_level < mrn_level and measured_mrn_level > 0):
+        return False
+    return True
 
 def multiple_fields_filter(multi_filter_threshold, f_list, s_list, ssn_level, mrn_level, name_similarity_threhold, alter_spelling_dict):
     # if threshold meet the input which means more than certain amount of attributes are the same
@@ -113,9 +113,7 @@ def multiple_fields_filter(multi_filter_threshold, f_list, s_list, ssn_level, mr
     for field, pairs in zip(fields, zip(f_list, s_list)):
         d[field] = pairs
     count = 0
-
-    # print(d)
-
+    #print(d)
     #process each field in dictionary
     for k, v in d.items():
         if k == "SSN":
@@ -161,6 +159,7 @@ def multiple_fields_filter(multi_filter_threshold, f_list, s_list, ssn_level, mr
                 count += 1
                 # print("phone")
         elif k == "DOB":
+            #print(v)
             if check_dob(v[0], v[1]):
                 count += 1
                 # print("dob")

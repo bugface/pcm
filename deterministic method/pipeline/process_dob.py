@@ -20,6 +20,8 @@ logger = logging.getLogger("process_dob")
 
 
 def pre_processing_dob_string(s):
+    if '/' in s:
+        s = s.replace("/", "-")
     return dict(zip(['year', 'month', 'day'], s.split(" ")[0].split("-")))
 
 

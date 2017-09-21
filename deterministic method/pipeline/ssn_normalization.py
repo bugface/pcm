@@ -5,13 +5,14 @@ def measure_ssn_similarity(ssn1, ssn2, sign):
     if ssn1 == "" or ssn2 == "" or ssn1 is None or ssn2 is None:
         return -1
 
-    r1 = jellyfish.jaro_winkler(ssn1, ssn2)
+    #r1 = jellyfish.jaro_winkler(ssn1, ssn2)
     r2 = 1 - jellyfish.hamming_distance(ssn1, ssn2) / len(ssn1)
 
     if sign == "t":
-        print("jw-{} vs hd-{}".format(r1, r2))
+        # print("jw-{} vs hd-{}".format(r1, r2))
+        pass
     elif sign == "w":
-        return max(r1, r2)
+        return r2#max(r1, r2)
 
 
 def test():

@@ -24,6 +24,7 @@ def filter_check():
         f_f = ""
         f_l = ""
         f_mrn = ""
+        f_m = ""
         f_int_mrn = 0
         for i, each in enumerate(reader):
             if each['DOB'] is None:
@@ -36,6 +37,7 @@ def filter_check():
                 f_phone += each['PHONE']
                 f_f += each['FIRST_']
                 f_l += each['LAST_']
+                f_m += each['MIDDLE']
                 f_mrn += each['MRN']
                 if f_mrn != "":
                     f_int_mrn += int(each['MRN'])
@@ -48,15 +50,46 @@ def filter_check():
                 s_phone = each['PHONE']
                 s_f = each['FIRST_']
                 s_l = each['LAST_']
+                s_m = each['MIDDLE']
                 s_mrn = each['MRN']
 
-                if measure_ssn_similarity(f_ssn, s_ssn, "w") >= 0.90:
-                    matched_results.add((f_id, s_id))
+                mm = measure_mrn_distance(f_mrn, s_mrn)
+
+
+
+                # ## test filter rule that if match f+l+dob -> get 111 records
+                # if f_f == s_f and f_l == s_l and f_dob == s_dob:
+                #     matched_results.add((f_id, s_id))
+
+                # # 1321
+                # if f_f == s_f and f_l == s_l and f_addr == s_addr:
+                #     matched_results.add((f_id, s_id))
+
+                # # 348
+                # if ((f_f == s_f and f_dob == s_dob) or (f_l == s_l and f_dob == s_dob)) and f_addr == s_addr:
+                #     matched_results.add((f_id, s_id))
+
+                # #2209
+                # if f_f==s_f and s_l == f_l and f_m == s_m and f_f != '' and f_l != "" and f_m != "":
+                #     matched_results.add((f_id, s_id))
+
+                # if measure_ssn_similarity(f_ssn, s_ssn, "w") >= 0.95:
+                #     print(f_id)
+
+                # if f_phone == s_phone and f_phone != "":
+                #     print(f_id)
+
+                # if mm < 200 and mm > 0:
+                #     print(f_id)
+                #     matched_results.add((f_id, s_id))
+
+                # if measure_ssn_similarity(f_ssn, s_ssn, "w") >= 0.95:
+                #     matched_results.add((f_id, s_id))
 
                 # elif check_dob(f_dob, s_dob):
                 #     matched_results.add((f_id, s_id))
 
-                # elif f_addr != "" and f_addr == s_addr:
+                # if f_addr != "" and f_addr == s_addr:
                 #     matched_results.add((f_id, s_id))
 
                 # elif f_phone == s_phone and f_phone != "":
@@ -65,11 +98,9 @@ def filter_check():
                 # elif measure_mrn_similarity(f_mrn, s_mrn, "w") >= 0.90:
                 #     matched_results.add((f_id, s_id))
 
-                elif measure_mrn_distance(f_mrn, s_mrn) < 500 and measure_mrn_distance(f_mrn, s_mrn) > 0:
-                    matched_results.add((f_id, s_id))
 
-                else:
-                    not_matched.append((f_id, s_id))
+                # else:
+                #     not_matched.append((f_id, s_id))
 
                 #matched_results.add((f_id, s_id))
 
@@ -82,6 +113,7 @@ def filter_check():
                 f_f = ""
                 f_l = ""
                 f_mrn = ""
+                f_m =""
 
     print(len(matched_results))
     # for each in matched_results:
@@ -105,9 +137,9 @@ def filter_check():
     #         f.remove(s2)
     # print(f)
 
-    pair2txt("check_now.txt", matched_results)
-    #create_submission_csv("altern_last_check_pairs.txt", "sub21b.csv")
-    pairs2csv(list(matched_results), "chekc_now.csv")
+    # pair2txt("check_now.txt", list(matched_results))
+    # create_submission_csv("check_now.txt", "sub_check_now.csv")
+    # pairs2csv(list(matched_results), "chekc_now.csv")
 
 
 def exclude_check():
