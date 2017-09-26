@@ -7,7 +7,7 @@ import csv
 import time
 from geopy.geocoders import Nominatim, GeocoderDotUS, GoogleV3, Bing
 
-#BING API_KEY
+# BING API_KEY
 BING_API_KEY = "AhHdobtqQ-mhLgtzjqrt9bcZf_P3ON7ioCf0MsU-lbNuDMHQRSqPkBZTUqPpiM63"
 
 # pre config for process address
@@ -96,6 +96,7 @@ def contain_digit(s):
         if each.isdigit():
             return True
     return False
+
 
 def normalize_address(addr_from_csv):
     raw_an = None
@@ -285,6 +286,7 @@ def normalize_address(addr_from_csv):
                 res += m.group(0)
     return res
 
+
 def geocoding(addr, flag='b'):
     res = None
     if flag == 'b':
@@ -307,8 +309,8 @@ def geocoding(addr, flag='b'):
     return res
 
 
-#bing api key=AhHdobtqQ-mhLgtzjqrt9bcZf_P3ON7ioCf0MsU-lbNuDMHQRSqPkBZTUqPpiM63
-#with open("processed_full_cover_detail.csv", "r") as f:
+# bing api key=AhHdobtqQ-mhLgtzjqrt9bcZf_P3ON7ioCf0MsU-lbNuDMHQRSqPkBZTUqPpiM63
+# with open("processed_full_cover_detail.csv", "r") as f:
 # with open("56626_ma.csv", "w", newline='') as f:
 #     with open("56626.csv", "r") as f1:
 #         writer = csv.writer(f)

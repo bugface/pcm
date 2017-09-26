@@ -21,8 +21,11 @@ engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 helper_title = ['ZIP', 'FIRST_', 'CITY', 'DOB', 'ADDRESS2', 'ADDRESS1', 'GENDER', 'ENTERPRISEID',
                 'MIDDLE', 'LAST_', 'SUFFIX_', 'MOTHERS_MADIDEN_NAME', 'MRN', 'STATE_', 'PHONE',
                 'PHONE2', 'EMAIL', 'ALIAS_', 'SSN']
-process_num = cpu_count()
-#process_num = 8
+pmac_title = ['ZIP', 'FIRST_', 'CITY', 'DOB', 'ADDRESS2', 'ADDRESS1', 'GENDER', 'ENTERPRISEID',
+              'MIDDLE', 'LAST_', 'SUFFIX_', 'MOTHERS_MADIDEN_NAME', 'MRN', 'STATE_', 'PHONE',
+              'PHONE2', 'EMAIL', 'ALIAS_', 'SSN', 'ADDRESS', 'YEAR', 'MONTH', 'DAY']
+# process_num = cpu_count()
+process_num = 8
 lock = threading.RLock()
 
 
@@ -41,6 +44,7 @@ def create_submission_csv(txt_file, csv_file):
             for each in f:
                 l = []
                 data = each[:-1].split('\t')
+                # print(data)
                 l.append(data[0])
                 l.append(data[1])
                 l.append(1)
@@ -83,6 +87,31 @@ def pair2txt_multi(future, file):
     finally:
         lock.release()
 
+def store_result_output(future, file):
+    data = future.result()
+    lock.acquire()
+    try:
+        with open(file, "w") as f:
+            for each in data:
+                output = "{}\t{}".format(each[0], each[1])
+                print(output, file=f, end='\n')
+    finally:
+        lock.release()
+
+def pmac_store_result_csv_job(future, output_csv_file):
+    results = future.result()
+    lock.acquire()
+    try:
+        with open(output_csv_file, "a", newline='') as f:
+            writer = csv.writer(f)
+            for result in results:
+                line1 = result[:23]
+                line2 = result[23:]
+                writer.writerow(line1)
+                writer.writerow(line2)
+    finally:
+        lock.release()
+
 
 def store_result_csv_job(future, output_csv_file):
     results = future.result()
@@ -97,6 +126,7 @@ def store_result_csv_job(future, output_csv_file):
                 writer.writerow(line2)
     finally:
         lock.release()
+
 
 def store_result_job(job, rule, sql, file):
     res = execute_sql(sql)
@@ -118,6 +148,37 @@ def store_result_job(job, rule, sql, file):
             if t not in s and tprim not in s:
                 s.add(t)
                 # data.append(t)
+                detail.append(each_res)
+
+    logger.info("rule: {}; pairs number: {}".format(file, len(s)))
+    res.close()
+
+    if job == "p":
+        return s
+    elif job == "d":
+        return detail
+    elif job == "n":
+        pairs2txt(file, s)
+
+
+def pmac_store_result_job(job, rule, sql, file):
+    res = execute_sql(sql)
+    #data = []
+    s = set()
+    detail = []
+
+    if job == "p" or job == "n":
+        for each_res in res:
+            t = (each_res[7], each_res[30])
+            tprim = (each_res[30], each_res[7])
+            if t not in s and tprim not in s:
+                s.add(t)
+    elif job == "d":
+        for each_res in res:
+            t = (each_res[7], each_res[30])
+            tprim = (each_res[30], each_res[7])
+            if t not in s and tprim not in s:
+                s.add(t)
                 detail.append(each_res)
 
     logger.info("rule: {}; pairs number: {}".format(file, len(s)))
@@ -157,7 +218,7 @@ def store_result_as_pairs(rules, folder, job, rule_file):
                         store_result_csv_job, output_csv_file=output_file))
                 elif job == "p":
                     future_.add_done_callback(
-                        functools.partial(pair2txt_multi, file=file))
+                        functools.partial(store_result_output, file=file))
                 elif job == "n":
                     pass
                 futures_.append(future_)
@@ -173,6 +234,42 @@ def store_result_as_pairs(rules, folder, job, rule_file):
     #   pool.apply_async(store_result_job, args=(rule, sql))
     # pool.close()
     # pool.join()
+
+
+def pmac_store_result_as_pairs(rules, folder, job, rule_file):
+    futures_ = []
+    output_file = None
+
+    if job == "d":
+        output_file = rule_file.split(".")[0] + "_all_in_one_csv.csv"
+        with open(output_csv_file, "w", newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(helper_title)
+    # elif job == "p":
+    #     output_file = rule_file.split(".")[0] + "_all_in_one_txt.txt"
+    #     with open(output_file, "w") as f:
+    #         pass
+
+    # with  concurrent.futures.ProcessPoolExecutor(max_workers=process_num) as excutor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=process_num) as excutor:
+        for rule, sql in rules.items():
+            file = folder + "\\" + rule + ".txt"
+            try:
+                future_ = excutor.submit(
+                    pmac_store_result_job, job=job, rule=rule, sql=sql, file=file)
+                if job == "d":
+                    future_.add_done_callback(functools.partial(
+                        pmac_store_result_csv_job, output_csv_file=output_file))
+                elif job == "p":
+                    future_.add_done_callback(
+                        functools.partial(pair2txt_multi, file=file))
+                elif job == "n":
+                    pass
+                futures_.append(future_)
+            except Exception as e:
+                logger.error(e)
+
+        concurrent.futures.wait(futures_)
 
 
 def _dedupe(file, dataset):
@@ -248,7 +345,6 @@ def pairs2csv_single(pairs, output_file):
             writer.writerow(row2)
 
 
-
 def pair2csv_helper_output(future, index, output_file):
     results = future.result()
 
@@ -304,17 +400,64 @@ def pairs2csv(pairs, output_file):
 
         concurrent.futures.wait(futures_)
 
-#stage 1
-def generate_individual_pairs_file_from_rules(rule_file, rules, folder, job):
-    #only generate indivudual pairs based on rules input
+
+def pmac_pair2csv_helper_query(pair):
+    pair1 = int(pair[0])
+    pair2 = int(pair[1])
+    sql = '''select * from
+             (select * from pmac where enterpriseid={})
+             union
+             (select * from pmac where ENTERPRISEID={})
+        '''.format(pair1, pair2)
+
+    l = []
+
+    with engine.begin() as conn:
+        res = conn.execute(sql)
+        for each in res:
+            l.append(each)
+        res.close()
+
+    return l
+
+
+def pmac_pairs2csv(pairs, output_file):
+    pmac_title.insert(0, "index")
+    #engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
+    with open(output_file, "w", newline="") as f:
+        writer = csv.writer(f)
+        writer.writerow(pmac_title)
+        pmac_title.pop(0)
+
+    futures_ = []
+    pairs_for_query = []
+    # might not need multithreading which suspect to lower the efficiency because if threads exchange cost
+    with concurrent.futures.ThreadPoolExecutor(max_workers=process_num) as executor:
+        for i, pair in enumerate(pairs):
+            future_ = executor.submit(pmac_pair2csv_helper_query, pair=pair)
+            future_.add_done_callback(functools.partial(
+                pair2csv_helper_output, index=i, output_file=output_file))
+            futures_.append(future_)
+
+        concurrent.futures.wait(futures_)
+
+
+# stage 1
+def generate_individual_pairs_file_from_rules(rule_file, folder, job, table):
+    # only generate indivudual pairs based on rules input
     print("read rules...")
     rules = get_rules(rule_file)
     print("collect pairs based on rules...")
-    store_result_as_pairs(rules, folder, job, rule_file)
+    if table == "pcm":
+        store_result_as_pairs(rules, folder, job, rule_file)
+    elif table == "pmac":
+        pmac_store_result_as_pairs(rules, folder, job, rule_file)
 
-#stage 2
-def output_deduped_pairs_and_detail(folder, base_file, output_pair_file, output_csv_file):
-    #collect all the individual pairs file and dedupe all the resulted pairs based on base_file and output results
+# stage 2
+
+
+def output_deduped_pairs_and_detail(folder, base_file, output_pair_file, output_csv_file, table):
+    # collect all the individual pairs file and dedupe all the resulted pairs based on base_file and output results
     print("combine all the pairs and perform deduplication...")
     new_pair_files = glob.glob(folder + "\\" + "*.txt")
     #combine_pair_files_with_dedupe(base_file, new_pair_files, output_pair_file)
@@ -322,12 +465,15 @@ def output_deduped_pairs_and_detail(folder, base_file, output_pair_file, output_
     print(len(extra_pairs))
     print("output results...")
     pair2txt(output_pair_file, extra_pairs)
-    pairs2csv(extra_pairs, output_csv_file)
+    if table == "pcm":
+        pairs2csv(extra_pairs, output_csv_file)
+    elif table == "pmac":
+        pmac_pairs2csv(extra_pairs, output_csv_file)
     print("done")
 
-def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job):
-    #pipeline combine stage 1 and stage 2
-    generate_individual_pairs_file_from_rules(rule_file, rules, folder, job)
-    output_deduped_pairs_and_detail(folder, base_file, output_pair_file, output_csv_file)
 
-
+def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job, table="pcm"):
+    # pipeline combine stage 1 and stage 2
+    generate_individual_pairs_file_from_rules(rule_file, folder, job, table)
+    output_deduped_pairs_and_detail(
+        folder, base_file, output_pair_file, output_csv_file, table)

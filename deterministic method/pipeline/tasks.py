@@ -6,6 +6,8 @@ from address_normalization import geocoding
 import csv
 import time
 from geopy.geocoders import Nominatim
+import os
+
 
 def task1(csv_file, out_txt, out_csv, s, m, i):
     res = filter_data_in_csv(csv_file, s, m, i)
@@ -157,12 +159,10 @@ def main():
     # pipline_get_detail(rule_file, folder, base_file,
     #                    output_csv_file, output_pair_file, job)
 
-
     #create_submission_csv("stgy7_process_first_last_address_dob_ssn_merged_with_dedupe_combined.txt", "sub19.csv")
 
     # create_submission_csv("processed_neg_56588.txt", "processed_neg_56588.csv")
     # create_submission_csv("processed_full_cover.txt", "processed_full_cover.csv")
-
 
     #pairs = extract_pairs_from_txt("56626.txt")
 
@@ -191,7 +191,7 @@ def main():
     # print(len(pairs))
     # task1(pairs, "neg_lastest.txt", "sub_neg_lastest.csv", "neg_lastest.csv")
 
-    #### redo again
+    # redo again
     # p1 = filter_data_in_csv("processed_full_cover_detail.csv", "mul", 0.95, 1000, 3, 0.85, "latest_result.txt")
     # task1(p1, "filtered_full_cover_1.txt", "sub28_1.csv", "filtered_full_cover_1.csv")
 
@@ -212,8 +212,16 @@ def main():
     #             print("None")
     #         time.sleep(2)
 
+#merge two files on distinct pairs
     # s = set()
-    # with open("todo/filtered_full_cover_comnined.txt", "r") as f:
+    # # s1 = set()
+    # with open("dy/duge922.txt", "r") as f:
+    #      for each in f:
+    #         p = each[:-1].split("\t")
+    #         t = (p[0], p[1])
+    #         s.add(t)
+
+    # with open("dy/yunpeng.txt", "r") as f:
     #     for each in f:
     #         p = each[:-1].split("\t")
     #         t = (p[0], p[1])
@@ -221,16 +229,26 @@ def main():
     #         if tp not in s and t not in s:
     #             s.add(t)
 
-    # # print(s)
-    # # print(len(s))
-    # pair2txt("filtered_full_cover_comnined_deduped.txt", list(s))
-    # create_submission_csv("filtered_full_cover_comnined_deduped.txt", "sub_filtered_full_cover_comnined_deduped.csv")
-    # pairs2csv(list(s), "filtered_full_cover_comnined_deduped.csv")
+    # pair2txt("dugeyunpengheti_1.txt", list(s))
+    # # #create_submission_csv("filtered_full_cover_comnined_deduped.txt", "sub_filtered_full_cover_comnined_deduped.csv")
+    # pairs2csv(list(s), "dugeyunpengheti_1.csv")
+
+    # create_submission_csv("new.txt", "sub_56626_neg_handcheck_2.csv")
+    # pairs = extract_pairs_from_txt("new.txt")
+    # pairs2csv(pairs, "56656_neg_filtered.csv")
+    #create_submission_csv("check_now.txt", "sub_9-22-643.csv")
+
+    #create_submission_csv("process_new_full_cover_remove_dupes.txt", "sub_9-26-1250.csv")
+
+    p = extract_pairs_from_txt("process_new_full_cover_remove_dupes.txt")
+    pairs2csv(p, "process_new_full_cover_remove_dupes.csv")
+
 
 def task1(pairs, file, sub, detail):
     pair2txt(file, pairs)
     create_submission_csv(file, sub)
     pairs2csv(pairs, detail)
+
 
 if __name__ == '__main__':
     main()
@@ -238,7 +256,7 @@ if __name__ == '__main__':
 '''
 pipeline work template:
 
-#process alter_last job
+##query pcm table
 base_file = "56588.txt"
 rule_file = "rules_detail_full_cover.txt"
 folder = "txt\\full_cover"
@@ -251,4 +269,19 @@ if not os.path.exists(folder):
 
 pipline_get_detail(rule_file, folder, base_file,
                    output_csv_file, output_pair_file, job)
+
+##query pmac table
+base_file = "latest_result_sacrify_percision.txt"
+rule_file = "newrules_detail_full_cover.txt"
+folder = "txt\\new_full_cover"
+job = "p"
+output_csv_file = "process_new_full_cover.csv"
+output_pair_file = "process_new_full_cover.txt"
+table = "pmac"
+
+if not os.path.exists(folder):
+    os.makedirs(folder)
+
+pipline_get_detail(rule_file, folder, base_file,
+                   output_csv_file, output_pair_file, job, table)
 '''

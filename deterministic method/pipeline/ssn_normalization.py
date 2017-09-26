@@ -1,6 +1,7 @@
 import jellyfish
 import csv
 
+
 def measure_ssn_similarity(ssn1, ssn2, sign):
     if ssn1 == "" or ssn2 == "" or ssn1 is None or ssn2 is None:
         return -1
@@ -12,7 +13,7 @@ def measure_ssn_similarity(ssn1, ssn2, sign):
         # print("jw-{} vs hd-{}".format(r1, r2))
         pass
     elif sign == "w":
-        return r2#max(r1, r2)
+        return r2  # max(r1, r2)
 
 
 def test():
@@ -53,4 +54,3 @@ def output_ssn_similarity_result(data, output_file):
         for each in data:
             output_data = "{}\t{}".format(each[0], each[1])
             print(output_data, file=f, end='\n')
-

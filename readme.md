@@ -163,9 +163,20 @@
 	- next step: use postive filter or multi-field filter to shrink the file in order for human check or find rules that detaily filter the negative pairs
 	- result1: using positive filter, obtained 1849 pairs, only 1 of them are error pairs (files as neg_latest.txt and neg_latest.csv)
 	- we can find that 1 pair and remove the left 1848 pairs from the previous filtered results, so that we only need to find 134 pairs from 1852 pairs
+<br><br>
 4. - using combined rule f+l+dob+addr+m filter the 330000 pairs generate a dataset merged with privious filtered results generated -> filtered_full_cover_comnined_deduped.txt
    - the new combined dataset has 5605 (p=0.0776) total pairs and 435 pairs of corrected pairs
    - use filtered_full_cover_comnined_deduped.csv for continue experiments
+<br><br>
+5. - from exp4, 28 pairs are extracted by using f + dob + l and 22 are corrected and all the corrected pairs are selected and added to the latest result set latest.txt
+<br><br>
+6. -
+<br><br>
+7. - New database table pmac used. create a new rules file: newrules_detail_full_cover.txt in which the address1 is replaced by address and dob is replace by year+month and month+day. perform the deterministic rule pipline on the new rule sets get total: 771842 pairs of data. Deduped with the data from exp2, the number of left distinct pairs is 7200000. Based on pmc judge r=0.02578, it confirms that another about 1500 pairs are targeted.
+<br><br>
+8. - task: extract correct pairs from the resulted dataset of exp7
+   - methods:
+   - result:
 <br><br>
 
 #### *************************************************************************************************************
