@@ -136,17 +136,17 @@
 	- revision: filter_pipeline
 <br><br>
 22. - using the 56588 data set apply the negative filter (ssn similarity < 0.9 and mrn distance is larger than 400) to obtain a negative dataset for false pairs check
-   - all the filtered pairs are stored in the 56588_neg.txt (7344 pairs)
-   - related detail of each records are stored in the 56588_neg.csv
-   - submission: sub26_neg.csv
-   - result: percision: 0.4522 (3321 are correct which means rest are not (does not make sense at all))
+    - all the filtered pairs are stored in the 56588_neg.txt (7344 pairs)
+    - related detail of each records are stored in the 56588_neg.csv
+    - submission: sub26_neg.csv
+    - result: percision: 0.4522 (3321 are correct which means rest are not (does not make sense at all))
 <br><br>
 
 ## PCM Answer Key Update
 ### after update our previous result changed to p=0.996, r=0.91, f=0.951
 ##### after update the current data set only contains 217 pairs of mismatched records; the total answer key contains 61874 pairs of records
 #### start version 2
-1. - result for submission of processed_neg_56588: percision: 0.435; total: 154 (67); number need to filter off: 87
+1.  - result for submission of processed_neg_56588: percision: 0.435; total: 154 (67); number need to filter off: 87
     - result for submission of processed_full_cover: percision: 0.8456; total: 149(126); number need to filter off:19
     - the pairs need to be filtered have been targeted. The results from above are merged with previous result to yield a new file: 56626.txt
     - the submission 27 is created based on 56626.txt yield result: p=0.996 , r=0.911 , f=0.952 (from pcm)
@@ -166,16 +166,28 @@
 <br><br>
 4. - using combined rule f+l+dob+addr+m filter the 330000 pairs generate a dataset merged with privious filtered results generated -> filtered_full_cover_comnined_deduped.txt
    - the new combined dataset has 5605 (p=0.0776) total pairs and 435 pairs of corrected pairs
-   - use filtered_full_cover_comnined_deduped.csv for continue experiments
+   - exp4a refer to apply methods on whole data set, exp4b refer to methods on combined dataset
 <br><br>
-5. - from exp4, 28 pairs are extracted by using f + dob + l and 22 are corrected and all the corrected pairs are selected and added to the latest result set latest.txt
+5. - from exp4b, 28 pairs are extracted by using f + dob + l and 22 are corrected and all the corrected pairs are selected and added to the latest result set latest.txt
 <br><br>
-6. -
+6. - from exp4a, apply feature: same unempty dob and diff of two mrn is positive and the diff/max(mrn1, mrn2) is smaller than 0.005
+   - result: 105 pairs are obtained with 23 are correct (check_now_dob.txt)
+   - modify feature to diff/max(mrn1, mrn2) is smaller than 0.0012, only 26 are selected, however only 12 of them are correct.
+   - exp6a: apply the method3 from exp8 -> 55 pairs got with p=0
+   - exp6d: apply the method4 from exp8 -> 15 pairs got with p=0
 <br><br>
 7. - New database table pmac used. create a new rules file: newrules_detail_full_cover.txt in which the address1 is replaced by address and dob is replace by year+month and month+day. perform the deterministic rule pipline on the new rule sets get total: 771842 pairs of data. Deduped with the data from exp2, the number of left distinct pairs is 7200000. Based on pmc judge r=0.02578, it confirms that another about 1500 pairs are targeted.
 <br><br>
 8. - task: extract correct pairs from the resulted dataset of exp7
-   - methods:
+   - method1: using same ssn feature (ssn must be valid not like 33333333 or 0123456789)
+   - result: get 22 pairs (exp8a.txt) p=1
+   - method2: f_f == s_f and f_f != "" and (s_l == "" or f_l == "") and check_dob(s_dob, f_dob) and f_addr == s_addr
+   - result: get 60 pairs p=0.0167
+   - method3: mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and (f_f == s_f and f != "" and f_l == s_l and f != "") (mm is mrn distance diff)
+   - result: get 260 pairs (exp8b.txt) p=0.973
+   - method4: ssn xxx-xx-xxxx => [xxx,xx,xxxx]; 2 of 3 are matched
+   - result: get 118 pairs (exp8d.txt) p=0.457
+   - method5:
    - result:
 <br><br>
 

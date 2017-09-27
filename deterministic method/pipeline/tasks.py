@@ -238,10 +238,10 @@ def main():
     # pairs2csv(pairs, "56656_neg_filtered.csv")
     #create_submission_csv("check_now.txt", "sub_9-22-643.csv")
 
-    #create_submission_csv("process_new_full_cover_remove_dupes.txt", "sub_9-26-1250.csv")
+    create_submission_csv("exp8cneg.txt", "sub_9-26-2215.csv")
 
-    p = extract_pairs_from_txt("process_new_full_cover_remove_dupes.txt")
-    pairs2csv(p, "process_new_full_cover_remove_dupes.csv")
+    # p = extract_pairs_from_txt("process_new_full_cover_remove_dupes.txt")
+    # pairs2csv(p, "process_new_full_cover_remove_dupes.csv")
 
 
 def task1(pairs, file, sub, detail):

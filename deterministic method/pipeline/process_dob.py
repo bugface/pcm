@@ -41,10 +41,10 @@ def check_dob(d1, d2):
             result = True
         elif dd1['year'] == dd2['year'] and dd1['month'] == dd2['month']:
             result = True
-        elif dd1['month'] == dd2['month'] and dd1['day'] == dd2['day']:
-            result = True
-        elif dd1['day'] == dd2['month'] and dd1['month'] == dd2['day']:
-            result = True
+        # elif dd1['month'] == dd2['month'] and dd1['day'] == dd2['day']:
+        #     result = True
+        # elif dd1['day'] == dd2['month'] and dd1['month'] == dd2['day']:
+        #     result = True
 
         return result
 

@@ -24,8 +24,8 @@ helper_title = ['ZIP', 'FIRST_', 'CITY', 'DOB', 'ADDRESS2', 'ADDRESS1', 'GENDER'
 pmac_title = ['ZIP', 'FIRST_', 'CITY', 'DOB', 'ADDRESS2', 'ADDRESS1', 'GENDER', 'ENTERPRISEID',
               'MIDDLE', 'LAST_', 'SUFFIX_', 'MOTHERS_MADIDEN_NAME', 'MRN', 'STATE_', 'PHONE',
               'PHONE2', 'EMAIL', 'ALIAS_', 'SSN', 'ADDRESS', 'YEAR', 'MONTH', 'DAY']
-# process_num = cpu_count()
-process_num = 8
+process_num = cpu_count()
+# process_num = 8
 lock = threading.RLock()
 
 

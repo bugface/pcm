@@ -1,6 +1,6 @@
 import csv
 import sys
-from ssn_normalization import measure_ssn_similarity
+from ssn_normalization import measure_ssn_similarity, match_partial_ssn
 from process_dob import check_dob
 from deterministic_rule_pipeline_new_version import pairs2csv, pair2txt, create_submission_csv, extract_pairs_from_txt
 from mrn_normalization import measure_mrn_distance, measure_mrn_similarity
@@ -8,8 +8,12 @@ from address_normalization import normalize_address
 
 
 def filter_check():
-    base = set(extract_pairs_from_txt("latest_result.txt"))
-    csv_file = "processed_full_cover_detail.csv"
+    base = set(extract_pairs_from_txt("latest_result_sacrify_percision.txt"))
+
+    csv_file = "process_new_full_cover_remove_dupes.csv"
+
+    # csv_file = "processed_full_cover_detail.csv"
+
     #csv_file = "filtered_full_cover_comnined_deduped.csv"
 
     with open(csv_file, "r") as f:
@@ -61,6 +65,7 @@ def filter_check():
                 t = (f_id, s_id)
                 tp = (s_id, f_id)
                 if t not in base and tp not in base:
+                    ####possible features
 
                     # if f_l == s_l and f_dob == s_dob and f_dob != "" and f_m == s_m and f_m != "":
                     #     matched_results.add((f_id, s_id))
@@ -78,10 +83,22 @@ def filter_check():
                     # if f_f==s_f and s_l == f_l and f_m == s_m and f_f != '' and f_l != "" and f_m != "":
                     #     matched_results.add((f_id, s_id))
 
-                    if mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and s_dob == f_dob and f_dob != "":
+                    #37 -> dob
+                    # if mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and f_dob == s_dob:
+                    #     matched_results.add((f_id, s_id))
+                    #1086 -> one of the f or l name
+                    #260 -> both f, l match
+                    # if mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and (f_f == s_f and f != "" and f_l == s_l and f != ""):
+                    #     matched_results.add((f_id, s_id))
+
+                    if match_partial_ssn(f_ssn, s_ssn):
                         matched_results.add((f_id, s_id))
 
-                    # if measure_ssn_similarity(f_ssn, s_ssn, "w") >= 0.95:
+                    #60 on new dataset
+                    # if f_f == s_f and f_f != "" and (s_l == "" or f_l == "") and check_dob(s_dob, f_dob) and f_addr == s_addr:
+                    #     matched_results.add((f_id, s_id))
+
+                    # if measure_ssn_similarity(f_ssn, s_ssn, "w") >= 0.98:
                     #     matched_results.add((f_id, s_id))
 
                     # elif check_dob(f_dob, s_dob):
@@ -111,32 +128,11 @@ def filter_check():
                 f_l = ""
                 f_mrn = ""
                 f_m = ""
-
     print(len(matched_results))
-    # for each in matched_results:
-    #     print(each)
-    # l = set()
-    # with open("processed_alter_last_diff.txt", 'r') as f:
-    #     for each in f:
-    #         p = each[:-1].split("\t")
-    #         t = (int(p[0]), int(p[1]))
-    #         l.add(t)
-    # f = []
-    # for each in l:
-    #     f.append(each[0])
-    #     f.append(each[1])
-    # for each in matched_results:
-    #     s1 = each[0]
-    #     s2 = each[1]
-    #     if s1 in f:
-    #         f.remove(s1)
-    #     if s2 in f:
-    #         f.remove(s2)
-    # print(f)
 
-    # pair2txt("check_now.txt", list(matched_results))
-    # create_submission_csv("check_now.txt", "sub_9-25-2254.csv")
-    pairs2csv(list(matched_results), "check_now_dob.csv")
+    # pair2txt("exp6d.txt", list(matched_results))
+    # create_submission_csv("exp6d.txt", "sub_9-27-0022.csv")
+    pairs2csv(list(matched_results), "exp6d.csv")
 
 
 def merge_two_txt():
