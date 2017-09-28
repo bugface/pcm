@@ -175,6 +175,7 @@
    - modify feature to diff/max(mrn1, mrn2) is smaller than 0.0012, only 26 are selected, however only 12 of them are correct.
    - exp6a: apply the method3 from exp8 -> 55 pairs got with p=0
    - exp6d: apply the method4 from exp8 -> 15 pairs got with p=0
+   - exp6e: apply the method5 from exp8 -> 73 pairs got with p=0.01667
 <br><br>
 7. - New database table pmac used. create a new rules file: newrules_detail_full_cover.txt in which the address1 is replaced by address and dob is replace by year+month and month+day. perform the deterministic rule pipline on the new rule sets get total: 771842 pairs of data. Deduped with the data from exp2, the number of left distinct pairs is 7200000. Based on pmc judge r=0.02578, it confirms that another about 1500 pairs are targeted.
 <br><br>
@@ -187,9 +188,11 @@
    - result: get 260 pairs (exp8b.txt) p=0.973
    - method4: ssn xxx-xx-xxxx => [xxx,xx,xxxx]; 2 of 3 are matched
    - result: get 118 pairs (exp8d.txt) p=0.457
-   - method5:
-   - result:
+   - method5: samae meaningful phone number (not 333-333-3333)
+   - result: get 6 pairs p=1
 <br><br>
+
+## Current Result: p=0.996, r=0.917, f=0.955
 
 #### *************************************************************************************************************
 

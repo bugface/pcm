@@ -214,22 +214,23 @@ def main():
 
 #merge two files on distinct pairs
     # s = set()
-    # # s1 = set()
-    # with open("dy/duge922.txt", "r") as f:
+    # s1 = set()
+    # with open("latest_result_sacrify_percision.txt", "r") as f:
     #      for each in f:
     #         p = each[:-1].split("\t")
     #         t = (p[0], p[1])
     #         s.add(t)
 
-    # with open("dy/yunpeng.txt", "r") as f:
+    # with open("temp.txt", "r") as f:
     #     for each in f:
     #         p = each[:-1].split("\t")
     #         t = (p[0], p[1])
     #         tp = (p[1], p[0])
     #         if tp not in s and t not in s:
-    #             s.add(t)
+    #             s1.add(t)
+    # print(len(list(s1)))
 
-    # pair2txt("dugeyunpengheti_1.txt", list(s))
+    # pair2txt("temp_1.txt", list(s1))
     # # #create_submission_csv("filtered_full_cover_comnined_deduped.txt", "sub_filtered_full_cover_comnined_deduped.csv")
     # pairs2csv(list(s), "dugeyunpengheti_1.csv")
 
@@ -238,7 +239,7 @@ def main():
     # pairs2csv(pairs, "56656_neg_filtered.csv")
     #create_submission_csv("check_now.txt", "sub_9-22-643.csv")
 
-    create_submission_csv("exp8cneg.txt", "sub_9-26-2215.csv")
+    create_submission_csv("latest_result_sacrify_percision.txt", "sub_9-28-1230.csv")
 
     # p = extract_pairs_from_txt("process_new_full_cover_remove_dupes.txt")
     # pairs2csv(p, "process_new_full_cover_remove_dupes.csv")
