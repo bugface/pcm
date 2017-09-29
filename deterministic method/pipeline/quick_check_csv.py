@@ -5,21 +5,16 @@ from process_dob import check_dob
 from deterministic_rule_pipeline_new_version import pairs2csv, pair2txt, create_submission_csv, extract_pairs_from_txt
 from mrn_normalization import measure_mrn_distance, measure_mrn_similarity
 from address_normalization import normalize_address
-
+from multiprocessing import Process, Manager
 
 def filter_check():
     base = set(extract_pairs_from_txt("latest_result_sacrify_percision.txt"))
-    base_neg = set(extract_pairs_from_txt("neg_pairs.txt"))
-
-    csv_file = "process_new_full_cover_remove_dupes.csv"
-
-    # csv_file = "processed_full_cover_detail.csv"
-
-    #csv_file = "filtered_full_cover_comnined_deduped.csv"
+    for each in extract_pairs_from_txt("neg_pairs.txt"):
+        base.add(each)
+    csv_file = "working_csvfile.csv"
 
     with open(csv_file, "r") as f:
         reader = csv.DictReader(f)
-
         matched_results = set()
         not_matched = []
 
@@ -32,6 +27,7 @@ def filter_check():
         f_l = ""
         f_mrn = ""
         f_m = ""
+        f_g = ""
         f_int_mrn = 0
         for i, each in enumerate(reader):
             if each['DOB'] is None:
@@ -46,6 +42,7 @@ def filter_check():
                 f_l += each['LAST_']
                 f_m += each['MIDDLE']
                 f_mrn += each['MRN']
+                f_g += each['GENDER']
                 if f_mrn != "":
                     f_int_mrn += int(each['MRN'])
                 # print(f_addr)
@@ -59,14 +56,27 @@ def filter_check():
                 s_l = each['LAST_']
                 s_m = each['MIDDLE']
                 s_mrn = each['MRN']
+                s_g = each['GENDER']
 
                 mm = measure_mrn_distance(f_mrn, s_mrn)
                 ss = measure_ssn_similarity(f_ssn, s_ssn, "w")
 
-                t = (f_id, s_id)
-                tp = (s_id, f_id)
-                if t not in base and tp not in base and t not in base_neg and tp not in base_neg:
+                t = (str(f_id), str(s_id))
+                tp = (str(s_id), str(f_id))
+
+                if t not in base and tp not in base:
                     ####possible features
+
+                    if f_g == s_g and f_g == 'F' and f_f == s_f and f_f != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005:
+                        matched_results.add((f_id, s_id))
+
+
+                    # if f_g == s_g and f_g == 'M' and f_l == s_l and f_l != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005:
+                    #     matched_results.add((f_id, s_id))
+
+                    # if (f_dob == s_dob and f_dob != "") or (f_addr == s_addr and f_addr != "") or (f_f == s_f and f_f != "") or (mm > 0 and mm < 200) or (f_m == s_m and f_m != "") or match_partial_ssn(f_ssn, s_ssn):
+                    #     # can add a neg filter for not same ssn
+                    #     matched_results.add((f_id, s_id))
 
                     # if f_l == s_l and f_dob == s_dob and f_dob != "" and f_m == s_m and f_m != "":
                     #     matched_results.add((f_id, s_id))
@@ -107,11 +117,53 @@ def filter_check():
                 f_l = ""
                 f_mrn = ""
                 f_m = ""
-    print(len(matched_results))
+                f_g = ""
 
-    # pair2txt("exp6e.txt", list(matched_results))
-    # create_submission_csv("exp6e.txt", "sub_9-27-.csv")
-    # pairs2csv(list(matched_results), "exp6e.csv")
+    print(len(matched_results))
+    pair2txt("exp8g.txt", list(matched_results))
+    create_submission_csv("exp8g.txt", "sub_9-29-136.csv")
+    pairs2csv(list(matched_results), "exp8g.csv")
+
+
+def reshape_data():
+    from collections import OrderedDict
+
+    with open("merged_working_csvfile.csv", "w", newline='') as f1:
+        with open("working_csvfile.csv", "r") as f:
+            reader = csv.DictReader(f)
+            header = reader.fieldnames
+            new_header = []
+            for each in header:
+                h1 = each + "_1"
+                h2 = each + "_2"
+                new_header.append(h1)
+                new_header.append(h2)
+            writer = csv.DictWriter(f1, fieldnames=new_header)
+            writer.writeheader()
+            l1 = None
+            l2 = None
+            d = OrderedDict()
+            for i, each in enumerate(reader):
+                if i % 2 == 0:
+                    l1 = each
+                else:
+                    l2 = each
+                    for k, v in l1.items():
+                        d[k+"_1"] = v
+                    for k, v in l2.items():
+                        d[k+"_2"] =v
+                    writer.writerow(d)
+                    l1 = None
+                    l2 = None
+                    d = OrderedDict()
+
+
+def filter_check_multiprocess():
+    base = set(extract_pairs_from_txt("latest_result_sacrify_percision.txt"))
+    base_neg = set(extract_pairs_from_txt("neg_pairs.txt"))
+
+    csv_file = "working_csvfile.csv"
+
 
 
 def merge_two_txt():
@@ -145,6 +197,7 @@ def merge_two_txt():
 def main():
     filter_check()
     # merge_two_txt()
+    # reshape_data()
 
 
 if __name__ == '__main__':

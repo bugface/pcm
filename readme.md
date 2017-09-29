@@ -190,6 +190,10 @@
    - result: get 118 pairs (exp8d.txt) p=0.457
    - method5: samae meaningful phone number (not 333-333-3333)
    - result: get 6 pairs p=1
+   - method6: f_g == s_g and f_g == 'M' and f_l == s_l and f_l != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and (f_dob == s_dob and f_dob != "") or (f_addr == s_addr and f_addr != "") or (f_f == s_f and f_f != "") or (mm > 0 and mm < 100) or (f_m == s_m and f_m != "") or match_partial_ssn(f_ssn, s_ssn)
+   - obtained 39 pairs, p=0.8
+   - method7: f_g == s_g and f_g == 'F' and f_f == s_f and f_f != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005
+   -result: got 66 pairs with p=0.985
 <br><br>
 
 ## Current Result: p=0.996, r=0.917, f=0.955

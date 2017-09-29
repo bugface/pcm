@@ -38,6 +38,7 @@ def extract_pairs_from_txt(txt_file):
 
 
 def create_submission_csv(txt_file, csv_file):
+    s = set()
     with open(txt_file, "r") as f:
         with open(csv_file, "w", newline='') as f1:
             writer = csv.writer(f1)
@@ -45,10 +46,16 @@ def create_submission_csv(txt_file, csv_file):
                 l = []
                 data = each[:-1].split('\t')
                 # print(data)
-                l.append(data[0])
-                l.append(data[1])
-                l.append(1)
-                writer.writerow(l)
+                t = (data[0], data[1])
+                tp = (data[1], data[0])
+                if t in s or tp in s:
+                    continue
+                else:
+                    s.add(t)
+                    l.append(data[0])
+                    l.append(data[1])
+                    l.append(1)
+                    writer.writerow(l)
 
 
 def execute_sql(rule):

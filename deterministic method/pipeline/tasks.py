@@ -215,34 +215,62 @@ def main():
 #merge two files on distinct pairs
     # s = set()
     # s1 = set()
+    # s2 = set()
     # with open("latest_result_sacrify_percision.txt", "r") as f:
+    #     for each in f:
+    #         p = each[:-1].split("\t")
+    #         t = (p[0], p[1])
+    #         s2.add(t)
+
+    # with open("temp.txt", "r") as f:
     #      for each in f:
     #         p = each[:-1].split("\t")
     #         t = (p[0], p[1])
     #         s.add(t)
 
-    # with open("temp.txt", "r") as f:
+    # with open("exp8f_sub.txt", "r") as f:
     #     for each in f:
     #         p = each[:-1].split("\t")
     #         t = (p[0], p[1])
     #         tp = (p[1], p[0])
-    #         if tp not in s and t not in s:
+    #         if tp not in s and t not in s and t not in s2 and tp not in s2:
     #             s1.add(t)
-    # print(len(list(s1)))
+    # print(len(s1))
 
-    # pair2txt("temp_1.txt", list(s1))
+    # pair2txt("exp8f.txt", list(s1))
     # # #create_submission_csv("filtered_full_cover_comnined_deduped.txt", "sub_filtered_full_cover_comnined_deduped.csv")
     # pairs2csv(list(s), "dugeyunpengheti_1.csv")
 
-    # create_submission_csv("new.txt", "sub_56626_neg_handcheck_2.csv")
+    # create_submission_csv("temp.txt", "sub_9-29-1243.csv")
     # pairs = extract_pairs_from_txt("new.txt")
     # pairs2csv(pairs, "56656_neg_filtered.csv")
     #create_submission_csv("check_now.txt", "sub_9-22-643.csv")
 
-    create_submission_csv("latest_result_sacrify_percision.txt", "sub_9-28-1230.csv")
+    # create_submission_csv("latest_result_sacrify_percision.txt", "sub_9-28-1230.csv")
 
     # p = extract_pairs_from_txt("process_new_full_cover_remove_dupes.txt")
     # pairs2csv(p, "process_new_full_cover_remove_dupes.csv")
+
+    # s = []
+    # header = None
+
+    ## reduce the working_csv.csv to two pairs are in one line
+    # csv_files = ["process_new_full_cover_remove_dupes.csv", "processed_full_cover_detail.csv"]
+    # for each_csv in csv_files:
+    #     with open(each_csv, "r") as f:
+    #         reader = csv.DictReader(f)
+
+    #         header = reader.fieldnames
+    #         for each in header:
+
+
+    #         for each in reader:
+    #             s.append(each)
+    # print(len(s))
+    # with open("working_csvfile.csv", "w", newline='') as f:
+    #     writer = csv.DictWriter(f, fieldnames=header)
+    #     writer.writeheader()
+    #     writer.writerows(s)
 
 
 def task1(pairs, file, sub, detail):
