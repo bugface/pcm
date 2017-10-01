@@ -180,20 +180,27 @@
 7. - New database table pmac used. create a new rules file: newrules_detail_full_cover.txt in which the address1 is replaced by address and dob is replace by year+month and month+day. perform the deterministic rule pipline on the new rule sets get total: 771842 pairs of data. Deduped with the data from exp2, the number of left distinct pairs is 7200000. Based on pmc judge r=0.02578, it confirms that another about 1500 pairs are targeted.
 <br><br>
 8. - task: extract correct pairs from the resulted dataset of exp7
-   - method1: using same ssn feature (ssn must be valid not like 33333333 or 0123456789)
+   - **method1**: using same ssn feature (ssn must be valid not like 33333333 or 0123456789)
    - result: get 22 pairs (exp8a.txt) p=1
-   - method2: f_f == s_f and f_f != "" and (s_l == "" or f_l == "") and check_dob(s_dob, f_dob) and f_addr == s_addr
+   - **method2**: f_f == s_f and f_f != "" and (s_l == "" or f_l == "") and check_dob(s_dob, f_dob) and f_addr == s_addr
    - result: get 60 pairs p=0.0167
-   - method3: mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and (f_f == s_f and f != "" and f_l == s_l and f != "") (mm is mrn distance diff)
+   - **method3**: mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and (f_f == s_f and f != "" and f_l == s_l and f != "") (mm is mrn distance diff)
    - result: get 260 pairs (exp8b.txt) p=0.973
-   - method4: ssn xxx-xx-xxxx => [xxx,xx,xxxx]; 2 of 3 are matched
+   - **method4**: ssn xxx-xx-xxxx => [xxx,xx,xxxx]; 2 of 3 are matched
    - result: get 118 pairs (exp8d.txt) p=0.457
-   - method5: samae meaningful phone number (not 333-333-3333)
+   - **method5**: same meaningful phone number (not 333-333-3333)
    - result: get 6 pairs p=1
-   - method6: f_g == s_g and f_g == 'M' and f_l == s_l and f_l != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and (f_dob == s_dob and f_dob != "") or (f_addr == s_addr and f_addr != "") or (f_f == s_f and f_f != "") or (mm > 0 and mm < 100) or (f_m == s_m and f_m != "") or match_partial_ssn(f_ssn, s_ssn)
+   - **method6**: f_g == s_g and f_g == 'M' and f_l == s_l and f_l != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and (f_dob == s_dob and f_dob != "") or (f_addr == s_addr and f_addr != "") or (f_f == s_f and f_f != "") or (mm > 0 and mm < 100) or (f_m == s_m and f_m != "") or match_partial_ssn(f_ssn, s_ssn)
    - obtained 39 pairs, p=0.8
-   - method7: f_g == s_g and f_g == 'F' and f_f == s_f and f_f != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005
-   -result: got 66 pairs with p=0.985
+   - **method7**: f_g == s_g and f_g == 'F' and f_f == s_f and f_f != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005
+   - result: got 66 pairs with p=0.985
+   - **method8**: if mm > 0 and mm < 500
+   - result: got 239 pairs with p=0.874
+   - filter the pairs from *method8* with ssn1 != ssn2 and not check_dob(f_dob, s_dob), obtain 29/31 false pairs
+   - **method9**: measure_name_distance(f_f, s_f) > 0.9 and measure_name_distance(f_l, s_l) > 0.9 and check_dob(f_dob, s_dob) and (f_m == s_m or f_addr == s_addr or (mm > 0 and mm < 500))
+   - result: got 1043 pairs with p= 0.281
+   - apply rule: measured mrn distance > 0 or at least one of ssn is missing, the original file is seperated into two files _b_ an _c_ with 102/470 and 191/573 respectively
+   > <span style="color:red"> Current rules(features) cannot help to reduce the wrong pairs for these resulted data </span>
 <br><br>
 
 ## Current Result: p=0.996, r=0.917, f=0.955

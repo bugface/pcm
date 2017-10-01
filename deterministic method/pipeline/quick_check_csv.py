@@ -6,12 +6,15 @@ from deterministic_rule_pipeline_new_version import pairs2csv, pair2txt, create_
 from mrn_normalization import measure_mrn_distance, measure_mrn_similarity
 from address_normalization import normalize_address
 from multiprocessing import Process, Manager
+from names_normalization import measure_name_distance
 
 def filter_check():
     base = set(extract_pairs_from_txt("latest_result_sacrify_percision.txt"))
     for each in extract_pairs_from_txt("neg_pairs.txt"):
         base.add(each)
-    csv_file = "working_csvfile.csv"
+    # csv_file = "working_csvfile.csv"
+    # csv_file = "exp8j_b.csv"
+    csv_file = "exp8j_c.csv"
 
     with open(csv_file, "r") as f:
         reader = csv.DictReader(f)
@@ -66,12 +69,48 @@ def filter_check():
 
                 if t not in base and tp not in base:
                     ####possible features
+                    #TODO next
+                    #70
+                    # if measure_name_distance(f_f, s_f) > 0.9 and measure_name_distance(f_l, s_l) > 0.9 and check_dob(f_dob, s_dob) and (f_m == s_m or f_addr == s_addr or (mm > 0 and mm < 500)):
+                    #     matched_results.add((f_id, s_id))
 
-                    if f_g == s_g and f_g == 'F' and f_f == s_f and f_f != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005:
-                        matched_results.add((f_id, s_id))
+
+                    #TODO next 2209
+                    # if f_f==s_f and s_l == f_l and f_m == s_m and f_f != "" and f_l != "" and f_m != "":
+                    #     matched_results.add((f_id, s_id))
 
 
-                    # if f_g == s_g and f_g == 'M' and f_l == s_l and f_l != "" and check_dob(f_dob, s_dob) and mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005:
+
+
+                    # if  not check_dob(f_dob,s_dob):
+                    #     print((f_id, s_id))
+                    #     matched_results.add((f_id, s_id))
+
+                    # if f_addr == s_addr and f_addr != "" and check_dob(f_dob, s_dob) and f_m==s_m and f_m != "":
+                    #      matched_results.add((f_id, s_id))
+
+                    #print(f_dob.split(" ")[0].split("-")[0])
+                    # y = int(f_dob.split(" ")[0].split("-")[0]) - int(s_dob.split(" ")[0].split("-")[0])
+                    # m = int(f_dob.split(" ")[0].split("-")[1]) - int(s_dob.split(" ")[0].split("-")[1])
+                    # d = int(f_dob.split(" ")[0].split("-")[2]) - int(s_dob.split(" ")[0].split("-")[2])
+
+                    # if ((y == 10 or y==20 or y==30) and d == 0 and m == 0) or (y == 0 and  m == 0 and d == 1):
+                    #     # print((f_id, s_id))
+                    #     matched_results.add((f_id, s_id))
+
+                    # if f_f==s_f and f_l==s_l:
+                    #     matched_results.add((f_id, s_id))
+
+                    # if f_phone == s_phone and f_phone != "":
+                    # if f_ssn == s_ssn and f_ssn != "":
+                    # if mm > 1000:
+                    # # if d == 30:
+                    # # if f_l == s_l:
+                    #     # print((f_id, s_id))
+                    #     matched_results.add((f_id, s_id))
+
+                    # if mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005: #1133
+                    # if mm > 0 and mm < 500:
                     #     matched_results.add((f_id, s_id))
 
                     # if (f_dob == s_dob and f_dob != "") or (f_addr == s_addr and f_addr != "") or (f_f == s_f and f_f != "") or (mm > 0 and mm < 200) or (f_m == s_m and f_m != "") or match_partial_ssn(f_ssn, s_ssn):
@@ -90,21 +129,19 @@ def filter_check():
                     # if ((f_f == s_f and f_dob == s_dob) or (f_l == s_l and f_dob == s_dob)) and f_addr == s_addr and f_addr != "":
                     #     matched_results.add((f_id, s_id))
 
-                    # #2209
-                    # if f_f==s_f and s_l == f_l and f_m == s_m and f_f != "" and f_l != "" and f_m != "":
+                    # if f_ssn == s_ssn and f_ssn != "":
                     #     matched_results.add((f_id, s_id))
 
-                    #37 -> dob (new dataset)
-                    # if mm > 0 and mm < 100:
+                    # # if (mm >0 and mm < 1000) or match_partial_ssn(f_ssn, s_ssn):
+                    if mm > 0 and (f_ssn != "" and s_ssn != ""):
+                        # print(f_id, s_id)
+                        matched_results.add((f_id, s_id))
+
+                    # if not check_dob(f_dob, s_dob):
                     #     matched_results.add((f_id, s_id))
 
-                    #1086 -> one of the f or l name
-                    #260 -> both f, l match
-                    # if mm > 0 and (mm / max(int(f_mrn), int(s_mrn))) <= 0.005 and (f_f == s_f and f != "" and f_l == s_l and f != ""):
-                    #     matched_results.add((f_id, s_id))
-
-                    #60 on new dataset
-                    # if f_f == s_f and f_f != "" and (s_l == "" or f_l == "") and check_dob(s_dob, f_dob) and f_addr == s_addr:
+                    # if f_m != s_m and f_m != "" and s_m != "":
+                    #     print(f_id, s_id)
                     #     matched_results.add((f_id, s_id))
 
                 f_int_mrn = 0
@@ -120,9 +157,10 @@ def filter_check():
                 f_g = ""
 
     print(len(matched_results))
-    pair2txt("exp8g.txt", list(matched_results))
-    create_submission_csv("exp8g.txt", "sub_9-29-136.csv")
-    pairs2csv(list(matched_results), "exp8g.csv")
+
+    pair2txt("exp8j_sub.txt", list(matched_results))
+    create_submission_csv("exp8j_sub.txt", "sub_9-30-1040.csv")
+    pairs2csv(list(matched_results), "exp8j_sub.csv")
 
 
 def reshape_data():

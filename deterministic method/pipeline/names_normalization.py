@@ -2,6 +2,11 @@ import jellyfish
 import csv
 from multiprocessing import Process
 
+def measure_name_distance(n1, n2):
+    r = []
+    for i in range(6):
+        r.append(measure_string_distance(n1, n2, i))
+    return  max(r)
 
 def measure_string_distance(s1, s2, method):
     '''

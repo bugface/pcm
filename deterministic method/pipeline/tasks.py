@@ -213,8 +213,8 @@ def main():
     #         time.sleep(2)
 
 #merge two files on distinct pairs
-    # s = set()
-    # s1 = set()
+    s = set()
+    s1 = set()
     # s2 = set()
     # with open("latest_result_sacrify_percision.txt", "r") as f:
     #     for each in f:
@@ -222,26 +222,32 @@ def main():
     #         t = (p[0], p[1])
     #         s2.add(t)
 
-    # with open("temp.txt", "r") as f:
+    # with open("exp8j_c.txt", "r") as f:
     #      for each in f:
     #         p = each[:-1].split("\t")
     #         t = (p[0], p[1])
     #         s.add(t)
 
-    # with open("exp8f_sub.txt", "r") as f:
+    # with open("exp8j.txt", "r") as f:
     #     for each in f:
     #         p = each[:-1].split("\t")
     #         t = (p[0], p[1])
     #         tp = (p[1], p[0])
-    #         if tp not in s and t not in s and t not in s2 and tp not in s2:
+    #         if tp not in s and t not in s:
     #             s1.add(t)
+    #         # s.add(t)
+
     # print(len(s1))
 
-    # pair2txt("exp8f.txt", list(s1))
-    # # #create_submission_csv("filtered_full_cover_comnined_deduped.txt", "sub_filtered_full_cover_comnined_deduped.csv")
-    # pairs2csv(list(s), "dugeyunpengheti_1.csv")
 
-    # create_submission_csv("temp.txt", "sub_9-29-1243.csv")
+    # pair2txt("exp8j_b.txt", list(s1))
+    # # create_submission_csv("exp8j_c.txt", "sub_9-30-900.csv")
+    # pairs2csv(list(s1), "exp8j_b.csv")
+
+    create_submission_csv("temp.txt", "sub_9-30-1025.csv")
+    # pairs2csv(list(s), "dugeyunpenghe1.csv")
+
+    # create_submission_csv("temp.txt", "sub_9-30-310.csv")
     # pairs = extract_pairs_from_txt("new.txt")
     # pairs2csv(pairs, "56656_neg_filtered.csv")
     #create_submission_csv("check_now.txt", "sub_9-22-643.csv")
