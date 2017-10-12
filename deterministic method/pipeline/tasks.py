@@ -213,8 +213,8 @@ def main():
     #         time.sleep(2)
 
 #merge two files on distinct pairs
-    s = set()
-    s1 = set()
+    # s = set()
+    # s1 = set()
     # s2 = set()
     # with open("latest_result_sacrify_percision.txt", "r") as f:
     #     for each in f:
@@ -241,10 +241,10 @@ def main():
 
 
     # pair2txt("exp8j_b.txt", list(s1))
-    # # create_submission_csv("exp8j_c.txt", "sub_9-30-900.csv")
+    # create_submission_csv("latest_result_sacrify_percision.txt", "sub_10-4-525.csv")
     # pairs2csv(list(s1), "exp8j_b.csv")
 
-    create_submission_csv("temp.txt", "sub_9-30-1025.csv")
+    # create_submission_csv("temp.txt", "sub_9-30-1025.csv")
     # pairs2csv(list(s), "dugeyunpenghe1.csv")
 
     # create_submission_csv("temp.txt", "sub_9-30-310.csv")
@@ -259,25 +259,35 @@ def main():
 
     # s = []
     # header = None
-
-    ## reduce the working_csv.csv to two pairs are in one line
-    # csv_files = ["process_new_full_cover_remove_dupes.csv", "processed_full_cover_detail.csv"]
+    # ## reduce the working_csv.csv to two pairs are in one line
+    # csv_files = ["working_csvfile.csv", "process_new1_full_cover.csv"]
     # for each_csv in csv_files:
     #     with open(each_csv, "r") as f:
     #         reader = csv.DictReader(f)
-
     #         header = reader.fieldnames
-    #         for each in header:
-
-
     #         for each in reader:
     #             s.append(each)
     # print(len(s))
-    # with open("working_csvfile.csv", "w", newline='') as f:
+    # with open("working_csvfile1.csv", "w", newline='') as f:
     #     writer = csv.DictWriter(f, fieldnames=header)
     #     writer.writeheader()
     #     writer.writerows(s)
 
+    # base_file = "latest_result_sacrify_percision.txt"
+    # rule_file = "new2_rules_detail_full_cover.txt"
+    # folder = "txt\\new2_full_cover"
+    # job = "p"
+    # output_csv_file = "process_new2_full_cover.csv"
+    # output_pair_file = "process_new2_full_cover.txt"
+    # table = "pmac"
+
+    # if not os.path.exists(folder):
+    #     os.makedirs(folder)
+
+    # pipline_get_detail(rule_file, folder, base_file,
+    #                    output_csv_file, output_pair_file, job, table)
+
+    # create_submission_csv("process_new2_full_cover.txt", "sub_10-9-1100.csv")
 
 def task1(pairs, file, sub, detail):
     pair2txt(file, pairs)

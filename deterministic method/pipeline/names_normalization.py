@@ -4,7 +4,7 @@ from multiprocessing import Process
 
 def measure_name_distance(n1, n2):
     r = []
-    for i in range(6):
+    for i in range(3):
         r.append(measure_string_distance(n1, n2, i))
     return  max(r)
 

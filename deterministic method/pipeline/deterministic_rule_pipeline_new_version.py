@@ -16,7 +16,7 @@ logging.basicConfig(filename='rules_log.log', level=logging.INFO,
                     format=FORMAT, datefmt="%Y-%m-%d %H:%M:%S")
 logger = logging.getLogger("task")
 title = ['ENTERPRISEID', 'LAST_', 'FIRST_', 'MIDDLE', 'SUFFIX_', 'DOB', 'GENDER', 'SSN', 'ADDRESS1',
-         'ADDRESS2', 'ZIP', 'MOTHERS_MAIDEN_NAME', 'MRN', 'CITY', 'STATE_', 'PHONE', 'PHONE2', 'EMAIL', 'ALIAS_']
+         'ADDRESS2', 'ZIP', 'MOTHERS_MADIDEN_NAME', 'MRN', 'CITY', 'STATE_', 'PHONE', 'PHONE2', 'EMAIL', 'ALIAS_']
 engine = create_engine(SQLALCHEMY_DATABASE_URI, pool_size=4, pool_recycle=3600)
 helper_title = ['ZIP', 'FIRST_', 'CITY', 'DOB', 'ADDRESS2', 'ADDRESS1', 'GENDER', 'ENTERPRISEID',
                 'MIDDLE', 'LAST_', 'SUFFIX_', 'MOTHERS_MADIDEN_NAME', 'MRN', 'STATE_', 'PHONE',
@@ -460,9 +460,8 @@ def generate_individual_pairs_file_from_rules(rule_file, folder, job, table):
     elif table == "pmac":
         pmac_store_result_as_pairs(rules, folder, job, rule_file)
 
+
 # stage 2
-
-
 def output_deduped_pairs_and_detail(folder, base_file, output_pair_file, output_csv_file, table):
     # collect all the individual pairs file and dedupe all the resulted pairs based on base_file and output results
     print("combine all the pairs and perform deduplication...")
@@ -482,5 +481,4 @@ def output_deduped_pairs_and_detail(folder, base_file, output_pair_file, output_
 def pipline_get_detail(rule_file, folder, base_file, output_csv_file, output_pair_file, job, table="pcm"):
     # pipeline combine stage 1 and stage 2
     generate_individual_pairs_file_from_rules(rule_file, folder, job, table)
-    output_deduped_pairs_and_detail(
-        folder, base_file, output_pair_file, output_csv_file, table)
+    output_deduped_pairs_and_detail(folder, base_file, output_pair_file, output_csv_file, table)
